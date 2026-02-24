@@ -609,21 +609,5 @@
   </div>
 </footer>
 
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Message sent ✓';
-  btn.style.background = '#2d9e6b';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Send Message →';
-    btn.style.background = '';
-    btn.disabled = false;
-    e.target.reset();
-  }, 3000);
-}
-</script>
-
 </body>
 </html>
