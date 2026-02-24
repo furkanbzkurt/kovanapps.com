@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kovan Apps – Mobile Software Studio</title>
+  <meta name="description" content="Kovan Apps is a mobile software studio crafting thoughtful, user-focused applications for Android and iOS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --surface: #16161f;
+      --border: rgba(255,255,255,0.07);
+      --text: #f0f0f5;
+      --muted: #8888a0;
+      --accent: #6c5ce7;
+      --accent2: #a29bfe;
+      --accent-glow: rgba(108,92,231,0.25);
+      --gold: #f9ca55;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw;
+      height: 68px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--accent2); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.85rem !important;
+      transition: background 0.2s, opacity 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent2) !important; color: var(--bg) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 5vw 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 20%, rgba(108,92,231,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(162,155,254,0.08) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 0%, transparent 80%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 760px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(108,92,231,0.15);
+      border: 1px solid rgba(108,92,231,0.3);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem;
+      color: var(--accent2);
+      font-weight: 500;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero-badge::before { content: '◆'; font-size: 0.6rem; }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+    h1 .hl {
+      background: linear-gradient(135deg, var(--accent2) 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+    .btn-primary:hover { background: #7d6ef0; transform: translateY(-1px); box-shadow: 0 4px 40px var(--accent-glow); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--accent2); color: var(--accent2); }
+
+    /* ─── SECTION ─── */
+    section { padding: 100px 5vw; }
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent2);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+    .section-sub { color: var(--muted); font-size: 1.05rem; max-width: 520px; }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .stat-num span { color: var(--accent2); }
+    .stat-label { font-size: 0.8rem; color: var(--muted); }
+    .about-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-blob {
+      width: 320px; height: 320px;
+      border-radius: 40% 60% 70% 30% / 30% 40% 60% 70%;
+      background: linear-gradient(135deg, rgba(108,92,231,0.2) 0%, rgba(162,155,254,0.08) 100%);
+      border: 1px solid rgba(108,92,231,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+    @keyframes blobFloat {
+      0%,100% { border-radius: 40% 60% 70% 30%/30% 40% 60% 70%; transform: translateY(0); }
+      33% { border-radius: 70% 30% 30% 70%/70% 30% 70% 30%; transform: translateY(-10px); }
+      66% { border-radius: 30% 70% 60% 40%/50% 60% 40% 50%; transform: translateY(5px); }
+    }
+
+    /* ─── APPS ─── */
+    .apps-section { background: var(--bg2); }
+    .apps-header { max-width: 1100px; margin: 0 auto 3.5rem; }
+    .apps-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 2rem; }
+    .app-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .app-card:hover { border-color: rgba(108,92,231,0.4); transform: translateY(-4px); }
+    .app-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent2), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .app-card:hover::before { opacity: 1; }
+    .app-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+      font-weight: 600; padding: 0.25rem 0.75rem;
+      border-radius: 100px; margin-bottom: 1.5rem;
+    }
+    .tag-music { background: rgba(108,92,231,0.15); color: var(--accent2); border: 1px solid rgba(108,92,231,0.25); }
+    .tag-safety { background: rgba(249,202,85,0.12); color: var(--gold); border: 1px solid rgba(249,202,85,0.25); }
+    .app-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+    .app-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem; font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 0.75rem;
+    }
+    .app-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.75rem; }
+    .app-badge-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .store-badge:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
+    .store-badge .badge-label { font-size: 0.65rem; color: var(--muted); display: block; line-height: 1; }
+    .store-badge .badge-name { font-size: 0.88rem; font-weight: 600; display: block; line-height: 1.3; }
+    .coming-soon-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ─── VALUES ─── */
+    .values-inner { max-width: 1100px; margin: 0 auto; }
+    .values-header { margin-bottom: 3.5rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.3s;
+    }
+    .value-card:hover { border-color: rgba(108,92,231,0.3); }
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .value-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .value-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+
+    /* ─── CONTACT ─── */
+    .contact-section { background: var(--bg2); }
+    .contact-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+    .contact-info { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-row {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .contact-row-icon { font-size: 1.4rem; }
+    .contact-row-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+    .contact-row-val { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+    .contact-row-val a { color: var(--text); text-decoration: none; }
+    .contact-row-val a:hover { color: var(--accent2); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+    .form-group input, .form-group textarea {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent2); }
+    .form-group textarea { min-height: 110px; }
+    .form-submit {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+      margin-top: 0.25rem;
+    }
+    .form-submit:hover { background: #7d6ef0; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 3rem 5vw;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-left { font-size: 0.85rem; color: var(--muted); }
+    .footer-left strong { color: var(--text); font-family: 'Syne', sans-serif; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .fade-up:nth-child(1) { animation-delay: 0.1s; }
+    .fade-up:nth-child(2) { animation-delay: 0.2s; }
+    .fade-up:nth-child(3) { animation-delay: 0.3s; }
+    .fade-up:nth-child(4) { animation-delay: 0.4s; }
+    @keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { display: none; }
+      .values-grid { grid-template-columns: 1fr; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 2.4rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Kovan<span>Apps</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#apps">Apps</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:info@kovanapps.com" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-up">Mobile Software Studio</div>
+    <h1 class="fade-up">
+      Apps that people<br><span class="hl">actually love.</span>
+    </h1>
+    <p class="hero-sub fade-up">
+      We build thoughtful, polished mobile experiences that combine great design
+      with smart technology — for Android and iOS.
+    </p>
+    <div class="hero-actions fade-up">
+      <a href="#apps" class="btn btn-primary">Explore Our Apps</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <p class="section-label">Who we are</p>
+      <h2>A focused studio building meaningful apps</h2>
+      <p class="section-sub">
+        Kovan Apps is a mobile software company dedicated to creating applications
+        that solve real problems and deliver genuine value. We pair thoughtful UX
+        with solid engineering to ship products users trust.
+      </p>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num">200K<span>+</span></div>
+          <div class="stat-label">App downloads</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4.5K<span>+</span></div>
+          <div class="stat-label">Active daily users</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Apps published</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">7<span>+</span></div>
+          <div class="stat-label">Years in mobile dev</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="about-blob">📱</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section id="apps" class="apps-section">
+  <div class="apps-header">
+    <p class="section-label">Our portfolio</p>
+    <h2>Apps we've built</h2>
+    <p class="section-sub">Each product is crafted with care, built on reliable technology, and designed with the end user at heart.</p>
+  </div>
+  <div class="apps-grid">
+
+    <!-- MeloMatch -->
+    <div class="app-card">
+      <span class="app-tag tag-music">🎵 Music &amp; Social</span>
+      <span class="app-icon">🎶</span>
+      <h3>MeloMatch</h3>
+      <p>
+        A music-based dating app that connects people through shared taste in music —
+        not just photos. Swipe through profiles enriched with Spotify data, discover
+        matches who vibe on the same wavelength, and break the ice with playlists.
+      </p>
+      <div class="app-badge-row">
+        <a href="https://play.google.com/store/apps/details?id=com.melomatch.app" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Get it on</span>
+            <span class="badge-name">Google Play</span>
+          </span>
+        </a>
+        <span class="coming-soon-badge">🍎 iOS — Coming Soon</span>
+      </div>
+    </div>
+
+    <!-- Police Scanner -->
+    <div class="app-card">
+      <span class="app-tag tag-safety">📡 Public Safety</span>
+      <span class="app-icon">🚔</span>
+      <h3>Live Police Scanner</h3>
+      <p>
+        A live police scanner app giving users real-time access to public safety
+        radio feeds from across the country. Trusted by over 200K users, it's
+        one of the most reliable scanners on the Play Store.
+      </p>
+      <div class="app-badge-row">
+        <a href="https://play.google.com/store/apps/details?id=com.genesissoftware.livepolicescanner" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Get it on</span>
+            <span class="badge-name">Google Play</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VALUES -->
+<section>
+  <div class="values-inner">
+    <div class="values-header">
+      <p class="section-label">How we work</p>
+      <h2>Our principles</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <span class="value-icon">🎯</span>
+        <h4>User-first design</h4>
+        <p>Every decision starts with the user experience. We design for clarity, speed, and delight — not features for the sake of features.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🔒</span>
+        <h4>Privacy by default</h4>
+        <p>We collect only what we need, protect what we have, and give users full control over their data. Trust is built, not assumed.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">⚙️</span>
+        <h4>Solid engineering</h4>
+        <p>We use modern, proven technology — Jetpack Compose, Firebase, Kotlin — to ship stable, maintainable apps that scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div>
+      <p class="section-label">Reach out</p>
+      <h2>Let's talk</h2>
+      <p class="section-sub">Whether you have a question about our apps, a business inquiry, or just want to say hello — we'd love to hear from you.</p>
+      <div class="contact-info">
+        <div class="contact-row">
+          <span class="contact-row-icon">✉️</span>
+          <div>
+            <div class="contact-row-label">Email</div>
+            <div class="contact-row-val"><a href="mailto:info@kovanapps.com">info@kovanapps.com</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-icon">🏢</span>
+          <div>
+            <div class="contact-row-label">Company</div>
+            <div class="contact-row-val">Kovan Apps Yazılım Ltd. Şti.</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row-icon">📍</span>
+          <div>
+            <div class="contact-row-label">Location</div>
+            <div class="contact-row-val">Turkey</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <strong>Kovan Apps</strong> — Kovan Apps Yazılım Ltd. Şti. &nbsp;·&nbsp; © 2026 All rights reserved.
+  </div>
+  <div class="footer-links">
+    <a href="/melomatch-privacy-policy/">Privacy Policy</a>
+    <a href="/melomatch-terms-and-conditions/">Terms of Service</a>
+    <a href="/melomatch-delete-account/">Delete Account</a>
+    <a href="mailto:info@kovanapps.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = 'Message sent ✓';
+  btn.style.background = '#2d9e6b';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Send Message →';
+    btn.style.background = '';
+    btn.disabled = false;
+    e.target.reset();
+  }, 3000);
+}
+</script>
+
+</body>
+</html>
