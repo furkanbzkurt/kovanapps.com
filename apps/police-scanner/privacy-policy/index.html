@@ -53,105 +53,149 @@
 <body>
 <nav>
   <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
-  <a href="/" class="nav-back">← Home</a>
+  <a href="/" class="nav-back">&larr; Home</a>
 </nav>
 
 <div class="page-header">
   <div class="inner">
     <div class="breadcrumb">
       <a href="/">Kovan Apps</a>
-      <span class="breadcrumb-sep">›</span>
-      <a href="/apps/police-scanner/privacy-policy/">Live Police Scanner</a>
-      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/police-scanner/privacy-policy/">Police Scanner Radio</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
       <span>Privacy Policy</span>
     </div>
-    <div class="app-pill">🚔 Live Police Scanner</div>
+    <div class="app-pill">&#x1F693; Police Scanner Radio: Fire&amp;EMS</div>
     <h1>Privacy Policy</h1>
     <div class="meta">
-      <span>🗓 Effective: April 25, 2020</span>
-      <span>🔄 Last Updated: February 2026</span>
+      <span>&#x1F5D3; Effective: April 25, 2020</span>
+      <span>&#x1F504; Last Updated: March 2026</span>
     </div>
   </div>
 </div>
 
 <div class="content-wrap">
 
-<p>Kovan Apps Yazılım Ltd. Şti. ("Company", "we", "us", or "our") built the <strong>Live Police Scanner</strong> app as an ad-supported application. This SERVICE is provided by Kovan Apps at no cost and is intended for use as is.</p>
+<p>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) built the <strong>Police Scanner Radio: Fire&amp;EMS</strong> app (the &ldquo;App&rdquo;) as an ad-supported application available on both <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. This SERVICE is provided by Kovan Apps at no cost and is intended for use as is.</p>
 
 <p>This page informs visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decides to use our Service. By using our Service, you agree to the collection and use of information in relation to this policy.</p>
 
 <h2>1. Information Collection and Use</h2>
-<p>For a better experience while using our Service, we may require you to provide certain personally identifiable information. The information we request will be retained on your device and is not collected by us directly.</p>
+<p>For a better experience while using our Service, we may require you to provide certain personally identifiable information. The information we request will be retained on your device and is not collected by us directly, except as described below.</p>
 
-<p>The app uses third-party services that may collect information used to identify you. Links to the privacy policies of third-party service providers used by the app:</p>
+<p>The App uses third-party services that may collect information used to identify you. Links to the privacy policies of third-party service providers used by the App:</p>
 
 <table>
-  <tr><th>Service</th><th>Purpose</th></tr>
-  <tr><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></td><td>Core app functionality and device services</td></tr>
-  <tr><td><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob</a></td><td>Ad serving and monetization</td></tr>
-  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></td><td>Usage analytics and app performance</td></tr>
-  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></td><td>Crash reporting and stability monitoring</td></tr>
+  <tr><th>Service</th><th>Purpose</th><th>Platform</th></tr>
+  <tr><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></td><td>Core app functionality and device services</td><td>Android</td></tr>
+  <tr><td><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob</a></td><td>Ad serving and monetization</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></td><td>Usage analytics and app performance</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></td><td>Crash reporting and stability monitoring</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a></td><td>Subscription management and purchase validation</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://deepgram.com/privacy" target="_blank" rel="noopener">Deepgram</a></td><td>Cloud-based AI speech-to-text transcription</td><td>Android &amp; iOS</td></tr>
 </table>
 
-<h2>2. Log Data</h2>
-<p>Whenever you use our Service, in the case of an error in the app, we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include:</p>
+<h2>2. AI Live Transcription</h2>
+<p>The App offers an AI Live Transcription feature that converts radio audio to text in real time. This feature works as follows:</p>
 <ul>
-  <li>Your device's Internet Protocol ("IP") address</li>
+  <li>Radio audio streams are sent to our cloud servers for processing via the Deepgram speech-to-text API.</li>
+  <li><strong>No microphone permission is required.</strong> The App does not access your device's microphone. Only publicly available radio streams are transcribed.</li>
+  <li>Transcription text is temporarily stored in Firebase Firestore for real-time delivery and is automatically deleted after 48 hours.</li>
+  <li>No personal information is included in the transcription data.</li>
+</ul>
+
+<h2>3. Subscription Data</h2>
+<p>The App offers optional premium subscriptions managed through RevenueCat. When you subscribe:</p>
+<ul>
+  <li>Payment is processed entirely by Apple (App Store) or Google (Play Store). We do not collect or store your payment details (credit card numbers, billing address, etc.).</li>
+  <li>RevenueCat receives an anonymous subscriber ID and purchase receipt to validate your subscription status.</li>
+  <li>We store your subscription status locally on your device to unlock premium features.</li>
+</ul>
+
+<h2>4. Log Data</h2>
+<p>Whenever you use our Service, in the case of an error in the App, we collect data and information (through third-party products) called Log Data. This Log Data may include:</p>
+<ul>
+  <li>Your device's Internet Protocol (&ldquo;IP&rdquo;) address</li>
   <li>Device name and operating system version</li>
   <li>App configuration when utilizing our Service</li>
   <li>Time and date of your use of the Service</li>
   <li>Other diagnostic statistics</li>
 </ul>
 
-<h2>3. Cookies</h2>
-<p>Cookies are files with a small amount of data commonly used as anonymous unique identifiers. This Service does not use cookies explicitly. However, the app may use third-party code and libraries that use cookies to collect information and improve their services. You have the option to accept or refuse these cookies through your device settings.</p>
+<h2>5. Cookies</h2>
+<p>Cookies are files with a small amount of data commonly used as anonymous unique identifiers. This Service does not use cookies explicitly. However, the App may use third-party code and libraries that use cookies to collect information and improve their services. You have the option to accept or refuse these cookies through your device settings.</p>
 
-<h2>4. Service Providers</h2>
+<h2>6. Service Providers</h2>
 <p>We may employ third-party companies and individuals to facilitate our Service, provide the Service on our behalf, perform Service-related services, or assist us in analyzing how our Service is used. These third parties have access to your Personal Information only to perform tasks assigned on our behalf and are obligated not to disclose or use it for any other purpose.</p>
 
-<h2>5. Advertising</h2>
-<p>Live Police Scanner is an ad-supported app. Ads are served by Google AdMob. AdMob may use your device's advertising ID and other non-personal data to serve relevant ads. You can opt out of personalized advertising through your device settings:</p>
+<h2>7. Advertising and Tracking</h2>
+<p>The App is ad-supported for free users. Ads are served by Google AdMob. AdMob may use your device's advertising identifier and other non-personal data to serve relevant ads.</p>
+
+<h3>iOS (Apple)</h3>
+<p>On iOS, the App uses Apple's App Tracking Transparency (ATT) framework. Before any tracking occurs, you will be asked for permission via a system dialog. If you choose &ldquo;Ask App Not to Track,&rdquo; no tracking data will be collected for advertising purposes. You can change this at any time in:</p>
 <ul>
-  <li><strong>Android:</strong> Settings → Google → Ads → Opt out of Ads Personalization</li>
+  <li><strong>Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong></li>
 </ul>
 
-<h2>6. Data Security</h2>
+<h3>Android</h3>
+<p>On Android, you can opt out of personalized advertising through:</p>
+<ul>
+  <li><strong>Settings &rarr; Google &rarr; Ads &rarr; Opt out of Ads Personalization</strong></li>
+</ul>
+
+<p>Premium subscribers do not see ads. Subscribing removes all advertising from the App.</p>
+
+<h2>8. Location Data</h2>
+<p>The App may request access to your device's location to show nearby scanner stations. Location data is used only locally on your device to find the closest stations and is not stored on our servers or shared with third parties.</p>
+
+<h2>9. Data Security</h2>
 <p>We value your trust in providing us your Personal Information and strive to use commercially acceptable means of protecting it. However, no method of transmission over the internet or electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
 
-<h2>7. Links to Other Sites</h2>
+<h2>10. Data Retention</h2>
+<p>We retain personal data only as long as necessary for the purposes described in this policy:</p>
+<ul>
+  <li><strong>Crash logs and analytics:</strong> Retained by Firebase for up to 90 days.</li>
+  <li><strong>Transcription data:</strong> Automatically deleted after 48 hours.</li>
+  <li><strong>Subscription data:</strong> Retained by RevenueCat for the duration of your subscription and up to 30 days after cancellation.</li>
+  <li><strong>Favorites and preferences:</strong> Stored locally on your device and deleted when you uninstall the App.</li>
+</ul>
+
+<h2>11. Your Rights</h2>
+<p>You have the following rights regarding your personal data:</p>
+<ul>
+  <li><strong>Access:</strong> You may request a copy of any personal data we hold about you.</li>
+  <li><strong>Deletion:</strong> You may request that we delete any personal data associated with you. Since we do not require accounts, most data is stored locally on your device and is removed when you uninstall the App.</li>
+  <li><strong>Opt-out:</strong> You may opt out of personalized advertising and tracking as described in Section 7.</li>
+  <li><strong>Portability:</strong> You may request your data in a portable format.</li>
+</ul>
+<p>To exercise any of these rights, contact us at <a href="mailto:info@kovanapps.com">info@kovanapps.com</a>. We will respond within 30 days.</p>
+
+<h2>12. Links to Other Sites</h2>
 <p>This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. These external sites are not operated by us. We strongly advise you to review the Privacy Policy of any third-party websites you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of third-party sites or services.</p>
 
-<h2>8. Children's Privacy</h2>
+<h2>13. Children&rsquo;s Privacy</h2>
 <div class="highlight-box">
   This Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided personal information, we will immediately delete it from our servers. If you are a parent or guardian and are aware that your child has provided us with personal information, please contact us immediately.
 </div>
 
-<h2>9. Permissions Used</h2>
-<table>
-  <tr><th>Permission</th><th>Purpose</th></tr>
-  <tr><td><strong>INTERNET</strong></td><td>Required to stream live police scanner audio feeds</td></tr>
-  <tr><td><strong>FOREGROUND_SERVICE</strong></td><td>Allows audio to continue playing when the app is in the background</td></tr>
-  <tr><td><strong>RECEIVE_BOOT_COMPLETED</strong></td><td>Allows the app to restart background services after device reboot (if applicable)</td></tr>
-</table>
-
-<h2>10. Changes to This Privacy Policy</h2>
+<h2>14. Changes to This Privacy Policy</h2>
 <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. Changes are effective immediately upon posting.</p>
 
-<h2>11. Contact Us</h2>
+<h2>15. Contact Us</h2>
 <p>
-  <strong>Kovan Apps Yazılım Ltd. Şti.</strong><br>
-  Üniversiteler Mah. 1597 Cad. No: 3/127 Bilkent, Çankaya, 06800 Ankara, TR<br>
+  <strong>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti.</strong><br>
+  &Uuml;niversiteler Mah. 1597 Cad. No: 3/127 Bilkent, &Ccedil;ankaya, 06800 Ankara, TR<br>
   Email: <a href="mailto:info@kovanapps.com">info@kovanapps.com</a><br>
-  Response Time: Within 48 hours
+  Response Time: Within 30 days
 </p>
 
 </div>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-left"><strong>Kovan Apps</strong> — © 2026 All rights reserved.</div>
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
     <div class="footer-app-row">
-      <span class="footer-app-label">Live Police Scanner</span>
+      <span class="footer-app-label">Police Scanner Radio</span>
       <div class="footer-app-links">
         <a href="/apps/police-scanner/privacy-policy/">Privacy Policy</a>
         <a href="/apps/police-scanner/terms/">Terms of Service</a>
