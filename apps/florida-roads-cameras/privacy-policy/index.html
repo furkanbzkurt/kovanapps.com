@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florida Roads &amp; Cameras – Privacy Policy | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--fl-accent:#00B4D8;--fl-accent2:#FFB627; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(0,180,216,0.08) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:780px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(0,180,216,0.1);border:1px solid rgba(0,180,216,0.3);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--fl-accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .meta { font-size:0.82rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap; }
+    .content-wrap { max-width:780px;margin:0 auto;padding:60px 5vw 100px; }
+    .content-wrap h2 { font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
+    .content-wrap h3 { font-size:1rem;font-weight:600;margin:1.75rem 0 0.5rem;color:var(--accent2); }
+    .content-wrap p { color:rgba(240,240,245,0.8);margin-bottom:1rem;font-size:0.94rem; }
+    .content-wrap ul { margin:0.75rem 0 1rem 1.25rem; }
+    .content-wrap li { color:rgba(240,240,245,0.8);font-size:0.94rem;margin-bottom:0.4rem; }
+    .content-wrap strong { color:var(--text);font-weight:600; }
+    .content-wrap a { color:var(--accent2);text-decoration:none; }
+    .content-wrap a:hover { text-decoration:underline; }
+    table { width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.85rem; }
+    th { background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .highlight-box { background:rgba(108,92,231,0.08);border:1px solid rgba(108,92,231,0.2);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    .disclaimer-box { background:rgba(255,182,39,0.08);border:1px solid rgba(255,182,39,0.25);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/florida-roads-cameras/privacy-policy/">Florida Roads &amp; Cameras</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Privacy Policy</span>
+    </div>
+    <div class="app-pill">&#x1F6E3;&#xFE0F; Florida Roads &amp; Cameras</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>&#x1F5D3; Effective: April 2026</span>
+      <span>&#x1F504; Last Updated: April 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+<p>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) built the <strong>Florida Roads &amp; Cameras</strong> app (the &ldquo;App&rdquo;) as a free, ad-supported application available on both <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. The App provides real-time access to publicly available traffic cameras, incident reports, and weather information for the state of Florida, USA. This SERVICE is provided by Kovan Apps at no cost and is intended for use as is.</p>
+
+<p>This page informs visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decides to use our Service. By using our Service, you agree to the collection and use of information in relation to this policy.</p>
+
+<div class="disclaimer-box">
+  <strong>&#x26A0;&#xFE0F; Independent App Notice:</strong> Florida Roads &amp; Cameras is an independent, third-party application and is <strong>NOT</strong> affiliated with, endorsed by, or connected to the Florida Department of Transportation (FDOT), FL511, the National Weather Service (NWS), the National Hurricane Center (NHC), or any government agency. All traffic, incident, and weather data is sourced from publicly available official feeds.
+</div>
+
+<h2>1. Information Collection and Use</h2>
+<p>For a better experience while using our Service, the App may request certain information. Most information is retained on your device and is not collected by us directly, except as described below.</p>
+
+<p>The App uses third-party services that may collect information used to identify you. Links to the privacy policies of third-party service providers used by the App:</p>
+
+<table>
+  <tr><th>Service</th><th>Purpose</th><th>Platform</th></tr>
+  <tr><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></td><td>Core app functionality and device services</td><td>Android</td></tr>
+  <tr><td><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob</a></td><td>Ad serving and monetization (free users only)</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></td><td>Usage analytics and app performance</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></td><td>Crash reporting and stability monitoring</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Authentication (Anonymous)</a></td><td>Anonymous session ID for API authentication</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Cloud Messaging</a></td><td>Severe traffic and hurricane push notifications (opt-in)</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Cloud Functions</a></td><td>Server-side data aggregation and caching</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase App Check</a></td><td>Backend abuse prevention (device attestation)</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Remote Config</a></td><td>Runtime feature flags and kill switches</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a></td><td>Subscription management and purchase validation</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://www.mapbox.com/legal/privacy" target="_blank" rel="noopener">Mapbox</a></td><td>Map rendering and tile delivery</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://fl511.com/terms-of-service" target="_blank" rel="noopener">FDOT FL511</a></td><td>Public traffic camera and incident feeds</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://www.weather.gov/privacy" target="_blank" rel="noopener">National Weather Service (NWS)</a></td><td>Public weather warnings and forecasts</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://www.nhc.noaa.gov/aboutrss.shtml" target="_blank" rel="noopener">National Hurricane Center (NHC)</a></td><td>Public hurricane advisory and tracking data</td><td>Android &amp; iOS</td></tr>
+</table>
+
+<h2>2. Traffic and Incident Data</h2>
+<p>The App displays real-time traffic camera images and incident reports sourced from the Florida Department of Transportation (FDOT) through the publicly accessible FL511 system. Specifically:</p>
+<ul>
+  <li>Camera images are loaded directly from FDOT&rsquo;s public CDN on demand; images are not stored on our servers.</li>
+  <li>Incident reports (accidents, lane closures, construction, road work) are fetched from FDOT&rsquo;s public DIVAS feed and cached briefly on our backend for performance.</li>
+  <li>This data is public record and contains no personally identifiable information.</li>
+  <li>We are not affiliated with FDOT and do not claim ownership of any traffic data.</li>
+</ul>
+
+<h2>3. Weather and Hurricane Data</h2>
+<p>The App provides weather warnings and hurricane tracking from the National Weather Service (NWS) and the National Hurricane Center (NHC). Specifically:</p>
+<ul>
+  <li>Weather alerts are fetched from the NWS public API and cached briefly for performance.</li>
+  <li>Hurricane advisories and forecast tracks are fetched from the NHC public feeds.</li>
+  <li>None of this data contains personal information.</li>
+  <li>Weather information is for informational purposes only and should not be used as the sole basis for emergency preparedness decisions. Always consult official sources and local emergency management.</li>
+</ul>
+
+<h2>4. Subscription Data</h2>
+<p>The App offers optional premium (&ldquo;Pro&rdquo;) subscriptions managed through RevenueCat. When you subscribe:</p>
+<ul>
+  <li>Payment is processed entirely by Apple (App Store) or Google (Play Store). We do not collect or store your payment details (credit card numbers, billing address, etc.).</li>
+  <li>RevenueCat receives an anonymous subscriber ID and purchase receipt to validate your subscription status.</li>
+  <li>We store your subscription status locally on your device to unlock premium features.</li>
+</ul>
+
+<h2>5. Push Notifications</h2>
+<p>The App offers opt-in push notifications via Firebase Cloud Messaging (FCM) for:</p>
+<ul>
+  <li>Severe traffic incidents on major Florida highways (I-95, I-75, I-4, I-10, Turnpike, etc.)</li>
+  <li>Bridge closures on selected major bridges (Sunshine Skyway, Howard Frankland, etc.)</li>
+  <li>Hurricane watches, warnings, and advisories for Florida</li>
+  <li>Storm surge warnings</li>
+</ul>
+<p>Push notifications are delivered via topic subscriptions only. We do not collect, store, or associate your device token with any personal identifier. You may disable notifications at any time through your device&rsquo;s system settings or within the App.</p>
+
+<h2>6. Location Data</h2>
+<p>The App may request access to your device&rsquo;s approximate or precise location to center the map on your current position and show nearby traffic cameras. Location data is:</p>
+<ul>
+  <li>Used <strong>only locally on your device</strong> to display nearby cameras and centering the map.</li>
+  <li>Never stored on our servers.</li>
+  <li>Never shared with third parties.</li>
+  <li>Entirely optional &mdash; the App works without location access; the map simply defaults to a statewide Florida view.</li>
+</ul>
+
+<h2>7. Log Data</h2>
+<p>Whenever you use our Service, in the case of an error in the App, we collect data and information (through third-party products) called Log Data. This Log Data may include:</p>
+<ul>
+  <li>Your device&rsquo;s Internet Protocol (&ldquo;IP&rdquo;) address (truncated, for abuse prevention)</li>
+  <li>Device name and operating system version</li>
+  <li>App configuration when utilizing our Service</li>
+  <li>Time and date of your use of the Service</li>
+  <li>Other diagnostic statistics</li>
+</ul>
+
+<h2>8. Cookies</h2>
+<p>Cookies are files with a small amount of data commonly used as anonymous unique identifiers. This Service does not use cookies explicitly. However, the App may use third-party code and libraries that use cookies to collect information and improve their services.</p>
+
+<h2>9. Service Providers</h2>
+<p>We may employ third-party companies and individuals to facilitate our Service, provide the Service on our behalf, perform Service-related services, or assist us in analyzing how our Service is used. These third parties have access to your Personal Information only to perform tasks assigned on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+
+<h2>10. Advertising and Tracking</h2>
+<p>The App is ad-supported for free users. Ads are served by Google AdMob. AdMob may use your device&rsquo;s advertising identifier and other non-personal data to serve relevant ads.</p>
+
+<h3>iOS (Apple)</h3>
+<p>On iOS, the App uses Apple&rsquo;s App Tracking Transparency (ATT) framework. Before any tracking occurs, you will be asked for permission via a system dialog. If you choose &ldquo;Ask App Not to Track,&rdquo; no tracking data will be collected for advertising purposes. You can change this at any time in:</p>
+<ul>
+  <li><strong>Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong></li>
+</ul>
+
+<h3>Android</h3>
+<p>On Android, you can opt out of personalized advertising through:</p>
+<ul>
+  <li><strong>Settings &rarr; Google &rarr; Ads &rarr; Opt out of Ads Personalization</strong></li>
+</ul>
+
+<p>Pro subscribers do not see ads. Subscribing removes all advertising from the App.</p>
+
+<h2>11. Data Security</h2>
+<p>We value your trust in providing us your Personal Information and strive to use commercially acceptable means of protecting it. All network communication with our backend uses HTTPS/TLS encryption. However, no method of transmission over the internet or electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+
+<h2>12. Data Retention</h2>
+<p>We retain personal data only as long as necessary for the purposes described in this policy:</p>
+<ul>
+  <li><strong>Crash logs and analytics:</strong> Retained by Firebase for up to 90 days.</li>
+  <li><strong>Traffic and weather cache:</strong> Automatically invalidated within minutes on our servers; no long-term storage.</li>
+  <li><strong>Push notification history:</strong> We retain hashed incident identifiers for up to 48 hours to prevent duplicate notifications; these contain no personal data.</li>
+  <li><strong>Subscription data:</strong> Retained by RevenueCat for the duration of your subscription and up to 30 days after cancellation.</li>
+  <li><strong>Favorites, camera groups, and preferences:</strong> Stored locally on your device and deleted when you uninstall the App.</li>
+</ul>
+
+<h2>13. Your Rights</h2>
+<p>You have the following rights regarding your personal data:</p>
+<ul>
+  <li><strong>Access:</strong> You may request a copy of any personal data we hold about you.</li>
+  <li><strong>Deletion:</strong> You may request that we delete any personal data associated with you. Since we do not require accounts, most data is stored locally on your device and is removed when you uninstall the App.</li>
+  <li><strong>Opt-out:</strong> You may opt out of personalized advertising and tracking as described in Section 10, and opt out of push notifications through your device&rsquo;s system settings.</li>
+  <li><strong>Portability:</strong> You may request your data in a portable format.</li>
+</ul>
+<p>To exercise any of these rights, contact us at <a href="mailto:info@kovanapps.com">info@kovanapps.com</a>. We will respond within 30 days.</p>
+
+<h2>14. Links to Other Sites</h2>
+<p>This Service may contain links to other sites, including FDOT, NWS, NHC, and Mapbox resources. If you click on a third-party link, you will be directed to that site. These external sites are not operated by us. We strongly advise you to review the Privacy Policy of any third-party websites you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of third-party sites or services.</p>
+
+<h2>15. Children&rsquo;s Privacy</h2>
+<div class="highlight-box">
+  This Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided personal information, we will immediately delete it from our servers. If you are a parent or guardian and are aware that your child has provided us with personal information, please contact us immediately.
+</div>
+
+<h2>16. Changes to This Privacy Policy</h2>
+<p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. Changes are effective immediately upon posting.</p>
+
+<h2>17. Contact Us</h2>
+<p>
+  <strong>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti.</strong><br>
+  &Uuml;niversiteler Mah. 1597 Cad. No: 3/127 Bilkent, &Ccedil;ankaya, 06800 Ankara, TR<br>
+  Email: <a href="mailto:info@kovanapps.com">info@kovanapps.com</a><br>
+  Response Time: Within 30 days
+</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">Florida Roads &amp; Cameras</span>
+      <div class="footer-app-links">
+        <a href="/apps/florida-roads-cameras/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/florida-roads-cameras/terms/">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
