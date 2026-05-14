@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Your Data – Ohio Roads &amp; Cameras | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--oh-accent:#BB0000;--oh-accent2:#E6A817; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(187,0,0,0.10) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:720px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(187,0,0,0.12);border:1px solid rgba(187,0,0,0.35);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--oh-accent2);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .page-header p { color:var(--muted);font-size:0.95rem; }
+    .content { max-width:720px;margin:0 auto;padding:60px 5vw 100px; }
+    .method-card { background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.75rem;margin-bottom:1.25rem; }
+    .method-card h2 { font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.9rem;display:flex;align-items:center;gap:0.6rem; }
+    .method-card ol, .method-card ul { margin-left:1.25rem; }
+    .method-card li { color:rgba(240,240,245,0.8);font-size:0.9rem;margin-bottom:0.45rem; }
+    .method-card li strong { color:var(--text); }
+    .method-card p { color:rgba(240,240,245,0.78);font-size:0.9rem;margin-bottom:0.85rem; }
+    .method-card a { color:var(--accent2);text-decoration:none; }
+    .method-card a:hover { text-decoration:underline; }
+    .info-box { background:rgba(187,0,0,0.08);border:1px solid rgba(187,0,0,0.22);border-radius:12px;padding:1.25rem 1.5rem;margin:1.75rem 0 1rem;font-size:0.88rem;color:rgba(240,240,245,0.82); }
+    .info-box strong { color:var(--oh-accent); }
+    .contact-box { background:rgba(108,92,231,0.07);border:1px solid rgba(108,92,231,0.2);border-radius:12px;padding:1.5rem;margin-top:2rem;text-align:center; }
+    .contact-box p { color:rgba(240,240,245,0.82);font-size:0.9rem;margin-bottom:0.6rem; }
+    .contact-box a { color:var(--accent2);font-weight:500;text-decoration:none;font-size:0.95rem; }
+    .retention { background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:2rem; }
+    .retention h3 { font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.9rem; }
+    .retention table { width:100%;border-collapse:collapse;font-size:0.82rem; }
+    .retention th { text-align:left;padding:0.5rem 0.75rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;font-size:0.72rem;border-bottom:1px solid var(--border); }
+    .retention td { padding:0.6rem 0.75rem;color:rgba(240,240,245,0.8);vertical-align:top;border-bottom:1px solid var(--border); }
+    .retention td:first-child { color:var(--text);font-weight:500;width:38%; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){.footer-inner{flex-direction:column;}.retention table{display:block;overflow-x:auto;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/ohio-roads-cameras/delete-data/">Ohio Roads &amp; Cameras</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Delete Your Data</span>
+    </div>
+    <div class="app-pill">&#x1F6E3;&#xFE0F; Ohio Roads &amp; Cameras</div>
+    <h1>&#x1F5D1;&#xFE0F; Delete Your Data</h1>
+    <p>Ohio Roads &amp; Cameras does not require an account to use. Most of your data never leaves your device. Here is how to delete any data that is stored locally or processed by our third-party services.</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="info-box">
+    <strong>&#x1F512; Good to know:</strong> We do not create user accounts, we do not collect your name, email, or phone number, and we do not store location data on our servers. Your camera favorites, groups, alert watches, and preferences are saved locally on your device only.
+  </div>
+
+  <div class="method-card">
+    <h2>&#x1F4F1; Method 1 &mdash; Uninstall the App (Fastest)</h2>
+    <p>All of your locally stored data is deleted automatically when you uninstall Ohio Roads &amp; Cameras from your device. This includes:</p>
+    <ul>
+      <li>Camera favorites, custom groups, and alert watches</li>
+      <li>App preferences (theme, units, notification settings)</li>
+      <li>Locally cached camera images, incident data, and road condition data</li>
+      <li>Firebase anonymous authentication session</li>
+    </ul>
+    <p><strong>iOS:</strong> Long-press the app icon &rarr; Remove App &rarr; Delete App.<br>
+    <strong>Android:</strong> Long-press the app icon &rarr; App info &rarr; Uninstall. Or go to Settings &rarr; Apps &rarr; Ohio Roads &amp; Cameras &rarr; Uninstall.</p>
+  </div>
+
+  <div class="method-card">
+    <h2>&#x1F4E7; Method 2 &mdash; Email a Data Deletion Request</h2>
+    <p>For data that is held by our third-party service providers (crash reports, analytics, subscription records), email us and we will initiate deletion on your behalf.</p>
+    <ol>
+      <li>Send an email to <a href="mailto:info@kovanapps.com?subject=Ohio%20Roads%20%26%20Cameras%20%E2%80%93%20Data%20Deletion%20Request">info@kovanapps.com</a>.</li>
+      <li><strong>Subject line:</strong> &ldquo;Ohio Roads &amp; Cameras &ndash; Data Deletion Request&rdquo;</li>
+      <li>Include (optional) your Firebase Installation ID or RevenueCat App User ID if you know them. These are not required &mdash; we can process a deletion request without any identifier.</li>
+      <li>If you are a subscriber, mention the store (Apple or Google) and the approximate subscription date.</li>
+    </ol>
+    <p>We will respond within <strong>30 days</strong> and confirm once deletion is complete.</p>
+  </div>
+
+  <div class="method-card">
+    <h2>&#x1F4F2; Method 3 &mdash; Reset Your Advertising ID</h2>
+    <p>The App uses Google AdMob to display ads. AdMob uses your device's advertising identifier. You can reset or disable it at any time:</p>
+    <p><strong>iOS:</strong> Settings &rarr; Privacy &amp; Security &rarr; Tracking &rarr; toggle off &ldquo;Allow Apps to Request to Track&rdquo;. You can also open the App, go to Settings, and respond &ldquo;Ask App Not to Track&rdquo; to the prompt.<br>
+    <strong>Android:</strong> Settings &rarr; Google &rarr; Ads &rarr; &ldquo;Delete advertising ID&rdquo; or &ldquo;Opt out of Ads Personalization&rdquo;.</p>
+    <p>Pro subscribers do not see ads, so no advertising ID is used while subscribed.</p>
+  </div>
+
+  <div class="method-card">
+    <h2>&#x1F30D; Method 4 &mdash; Third-Party Data Deletion (Advanced)</h2>
+    <p>You may also request deletion directly from each third-party service that the App uses:</p>
+    <ul>
+      <li><strong>Google (AdMob + Firebase):</strong> <a href="https://myaccount.google.com/" target="_blank" rel="noopener">myaccount.google.com</a> &rarr; Data &amp; privacy &rarr; Delete a service or your account.</li>
+      <li><strong>RevenueCat (subscription records):</strong> Email <a href="mailto:support@revenuecat.com">support@revenuecat.com</a> with your subscription App User ID, or request we do it on your behalf via Method 2 above.</li>
+      <li><strong>Apple (purchase records):</strong> These are held by Apple and can be requested via <a href="https://privacy.apple.com/" target="_blank" rel="noopener">privacy.apple.com</a>.</li>
+    </ul>
+    <p>Note: we cannot delete data held by Apple or Google on our behalf.</p>
+  </div>
+
+  <div class="retention">
+    <h3>What data is retained, for how long</h3>
+    <table>
+      <thead>
+        <tr><th>Data type</th><th>Location</th><th>Retention</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Camera favorites, groups &amp; alert watches</td><td>Your device only</td><td>Until uninstall</td></tr>
+        <tr><td>App preferences</td><td>Your device only</td><td>Until uninstall</td></tr>
+        <tr><td>Firebase anonymous session</td><td>Your device + Firebase</td><td>Cleared on uninstall; Firebase: 540 days of inactivity</td></tr>
+        <tr><td>Crash logs &amp; diagnostics</td><td>Firebase Crashlytics</td><td>Up to 90 days, then aggregated</td></tr>
+        <tr><td>Analytics events</td><td>Firebase Analytics</td><td>Up to 14 months, then deleted</td></tr>
+        <tr><td>Subscription records</td><td>RevenueCat + Apple/Google</td><td>Active subscription + 30 days after cancellation; Apple/Google per their policies</td></tr>
+        <tr><td>Advertising ID</td><td>Your device + AdMob</td><td>Until you reset or opt out</td></tr>
+        <tr><td>Push notification token (FCM)</td><td>Firebase</td><td>Cleared on uninstall or re-install</td></tr>
+        <tr><td>Incident notification history</td><td>Our backend</td><td>Up to 48 hours (for deduplication only; no personal data)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="contact-box">
+    <p>Questions about deleting your data, or something went wrong?</p>
+    <a href="mailto:info@kovanapps.com?subject=Ohio%20Roads%20%26%20Cameras%20%E2%80%93%20Data%20Deletion%20Request">&#x2709;&#xFE0F; info@kovanapps.com</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">Ohio Roads &amp; Cameras</span>
+      <div class="footer-app-links">
+        <a href="/apps/ohio-roads-cameras/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/ohio-roads-cameras/terms/">Terms of Use</a>
+        <a href="/apps/ohio-roads-cameras/delete-data/">Delete Data</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
