@@ -77,7 +77,7 @@
 
 <div class="content-wrap">
 
-<p>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) built the <strong>Global Entry Slot Finder</strong> app (the &ldquo;App&rdquo;) available on both <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. The App shows the soonest available Global Entry (Trusted Traveler Programs) interview appointments at US enrollment centers using publicly available scheduler data, and can optionally notify you when a matching appointment opens. Browsing is free; alert features are unlocked with a single one-time purchase. The App contains <strong>no advertising and no third-party analytics or tracking SDKs</strong>.</p>
+<p>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) built the <strong>Global Entry Slot Finder</strong> app (the &ldquo;App&rdquo;) available on both <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. The App shows the soonest available Global Entry (Trusted Traveler Programs) interview appointments at US enrollment centers using publicly available scheduler data, and can optionally notify you when a matching appointment opens. Browsing is free; alert features are unlocked with a single one-time purchase. The App contains <strong>no advertising</strong> and does <strong>not track you across other apps or websites</strong>. We use Google Analytics for Firebase solely for aggregate, anonymous usage statistics (e.g. how many devices opened the app).</p>
 
 <p>This page informs visitors regarding our policies on the collection, use, and disclosure of information if anyone decides to use our Service. By using our Service, you agree to the collection and use of information in relation to this policy.</p>
 
@@ -95,6 +95,7 @@
   <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Cloud Functions</a></td><td>Server-side appointment checking and alert matching</td><td>Android &amp; iOS</td></tr>
   <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Cloud Messaging</a></td><td>Push notifications for your appointment alerts</td><td>Android &amp; iOS</td></tr>
   <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase App Check</a></td><td>Backend abuse prevention (device attestation)</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></td><td>Aggregate usage analytics and app performance</td><td>Android &amp; iOS</td></tr>
   <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></td><td>Crash reporting and stability monitoring</td><td>Android &amp; iOS</td></tr>
   <tr><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a></td><td>One-time purchase validation (Pro unlock)</td><td>Android &amp; iOS</td></tr>
   <tr><td><a href="https://openfreemap.org/" target="_blank" rel="noopener">OpenFreeMap</a></td><td>Map tile delivery for the enrollment-center detail map</td><td>Android &amp; iOS</td></tr>
@@ -134,8 +135,8 @@
   <li>There is no subscription, no recurring charge, and no ads.</li>
 </ul>
 
-<h2>6. Crash and Diagnostic Data</h2>
-<p>We use Firebase Crashlytics to detect crashes and stability problems. Crash reports may include your device model, operating system version, and the technical state of the App at the time of the crash. They contain no personal information and are not used for advertising. We do not use any general-purpose analytics SDK &mdash; we do not track screens you visit, buttons you tap, or build behavioral profiles.</p>
+<h2>6. Analytics, Crash and Diagnostic Data</h2>
+<p>We use Firebase Crashlytics to detect crashes and stability problems. Crash reports may include your device model, operating system version, and the technical state of the App at the time of the crash. We also use Google Analytics for Firebase to understand aggregate usage (such as first opens, sessions, and in-app purchase counts). This data is tied to an anonymous app-instance identifier &mdash; not to your name, email, or any real-world identity &mdash; and is never used for advertising or cross-app tracking.</p>
 
 <h2>7. Cookies</h2>
 <p>The App itself does not use cookies. Third-party libraries used by the App may use technologies with similar functions for the purposes described above. When you open the official booking website in your browser, that website&rsquo;s own policies apply.</p>
@@ -149,6 +150,7 @@
   <li><strong>Push notification tokens:</strong> Retained while your alerts are active; invalid tokens are pruned automatically.</li>
   <li><strong>Anonymous session ID:</strong> Persists on your device until you uninstall the App; the associated server data becomes orphaned and inert once your alerts expire.</li>
   <li><strong>Crash logs:</strong> Retained by Firebase for up to 90 days.</li>
+  <li><strong>Analytics events:</strong> Retained by Google Analytics for Firebase for up to 14 months, then deleted.</li>
   <li><strong>Purchase records:</strong> Retained by RevenueCat/Apple/Google per their policies to support purchase restoration.</li>
   <li><strong>Preferences (theme, onboarding state):</strong> Stored locally on your device and deleted when you uninstall the App.</li>
 </ul>
