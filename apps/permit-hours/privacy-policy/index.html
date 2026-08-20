@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Permit Hours – Privacy Policy | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--ph-accent:#F59E0B;--ph-accent2:#818CF8; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(245,158,11,0.08) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:780px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--ph-accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .meta { font-size:0.82rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap; }
+    .content-wrap { max-width:780px;margin:0 auto;padding:60px 5vw 100px; }
+    .content-wrap h2 { font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
+    .content-wrap h3 { font-size:1rem;font-weight:600;margin:1.75rem 0 0.5rem;color:var(--accent2); }
+    .content-wrap p { color:rgba(240,240,245,0.8);margin-bottom:1rem;font-size:0.94rem; }
+    .content-wrap ul { margin:0.75rem 0 1rem 1.25rem; }
+    .content-wrap li { color:rgba(240,240,245,0.8);font-size:0.94rem;margin-bottom:0.4rem; }
+    .content-wrap strong { color:var(--text);font-weight:600; }
+    .content-wrap a { color:var(--accent2);text-decoration:none; }
+    .content-wrap a:hover { text-decoration:underline; }
+    table { width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.85rem; }
+    th { background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .highlight-box { background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    .disclaimer-box { background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/permit-hours/privacy-policy/">Permit Hours</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Privacy Policy</span>
+    </div>
+    <div class="app-pill">Permit Hours</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>&#x1F5D3; Effective: August 2026</span>
+      <span>&#x1F504; Last Updated: August 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+<p>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) built the <strong>Permit Hours</strong> app (the &ldquo;App&rdquo;) available on both <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. The App is a supervised-driving log: a learner driver and their parent or supervisor record practice sessions, track progress toward their state&rsquo;s required hours, and export a printable report for the DMV. Logging is free up to a limited number of hours; unlimited logging and PDF export are unlocked with a single one-time purchase. The App contains <strong>no advertising</strong> and does <strong>not track you across other apps or websites</strong>.</p>
+
+<p>This page informs visitors regarding our policies on the collection, use, and disclosure of information if anyone decides to use our Service. By using our Service, you agree to the collection and use of information in relation to this policy.</p>
+
+<div class="disclaimer-box">
+  <strong>&#x26A0;&#xFE0F; Independent App Notice:</strong> Permit Hours is an independent application and is <strong>NOT</strong> affiliated with, endorsed by, or connected to any Department of Motor Vehicles, Bureau of Motor Vehicles, state agency, or driving school. The hour requirements shown in the App are provided for reference only and may change; always confirm the current official requirements with your own state&rsquo;s licensing agency. Whether a printed log from this App is accepted is at the sole discretion of your local agency.
+</div>
+
+<h2>1. Information Collection and Use</h2>
+<p>The App works without a traditional account &mdash; there is no sign-up, no password, and we never ask for your email address or phone number. A device is identified only by an <strong>anonymous Firebase Authentication ID</strong>. The information you type into the App (a driver&rsquo;s display name, a supervisor&rsquo;s name, notes) is content you choose to enter, and you may use nicknames or initials instead of full names.</p>
+<p>The App uses the following third-party services, which may process limited technical information:</p>
+
+<table>
+  <tr><th>Service</th><th>Purpose</th><th>Platform</th></tr>
+  <tr><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></td><td>Core app functionality and device services</td><td>Android</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Authentication (Anonymous)</a></td><td>Anonymous device ID for backend authentication &mdash; no personal sign-in</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Cloud Functions</a></td><td>Family sync, PDF import parsing, remote configuration &mdash; the only way the App reaches our database</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Cloud Firestore</a></td><td>Stores synced session records for families that turn Family Sync on</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase App Check</a></td><td>Backend abuse prevention (device attestation)</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Remote Config</a></td><td>Delivers app configuration such as the free-hour limit</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></td><td>Aggregate, anonymous usage statistics</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></td><td>Crash reporting and stability monitoring</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a></td><td>One-time purchase validation (Full Unlock) and purchase restoration</td><td>Android &amp; iOS</td></tr>
+</table>
+
+<h2>2. Your Driving Log</h2>
+<p>Every session you log is stored <strong>on your device</strong> in a local database. If you never turn on Family Sync, your log never leaves your phone at all &mdash; the App is fully usable offline and entirely local.</p>
+<p>If you do turn on <strong>Family Sync</strong> (so that a second parent or supervisor sees the same log), the following fields for each session are sent to our servers and stored against your family&rsquo;s record:</p>
+<ul>
+  <li>Start and end time of the session, and the split between daytime and nighttime minutes</li>
+  <li>Total distance in miles, if you recorded or entered one</li>
+  <li>Weather and road type, if you selected them</li>
+  <li>The supervisor name and any note you typed for that session</li>
+  <li>The driver&rsquo;s display name, state, and hour targets</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>&#x1F512; Location and route data never leave your device.</strong> When you use the built-in drive timer, the App may record GPS points to calculate distance and draw a private route sketch on the session screen. Those coordinates are stored only in your device&rsquo;s local database. They are <strong>never</strong> uploaded to our servers, never included in Family Sync, never written into the exported PDF, and never sent to any third party. Uninstalling the App deletes them permanently.
+</div>
+
+<h2>3. Location Data</h2>
+<p>The drive timer optionally uses your device&rsquo;s <strong>precise</strong> location, including while the timer runs in the background, for a single purpose: measuring how far the practice drive went and sketching its shape for your own reference. Location access is:</p>
+<ul>
+  <li>Used <strong>only on your device</strong> &mdash; as described above, coordinates never leave the phone</li>
+  <li>Entirely optional &mdash; you can log every session manually, and the App is fully functional without location access</li>
+  <li>Revocable at any time in your device&rsquo;s system settings</li>
+</ul>
+
+<h2>4. Family Sync and Share Codes</h2>
+<p>Family Sync links two or more devices so that a drive logged by one supervisor appears for the others. When you create a family, our server generates a short <strong>share code</strong>. Anyone who enters that code joins the family and can see the sessions in it, so treat the code like a password and share it only with people you want to have access. A family is limited to a small number of members. Only the session fields listed in Section 2 are shared &mdash; never location or route data.</p>
+
+<h2>5. Importing a Log From Another App</h2>
+<p>The App can read a driving-log PDF exported from another app so you do not have to retype your history. The file you choose is uploaded to our Cloud Function, parsed into session rows, and returned to your device for you to confirm. The uploaded file is processed in memory and is <strong>not stored</strong> on our servers afterwards.</p>
+
+<h2>6. Purchase Data</h2>
+<p>The App offers a single optional one-time purchase (&ldquo;Full Unlock&rdquo;) managed through RevenueCat. When you purchase:</p>
+<ul>
+  <li>Payment is processed entirely by Apple (App Store) or Google (Play Store). We never see or store your payment details (card numbers, billing address, etc.).</li>
+  <li>RevenueCat receives your anonymous ID and the purchase receipt to validate the unlock, including for &ldquo;Restore purchases&rdquo;.</li>
+  <li>There is no subscription, no recurring charge, and no ads.</li>
+</ul>
+
+<h2>7. Analytics, Crash and Diagnostic Data</h2>
+<p>We use Firebase Crashlytics to detect crashes and stability problems. Crash reports may include your device model, operating system version, and the technical state of the App at the time of the crash. We also use Google Analytics for Firebase to understand aggregate usage (such as first opens, sessions started, and purchases). These events carry <strong>no personal content</strong> &mdash; no driver or supervisor names, no notes, no locations, no session details. This data is tied to an anonymous app-instance identifier, not to your name, email, or any real-world identity, and is never used for advertising or cross-app tracking.</p>
+
+<h2>8. Cookies</h2>
+<p>The App itself does not use cookies. Third-party libraries used by the App may use technologies with similar functions for the purposes described above.</p>
+
+<h2>9. Data Security</h2>
+<p>All network communication between the App and our backend uses HTTPS/TLS encryption, and every backend operation goes through authenticated Cloud Functions &mdash; the App has no direct database access. Authentication tokens are held in the platform&rsquo;s encrypted storage (Android EncryptedSharedPreferences, iOS Keychain). However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+<h2>10. Data Retention</h2>
+<ul>
+  <li><strong>Your driving log on the device:</strong> Kept until you delete the sessions or uninstall the App.</li>
+  <li><strong>Location and route points:</strong> Local only; deleted with the session or on uninstall.</li>
+  <li><strong>Synced session records (Family Sync only):</strong> Retained while the family exists; removed when you delete your data as described in Section 11.</li>
+  <li><strong>Imported PDF files:</strong> Not retained &mdash; parsed in memory and discarded.</li>
+  <li><strong>Anonymous ID:</strong> Persists on your device until you delete your data or uninstall the App.</li>
+  <li><strong>Crash logs:</strong> Retained by Firebase for up to 90 days.</li>
+  <li><strong>Analytics events:</strong> Retained by Google Analytics for Firebase for up to 14 months, then deleted.</li>
+  <li><strong>Purchase records:</strong> Retained by RevenueCat/Apple/Google per their policies to support purchase restoration.</li>
+</ul>
+
+<h2>11. Your Rights and Deleting Your Data</h2>
+<ul>
+  <li><strong>Access:</strong> You may request a copy of any data associated with your anonymous ID.</li>
+  <li><strong>Deletion:</strong> You can delete everything from inside the App at any time &mdash; open <strong>Settings &rarr; Delete my data</strong>. This erases your local log and permanently deletes the server-side records tied to your anonymous ID. Full instructions are on our <a href="/apps/permit-hours/delete-account/">Delete Your Data</a> page.</li>
+  <li><strong>Correction:</strong> Every session in the log can be edited or deleted individually in the App.</li>
+  <li><strong>Opt-out of sharing:</strong> You may use the App entirely offline by never enabling Family Sync.</li>
+</ul>
+<p>To exercise any of these rights, contact us at <a href="mailto:info@kovanapps.com">info@kovanapps.com</a>. We will respond within 30 days.</p>
+
+<h2>12. Children&rsquo;s Privacy</h2>
+<div class="highlight-box">
+  Permit Hours is a record-keeping tool for parents, guardians, and supervising drivers; it is not directed to children and is not intended for use by anyone under 13. We do not knowingly collect personal information from children under 13. A learner driver&rsquo;s display name is entered by the supervising adult and may be a first name, nickname, or initials. If you are a parent or guardian and believe a child under 13 has provided us with personal information, contact us at <a href="mailto:info@kovanapps.com">info@kovanapps.com</a> and we will delete it immediately.
+</div>
+
+<h2>13. Changes to This Privacy Policy</h2>
+<p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. Changes are effective immediately upon posting.</p>
+
+<h2>14. Contact Us</h2>
+<p>
+  <strong>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti.</strong><br>
+  &Uuml;niversiteler Mah. 1597 Cad. No: 3/127 Bilkent, &Ccedil;ankaya, 06800 Ankara, TR<br>
+  Email: <a href="mailto:info@kovanapps.com">info@kovanapps.com</a><br>
+  Response Time: Within 30 days
+</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">Permit Hours</span>
+      <div class="footer-app-links">
+        <a href="/apps/permit-hours/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/permit-hours/terms/">Terms of Use</a>
+        <a href="/apps/permit-hours/delete-account/">Delete Data</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
