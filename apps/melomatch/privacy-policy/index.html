@@ -70,17 +70,17 @@
     <h1>Privacy Policy</h1>
     <div class="meta">
       <span>🗓 Effective: December 4, 2024</span>
-      <span>🔄 Last Updated: December 4, 2024</span>
+      <span>🔄 Last Updated: September 3, 2026</span>
     </div>
   </div>
 </div>
 
 <div class="content-wrap">
 
-<p>Kovan Apps Ltd ("Company", "we", "us", or "our") operates the MeloMatch mobile application ("App", "Service"). This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our Service.</p>
+<p>Kovan Apps Yazılım Ltd. Şti. ("Kovan Apps", "Company", "we", "us", or "our") operates the <strong>MeloMatch</strong> mobile application ("App", "Service"), available on <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. MeloMatch is a music-first social app: you build a profile from the artists and songs you love, discover people who share your taste, challenge them to music duels, and start conversations with a song. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use the App on either platform.</p>
 
 <div class="highlight-box">
-  <strong>YOUR PRIVACY MATTERS:</strong> We are committed to protecting your privacy and handling your data transparently. This Privacy Policy complies with the General Data Protection Regulation (GDPR), California Consumer Privacy Act (CCPA), and other applicable data protection laws.
+  <strong>YOUR PRIVACY MATTERS:</strong> We are committed to handling your data transparently. This Privacy Policy is written to comply with the General Data Protection Regulation (GDPR), the Turkish Personal Data Protection Law (KVKK), the California Consumer Privacy Act (CCPA), and other applicable data protection laws. The App contains <strong>no advertising</strong>, and we do <strong>not track you across other companies' apps or websites</strong>.
 </div>
 
 <p>By using MeloMatch, you consent to the data practices described in this Privacy Policy. If you do not agree with our policies and practices, please do not use the App.</p>
@@ -89,135 +89,151 @@
 <h3>1.1 Information You Provide Directly</h3>
 <table>
   <tr><th>Data Category</th><th>Specific Information</th><th>Purpose</th></tr>
-  <tr><td><strong>Profile Information</strong></td><td>Name, age, gender, bio/description</td><td>Create and display your profile to other users</td></tr>
-  <tr><td><strong>Authentication Data</strong></td><td>Phone number</td><td>Account creation and login via Firebase Authentication</td></tr>
-  <tr><td><strong>Photos</strong></td><td>Profile pictures and additional photos</td><td>Visual representation on your profile, stored in Firebase Storage</td></tr>
-  <tr><td><strong>Music Preferences</strong></td><td>Favorite artists, genres, songs, playlists (via Spotify API)</td><td>Matching algorithm to connect users with similar tastes</td></tr>
-  <tr><td><strong>User Preferences</strong></td><td>Age range, distance, gender preferences</td><td>Filter and display relevant matches</td></tr>
-  <tr><td><strong>Communications</strong></td><td>Messages, reports, support inquiries</td><td>Enable chat, content moderation, customer support</td></tr>
+  <tr><td><strong>Profile Information</strong></td><td>First name, date of birth (to derive your age), gender, short bio, what you are looking for</td><td>Create your profile and show it to other users</td></tr>
+  <tr><td><strong>Authentication Data</strong></td><td>Phone number and the one-time SMS verification code</td><td>Account creation and sign-in via Firebase Authentication. We do not use passwords or social logins.</td></tr>
+  <tr><td><strong>Photos</strong></td><td>Profile pictures you take or choose from your library</td><td>Shown on your profile; stored in Firebase Storage; screened for prohibited content</td></tr>
+  <tr><td><strong>Music Preferences</strong></td><td>Favorite artists, favorite songs, and the genres derived from them. On iOS you may optionally import suggestions from your Apple Music library.</td><td>Compatibility scoring, discovery ranking, duel questions, song sharing</td></tr>
+  <tr><td><strong>Discovery Preferences</strong></td><td>Age range, maximum distance, gender(s) you would like to see</td><td>Filter who is shown to you</td></tr>
+  <tr><td><strong>Duel and Song Activity</strong></td><td>Answers, scores and timing in music duels; songs you send to others and your responses to songs you receive</td><td>Run duels, show results to both participants, unlock conversations</td></tr>
+  <tr><td><strong>Communications</strong></td><td>Chat messages, reports you file, feedback and support emails</td><td>Deliver chat, moderate content, provide support</td></tr>
 </table>
 
 <h3>1.2 Information Collected Automatically</h3>
 <ul>
-  <li><strong>Location Data:</strong> GPS coordinates, approximate location based on IP. Used to show nearby users. Can be disabled in device settings.</li>
-  <li><strong>Device Information:</strong> Device model, OS version, unique device identifiers (Android ID), mobile network info</li>
-  <li><strong>Usage Data:</strong> App interactions, features used, time spent, swipe patterns, match interactions</li>
-  <li><strong>Log Data:</strong> IP address, access times, app errors, crash reports (Firebase Crashlytics and Sentry)</li>
-  <li><strong>Analytics Data:</strong> User behavior, feature engagement, conversion metrics (Firebase Analytics)</li>
+  <li><strong>Location Data:</strong> With your permission we read your device's precise location while the App is in use (Android: fine/coarse location; iOS: "While Using the App"). We store your coordinates and derived city on our servers to show you people nearby and concerts in your area. <strong>Other users only see your city and an approximate distance</strong>, never your exact coordinates. Location is required for discovery; you can revoke it in device settings, in which case discovery will not work.</li>
+  <li><strong>Device and App Information:</strong> Device model, operating system version, app version, language, time zone, a random app-instance identifier, and a push notification token (Firebase Cloud Messaging on Android, Apple Push Notification service on iOS).</li>
+  <li><strong>Usage Data:</strong> Screens viewed, features used, connection requests sent and received, duels played, songs sent, subscription events. Collected through Google Analytics for Firebase.</li>
+  <li><strong>Diagnostic Data:</strong> Crash reports and non-fatal errors (Firebase Crashlytics), including device state at the time of the error and your internal user ID so we can investigate reports you send us.</li>
+  <li><strong>Security Signals:</strong> Device-attestation tokens (Firebase App Check, and Google reCAPTCHA Enterprise during phone verification on iOS) used only to block automated abuse. These do not identify you personally.</li>
 </ul>
 
 <h3>1.3 Information from Third Parties</h3>
 <ul>
-  <li><strong>Spotify:</strong> If connected, we receive your music listening history, favorite artists, top tracks, and playlists per Spotify's API permissions</li>
-  <li><strong>Google Play Services:</strong> Authentication tokens, purchase history for subscription management</li>
+  <li><strong>Apple Music (iOS, optional):</strong> If you grant Media &amp; Apple Music access, the App reads artists and songs from your library <em>on your device</em> to suggest favorites. Only the artists and songs you actually pick are sent to our servers, where they are resolved against the public music catalog. We never receive your Apple ID or your full listening history.</li>
+  <li><strong>App Store and Google Play:</strong> Purchase receipts and subscription status, delivered to us through RevenueCat. We never see your payment card details.</li>
 </ul>
+
+<h3>1.4 Public Music and Event Data (Not About You)</h3>
+<p>To build your profile, duels and the concert feed, our servers query public catalogs: the Apple Music / iTunes catalog, the Spotify catalog, MusicBrainz (genres) and Ticketmaster (concerts). These queries are made from our servers, contain no personal identifiers, and are cached for all users. Song previews played in the App are 30-second clips served by Apple and remain the property of their rights holders.</p>
 
 <h2>2. How We Use Your Information</h2>
 <h3>2.1 Core Service Functionality</h3>
-<p>We use your information to create and manage your account, authenticate your identity, display your profile to other users, match you with compatible users based on music preferences and location, enable chat features, and process subscriptions.</p>
+<p>We use your information to create and manage your account, verify your phone number, display your profile to other users, calculate music compatibility, rank who you see and who sees you, run duels, deliver songs and chat messages, show concerts near you, and process subscriptions.</p>
 
 <h3>2.2 Service Improvement and Analytics</h3>
-<p>We analyze usage patterns to improve user experience, develop new features, conduct research, monitor performance, and identify and fix technical issues.</p>
+<p>We analyze aggregate usage to improve the App, develop new features, monitor performance, and find and fix technical problems.</p>
 
 <h3>2.3 Safety and Security</h3>
-<p>We detect and prevent fraud, monitor content for prohibited material using Firebase Cloud Vision API, investigate user reports, enforce our Terms, and comply with legal obligations.</p>
+<p>We screen every uploaded photo with the Google Cloud Vision API (SafeSearch) before it is shown, review reports filed by users, detect and prevent fraud and automated abuse, enforce our Terms, and comply with legal obligations.</p>
 
 <h3>2.4 Communication</h3>
-<p>We send service-related notifications, respond to support inquiries, and notify you of changes to our policies.</p>
+<p>We send push notifications about connection requests, duels, songs and messages you receive (you can turn these off in device settings), respond to support inquiries, and notify you of changes to our policies.</p>
 
-<h2>3. Legal Basis for Processing (GDPR/KVKK)</h2>
+<h2>3. Legal Basis for Processing (GDPR / KVKK)</h2>
 <ul>
-  <li><strong>Consent:</strong> You provide explicit consent when creating an account</li>
-  <li><strong>Contractual Necessity:</strong> Processing necessary to provide the dating service</li>
-  <li><strong>Legitimate Interests:</strong> Improving our service, preventing fraud, ensuring safety</li>
-  <li><strong>Legal Obligations:</strong> Complying with legal requirements</li>
+  <li><strong>Contractual Necessity:</strong> Processing needed to provide the App you signed up for (profile, discovery, duels, chat, subscriptions)</li>
+  <li><strong>Consent:</strong> Location access, Apple Music library access, push notifications, and photo library access. You may withdraw consent at any time in device settings.</li>
+  <li><strong>Legitimate Interests:</strong> Keeping the App safe, preventing fraud, improving the Service, and analyzing aggregate usage</li>
+  <li><strong>Legal Obligations:</strong> Responding to lawful requests and reporting obligations</li>
 </ul>
 
 <h2>4. How We Share Your Information</h2>
-<div class="highlight-box"><strong>WE DO NOT SELL YOUR PERSONAL DATA.</strong> We will never sell, rent, or trade your personal information to third parties for marketing purposes.</div>
+<div class="highlight-box"><strong>WE DO NOT SELL YOUR PERSONAL DATA.</strong> We never sell, rent, or trade your personal information, and we do not share it with advertisers or data brokers.</div>
 
 <h3>4.1 With Other Users</h3>
-<p>Your profile information, photos, music preferences, and approximate location are visible to other MeloMatch users for matching purposes. You control what information appears on your profile.</p>
+<p>The following is visible to other MeloMatch users: your first name, age, gender, city and approximate distance, bio, photos, favorite artists and songs, genres, your compatibility score with them, duel results you played together, and songs you send. Your phone number, exact location, date of birth and discovery preferences are <strong>never</strong> shown to other users.</p>
 
 <h3>4.2 Service Providers</h3>
+<p>We share data only with providers that help us run the App, under contracts that restrict them to that purpose:</p>
 <table>
-  <tr><th>Service Provider</th><th>Purpose</th><th>Data Shared</th></tr>
-  <tr><td><strong>Firebase (Google)</strong></td><td>Auth, database, storage, analytics, crashlytics</td><td>Phone number, profile data, photos, usage data, crash reports</td></tr>
-  <tr><td><strong>RevenueCat</strong></td><td>Subscription management</td><td>User ID, subscription status, purchase history, device info</td></tr>
-  <tr><td><strong>Spotify</strong></td><td>Music data integration</td><td>User ID, auth tokens (if Spotify connected)</td></tr>
-  <tr><td><strong>Sentry</strong></td><td>Error tracking</td><td>Error logs, device info, app version</td></tr>
+  <tr><th>Service Provider</th><th>Purpose</th><th>Data Shared</th><th>Platform</th></tr>
+  <tr><td><strong><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase / Google Cloud</a></strong></td><td>Authentication, database, file storage, server functions, push notifications, App Check, analytics, crash reporting</td><td>Phone number, profile, photos, music preferences, location, messages, usage and crash data</td><td>Android &amp; iOS</td></tr>
+  <tr><td><strong><a href="https://cloud.google.com/vision" target="_blank" rel="noopener">Google Cloud Vision API</a></strong></td><td>Automated screening of uploaded photos for prohibited content</td><td>Photo being uploaded (no identity data)</td><td>Android &amp; iOS</td></tr>
+  <tr><td><strong><a href="https://www.google.com/recaptcha/about/" target="_blank" rel="noopener">Google reCAPTCHA Enterprise</a></strong></td><td>Abuse prevention during phone verification</td><td>Device signals</td><td>iOS</td></tr>
+  <tr><td><strong><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a></strong></td><td>Subscription validation and management</td><td>Internal user ID, purchase receipts, subscription status, device info</td><td>Android &amp; iOS</td></tr>
+  <tr><td><strong><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a></strong></td><td>App Store billing, push notifications (APNs), Apple Music / MusicKit access, song previews</td><td>Purchase data (handled by Apple), push token, catalog lookups</td><td>iOS</td></tr>
+  <tr><td><strong><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></strong></td><td>Play billing, push notifications, location services</td><td>Purchase data (handled by Google), push token</td><td>Android</td></tr>
+  <tr><td><strong><a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify</a></strong></td><td>Music catalog lookups (artist and song search)</td><td>None &mdash; catalog queries only, no account connection</td><td>Android &amp; iOS</td></tr>
+  <tr><td><strong><a href="https://www.ticketmaster.com/privacy" target="_blank" rel="noopener">Ticketmaster</a></strong>, <a href="https://metabrainz.org/privacy" target="_blank" rel="noopener">MusicBrainz</a></td><td>Concert listings and genre data</td><td>None &mdash; queried from our servers without personal data</td><td>Android &amp; iOS</td></tr>
 </table>
 
 <h3>4.3 Legal Requirements</h3>
-<p>We may disclose your information if required by law, to enforce our Terms, protect user safety, or detect and prevent fraud.</p>
+<p>We may disclose your information if required by law or valid legal process, to enforce our Terms, to protect the safety of users or the public, or to detect and prevent fraud. Reports of child sexual abuse material are forwarded to the appropriate authorities as described in our Terms.</p>
 
 <h3>4.4 Business Transfers</h3>
-<p>In the event of a merger or acquisition, your information may be transferred to the acquiring entity with prior notice to you.</p>
+<p>If Kovan Apps is involved in a merger, acquisition, or sale of assets, your information may be transferred to the successor entity. We will notify you before your information becomes subject to a different privacy policy.</p>
 
 <h2>5. Data Security</h2>
-<p>We implement industry-standard security measures: SSL/TLS encryption for data in transit, encrypted storage on Firebase servers, strict access controls, and regular security audits.</p>
-<p><strong>Important Notice:</strong> No method of internet transmission is 100% secure. You are responsible for maintaining the confidentiality of your account credentials.</p>
+<p>All traffic between the App and our servers is encrypted with TLS. Our database is not directly accessible from the App: every read and write goes through server-side functions that verify your identity and validate the request, and backend access is protected by device attestation (Firebase App Check). Data is stored encrypted at rest on Google Cloud. Only a small number of Kovan Apps staff can access production data, and only for support, moderation and debugging.</p>
+<p><strong>Important Notice:</strong> No method of internet transmission or storage is 100% secure. Keep your phone and SIM secure, since your phone number is your sign-in credential.</p>
 
 <h2>6. Data Retention</h2>
 <ul>
-  <li><strong>Active Accounts:</strong> Data retained while your account is active</li>
-  <li><strong>Inactive Accounts:</strong> Accounts inactive for 2 years may be automatically deleted</li>
-  <li><strong>Deleted Accounts:</strong> Most data removed within 30 days; some retained up to 90 days for legal or fraud prevention purposes</li>
-  <li><strong>Legal Requirements:</strong> Data may be retained longer if required by law</li>
+  <li><strong>Active accounts:</strong> Profile, music, connection and chat data are retained while your account is active.</li>
+  <li><strong>Deleted accounts:</strong> Your profile is hidden immediately. Profile data, photos, connections, duels and messages are deleted from our production systems within 30 days. Limited records (for example moderation actions and the hashed identifier of a banned account) may be kept for up to 90 days, or longer where required by law, to prevent abuse and to handle legal claims.</li>
+  <li><strong>Reports and moderation records:</strong> Retained for as long as needed to enforce our Terms and meet legal reporting obligations.</li>
+  <li><strong>Crash logs:</strong> Retained by Firebase Crashlytics for up to 90 days.</li>
+  <li><strong>Analytics events:</strong> Retained by Google Analytics for Firebase for up to 14 months.</li>
+  <li><strong>Purchase records:</strong> Retained by RevenueCat, Apple and Google under their own policies to support purchase restoration and tax obligations.</li>
+  <li><strong>Inactive accounts:</strong> We may delete accounts that have been inactive for more than 2 years after notifying you.</li>
 </ul>
 
 <h2>7. Your Privacy Rights</h2>
-<h3>7.1 Rights Under GDPR (European Users)</h3>
-<p>Right to Access, Rectification, Erasure, Restrict Processing, Data Portability, Object to Processing, Withdraw Consent, and Lodge a Complaint with a supervisory authority.</p>
+<h3>7.1 Rights Under GDPR and KVKK</h3>
+<p>You have the right to access, rectify and erase your personal data, to restrict or object to processing, to data portability, to withdraw consent at any time, and to lodge a complaint with your local supervisory authority (in Turkey, the Personal Data Protection Authority, KVKK).</p>
 
 <h3>7.2 Rights Under CCPA (California Users)</h3>
-<p>Right to Know, Right to Delete, Right to Opt-Out (we do not sell data), and Right to Non-Discrimination.</p>
+<p>You have the right to know what personal information we collect and how it is used, the right to delete it, the right to opt out of its sale or sharing (we do neither), and the right not to be discriminated against for exercising these rights.</p>
 
 <h3>7.3 How to Exercise Your Rights</h3>
 <div class="highlight-box">
-  <strong>ACCOUNT DELETION:</strong> You can delete your account at any time in the MeloMatch app:<br>
-  Settings → Account Settings → Delete Account → Confirm
+  <strong>ACCOUNT DELETION:</strong> You can delete your account at any time inside the App on both iOS and Android:<br>
+  Profile tab &rarr; Settings &rarr; Account &rarr; Delete Account &rarr; Confirm<br>
+  Or follow the steps on our <a href="/apps/melomatch/delete-account/">Delete Account</a> page.
 </div>
-<p>For other requests, contact us at <a href="mailto:info@kovanapps.com">info@kovanapps.com</a> with subject "Privacy Rights Request – MeloMatch". We respond within 30 days (GDPR/KVKK) or 45 days (CCPA).</p>
+<p>To edit your profile, photos, music or discovery preferences, use the Profile tab. For any other request, email <a href="mailto:info@kovanapps.com">info@kovanapps.com</a> with the subject "Privacy Rights Request &ndash; MeloMatch" from an address you can verify, and include the phone number on your account. We respond within 30 days (GDPR/KVKK) or 45 days (CCPA).</p>
 
 <h2>8. Permissions and Device Access</h2>
 <table>
-  <tr><th>Permission</th><th>Purpose</th><th>Required/Optional</th></tr>
-  <tr><td><strong>Location (GPS)</strong></td><td>Show nearby users, distance-based matching</td><td>Required for core functionality</td></tr>
-  <tr><td><strong>Camera</strong></td><td>Take profile photos</td><td>Optional</td></tr>
-  <tr><td><strong>Photo Gallery/Storage</strong></td><td>Upload existing photos</td><td>Optional</td></tr>
-  <tr><td><strong>Internet Access</strong></td><td>Connect to servers, enable chat</td><td>Required</td></tr>
-  <tr><td><strong>Network State</strong></td><td>Check connectivity, optimize data usage</td><td>Required</td></tr>
+  <tr><th>Permission</th><th>Purpose</th><th>Platform</th><th>Required / Optional</th></tr>
+  <tr><td><strong>Location</strong></td><td>Show people and concerts near you; only your city is shown to others</td><td>Android (fine &amp; coarse) &middot; iOS (while using)</td><td>Required for discovery</td></tr>
+  <tr><td><strong>Photos</strong></td><td>Pick profile photos through the system photo picker</td><td>Android &amp; iOS</td><td>Optional (at least one photo is needed for a profile)</td></tr>
+  <tr><td><strong>Camera</strong></td><td>Take a new profile photo</td><td>Android</td><td>Optional</td></tr>
+  <tr><td><strong>Media &amp; Apple Music</strong></td><td>Suggest artists and songs from your library</td><td>iOS</td><td>Optional</td></tr>
+  <tr><td><strong>Notifications</strong></td><td>Alert you about connection requests, duels, songs and messages</td><td>Android &amp; iOS</td><td>Optional</td></tr>
+  <tr><td><strong>Internet &amp; Network State</strong></td><td>Connect to our servers</td><td>Android &amp; iOS</td><td>Required</td></tr>
 </table>
+<p>We do <strong>not</strong> request the iOS App Tracking Transparency permission because we do not track you across other companies' apps or websites, and we do not access your contacts, microphone, or calendar.</p>
 
 <h2>9. Children's Privacy</h2>
-<div class="highlight-box"><strong>AGE RESTRICTION:</strong> MeloMatch is NOT intended for users under 18 years of age. We do not knowingly collect personal information from minors. Contact info@kovanapps.com immediately if you believe a minor has registered.</div>
+<div class="highlight-box"><strong>AGE RESTRICTION:</strong> MeloMatch is for adults only. You must be at least 18 years old to create an account. We do not knowingly collect personal information from anyone under 18. If you believe a minor has registered, contact <a href="mailto:info@kovanapps.com">info@kovanapps.com</a> immediately and we will remove the account.</div>
 
 <h2>10. International Data Transfers</h2>
-<p>Your information may be transferred to and processed in Turkey and the United States (where Firebase servers are located). We ensure appropriate safeguards including Standard Contractual Clauses approved by the European Commission.</p>
+<p>Kovan Apps is based in Turkey. Your information is processed on Google Cloud servers in the United States and the European Union, and by the service providers listed in Section 4.2. Where data leaves the EU/EEA, the UK or Turkey, we rely on Standard Contractual Clauses approved by the European Commission and equivalent safeguards under KVKK.</p>
 
-<h2>11. Cookies and Tracking Technologies</h2>
-<p>We use Firebase Analytics for usage tracking, Sentry for performance monitoring, local device storage for preferences, and authentication tokens to maintain session state. You can limit tracking via app settings or device privacy settings.</p>
+<h2>11. Analytics, Cookies and Tracking</h2>
+<p>The App itself does not use cookies. We use Google Analytics for Firebase and Firebase Crashlytics tied to a random app-instance identifier, RevenueCat for subscriptions, local device storage for your preferences, and authentication tokens to keep you signed in. We do not use advertising SDKs, and we do not share your data with advertising networks. On iOS, the App Store privacy "nutrition label" for MeloMatch reflects the practices in this Policy.</p>
 
 <h2>12. Changes to This Privacy Policy</h2>
-<p>We may update this Privacy Policy periodically. We will update the "Last Updated" date and notify you through the App or via email for material changes. Continued use of MeloMatch after changes constitutes acceptance of the updated Policy.</p>
+<p>We may update this Privacy Policy from time to time. We will change the "Last Updated" date above and, for material changes, notify you in the App. Continued use of MeloMatch after a change means you accept the updated Policy.</p>
 
 <h2>13. Data Breach Notification</h2>
-<p>In the event of a data breach affecting your rights, we will notify affected users without undue delay, report to relevant supervisory authorities within 72 hours (as required by GDPR/KVKK), and provide guidance on protective measures.</p>
+<p>If a data breach is likely to affect your rights, we will notify affected users without undue delay, report to the relevant supervisory authorities within 72 hours as required by GDPR and KVKK, and explain the steps you can take to protect yourself.</p>
 
 <h2>14. Contact Us</h2>
 <p>
   <strong>Kovan Apps Yazılım Ltd. Şti.</strong><br>
-  Üniversiteler Mah. 1597 Cad. No: 3/127 Bilkent, Çankaya, 06800 Ankara, TR<br>
+  Üniversiteler Mah. 1597 Cad. No: 3/127 Bilkent, Çankaya, 06800 Ankara, Türkiye<br>
   Email: <a href="mailto:info@kovanapps.com">info@kovanapps.com</a><br>
-  Subject: "Privacy Inquiry – MeloMatch"<br>
+  Subject: "Privacy Inquiry &ndash; MeloMatch"<br>
   Response Time: Within 48 hours for general inquiries
 </p>
 
 <h3>Supervisory Authorities</h3>
 <ul>
+  <li><strong>Turkey:</strong> Personal Data Protection Authority (KVKK) &mdash; <a href="https://www.kvkk.gov.tr" target="_blank" rel="noopener">kvkk.gov.tr</a></li>
   <li><strong>European Users:</strong> Your local Data Protection Authority</li>
-  <li><strong>California Users:</strong> California Attorney General's Office — <a href="https://oag.ca.gov/privacy" target="_blank" rel="noopener">oag.ca.gov/privacy</a></li>
+  <li><strong>California Users:</strong> California Attorney General's Office &mdash; <a href="https://oag.ca.gov/privacy" target="_blank" rel="noopener">oag.ca.gov/privacy</a></li>
 </ul>
 
 </div>
