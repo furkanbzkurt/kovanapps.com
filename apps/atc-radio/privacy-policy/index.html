@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATC Radio – Privacy Policy | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--atc-accent:#FFD60A; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(255,214,10,0.08) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:780px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,214,10,0.1);border:1px solid rgba(255,214,10,0.3);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--atc-accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .meta { font-size:0.82rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap; }
+    .content-wrap { max-width:780px;margin:0 auto;padding:60px 5vw 100px; }
+    .content-wrap h2 { font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
+    .content-wrap p { color:rgba(240,240,245,0.8);margin-bottom:1rem;font-size:0.94rem; }
+    .content-wrap ul { margin:0.75rem 0 1rem 1.25rem; }
+    .content-wrap li { color:rgba(240,240,245,0.8);font-size:0.94rem;margin-bottom:0.4rem; }
+    .content-wrap strong { color:var(--text);font-weight:600; }
+    .content-wrap a { color:var(--accent2);text-decoration:none; }
+    .content-wrap a:hover { text-decoration:underline; }
+    table { width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.85rem; }
+    th { background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .highlight-box { background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    .disclaimer-box { background:rgba(255,214,10,0.08);border:1px solid rgba(255,214,10,0.25);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/atc-radio/privacy-policy/">ATC Radio</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Privacy Policy</span>
+    </div>
+    <div class="app-pill">ATC Radio</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>&#x1F5D3; Effective: September 2026</span>
+      <span>&#x1F504; Last Updated: September 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+<p>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) built the <strong>ATC Radio</strong> app (the &ldquo;App&rdquo;) for <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. The App streams publicly available air traffic control (ATC) audio from third-party volunteer relay servers, and adds a live AI transcript, session summaries, an audio enhancer, and local recordings. Listening is free and supported by ads; the extra features are unlocked with an optional subscription or one-time purchase.</p>
+
+<div class="disclaimer-box">
+  <strong>&#x1F3A7; The App never listens to you.</strong> ATC Radio does <strong>not</strong> request microphone access and cannot record from your device&rsquo;s microphone &mdash; there is no such permission in the app at all. &ldquo;Record&rdquo; saves the public radio channel you are already listening to, as a file on your own device.
+</div>
+
+<p>This page explains what information is collected, why, and how long it is kept. By using the App you agree to the practices described here.</p>
+
+<h2>1. No Account, No Sign-Up</h2>
+<p>The App has no registration: no email address, no password, no phone number, no name. Your device is identified only by an <strong>anonymous Firebase Authentication ID</strong>, created on first launch. It identifies a device installation, not a person. You can see this value in the App under <strong>Settings &rarr; About &rarr; Customer ID</strong>; it is the reference to quote if you ask us to delete your data.</p>
+
+<h2>2. Third-Party Services</h2>
+<p>The App uses the following services, which may process limited technical information:</p>
+
+<table>
+  <tr><th>Service</th><th>Purpose</th><th>Platform</th></tr>
+  <tr><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></td><td>Core device services</td><td>Android</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Authentication (Anonymous)</a></td><td>Anonymous device ID for backend authentication</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Cloud Functions</a></td><td>Every backend request &mdash; catalog, stream address, transcript, insights. The App has no direct database access.</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Cloud Firestore</a></td><td>Airport/channel catalog, transcript lines, session records, usage quotas</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase App Check</a></td><td>Abuse prevention (device attestation)</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Remote Config</a></td><td>Feature flags and limits</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Analytics for Firebase</a></td><td>Aggregate, anonymous usage statistics</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Crashlytics</a></td><td>Crash reporting and stability monitoring</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a></td><td>Subscription and purchase validation, restore purchases</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob</a> + <a href="https://support.google.com/admob/answer/10113207" target="_blank" rel="noopener">User Messaging Platform</a></td><td>Ads for free users, and the consent form where consent is required</td><td>Android &amp; iOS</td></tr>
+  <tr><td><a href="https://deepgram.com/privacy" target="_blank" rel="noopener">Deepgram</a></td><td>Speech-to-text on the <em>public radio channel</em> audio, for the live transcript (Pro)</td><td>Server-side</td></tr>
+  <tr><td><a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Google Gemini API</a></td><td>Turns transcript text into a session summary (Pro)</td><td>Server-side</td></tr>
+  <tr><td>Third-party audio relay servers</td><td>Deliver the public ATC audio stream. Your device connects to them directly, so they receive your IP address and a standard connection request, exactly as with any internet radio.</td><td>Android &amp; iOS</td></tr>
+</table>
+
+<h2>3. Advertising</h2>
+<p>Listening is free and supported by ads. Free users may see <strong>a single full-screen ad at natural breaks</strong> &mdash; after you have been listening for a while, when you switch channels or close the player. Ads are never shown while the player is opening, and the audio keeps playing behind the ad. <strong>Subscribers see no ads at all</strong>, and for a subscriber the ad SDK is never even started.</p>
+<ul>
+  <li><strong>Consent (EEA, UK, Switzerland):</strong> before any ad request, Google&rsquo;s User Messaging Platform asks for your consent choices. You can change them any time from <strong>Settings &rarr; Ad privacy choices</strong>, which appears where consent rules apply.</li>
+  <li><strong>iOS:</strong> the App does <strong>not</strong> show an App Tracking Transparency prompt and does not use the advertising identifier (IDFA). Ads on iOS are served without cross-app tracking.</li>
+  <li><strong>Android:</strong> Google AdMob may use the advertising ID and device information to serve and measure ads, as described in Google&rsquo;s policies. Where consent is required, your choice controls whether ads are personalized.</li>
+</ul>
+
+<h2>4. Location</h2>
+<p>Location is <strong>optional</strong> and used for one thing: finding airports near you. When you allow it, your coordinates are sent to our Cloud Function, which returns the nearest airports in the catalog. The coordinates are used to answer that query and are <strong>not stored</strong> against your anonymous ID, not shared with advertisers, and not included in crash or analytics events. The App works fully without location &mdash; you can browse and search for any airport instead &mdash; and you can revoke the permission at any time in system settings.</p>
+
+<h2>5. Live Transcript and Session Insights (Pro)</h2>
+<p>The transcript is produced from the <strong>public radio channel</strong>, not from you. Our server receives the channel audio, sends it to Deepgram for speech-to-text, and stores the resulting lines <strong>per channel</strong> &mdash; the lines belong to the channel everyone is listening to, not to your account.</p>
+<ul>
+  <li><strong>Transcript lines</strong> are automatically deleted about an hour after they are produced.</li>
+  <li><strong>Session insights</strong> (the end-of-session summary) are generated by the Gemini API from those lines and stored with your anonymous ID so the App can show your insight history. They are deleted automatically after <strong>90 days</strong>.</li>
+  <li><strong>Usage quotas</strong> (daily transcript minutes, insight count) are counted per anonymous ID so the limits can be enforced.</li>
+  <li>AI output can be wrong. Never rely on the transcript or the summary for anything operational &mdash; see our <a href="/apps/atc-radio/terms/">Terms of Use</a>.</li>
+</ul>
+
+<h2>6. Recordings</h2>
+<p>Recordings are written to your device&rsquo;s app storage and stay there. They are never uploaded to us or to anyone else. Deleting a recording in the App, or uninstalling the App, removes it permanently.</p>
+
+<h2>7. Purchases</h2>
+<p>Payment is handled entirely by Apple or Google; we never see or store card numbers or billing details. RevenueCat receives your anonymous ID and the store receipt to validate your subscription and to support &ldquo;Restore purchases&rdquo;.</p>
+
+<h2>8. Feedback You Send Us</h2>
+<p>If you use the in-app feedback form, your message is sent together with a small technical context so we can reproduce the problem: device model and OS version, whether you are free or Pro, the channel you last played (name, ID, airport, frequency), an anonymized token for the stream server, whether notifications are enabled, and simple usage counters (app opens, total listening minutes, favorites added).</p>
+<div class="highlight-box">
+  Deliberately <strong>excluded</strong> from feedback: your location coordinates, transcript text, and your device&rsquo;s personal name. The same list is shown inside the App before you send.
+</div>
+
+<h2>9. Notifications</h2>
+<p>The App may ask to show notifications so it can tell you when a live transcript pauses. These are generated locally on your device. <strong>We do not send push notifications</strong> and the App does not register for a push token.</p>
+
+<h2>10. Analytics, Crash and Diagnostic Data</h2>
+<p>Firebase Crashlytics collects crash reports (device model, OS version, technical state at the time of the crash). Google Analytics for Firebase records aggregate usage events such as app opens, channel plays, transcript starts and purchases. Playback problems are reported as anonymized events (channel ID, error class, an anonymized token for the stream server) so we can see when a source is broken. None of this carries personal content or location, and it is tied to an anonymous app-instance identifier.</p>
+
+<h2>11. Data Security</h2>
+<p>All communication uses HTTPS/TLS. Every backend operation goes through authenticated Cloud Functions protected by Firebase App Check and request signing; the App has no direct database access. Tokens are stored in the platform&rsquo;s encrypted storage (Android EncryptedSharedPreferences, iOS Keychain). No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+<h2>12. Data Retention</h2>
+<table>
+  <tr><th>Data</th><th>Kept for</th></tr>
+  <tr><td>Favorites, recently played, insight history on the device</td><td>Until you delete them or uninstall</td></tr>
+  <tr><td>Recordings</td><td>On device only, until you delete them or uninstall</td></tr>
+  <tr><td>Transcript lines (per channel, on our server)</td><td>About 1 hour</td></tr>
+  <tr><td>Session insights (with anonymous ID)</td><td>90 days</td></tr>
+  <tr><td>Transcription session records and quota counters</td><td>7 days / rolling daily counters</td></tr>
+  <tr><td>Playback error events</td><td>14 days</td></tr>
+  <tr><td>Subscription state cache</td><td>Refreshed continuously; removed on request</td></tr>
+  <tr><td>Crash logs</td><td>Up to 90 days (Firebase)</td></tr>
+  <tr><td>Analytics events</td><td>Up to 14 months (Google Analytics for Firebase)</td></tr>
+  <tr><td>Purchase records</td><td>Per RevenueCat / Apple / Google policies, to support restore</td></tr>
+</table>
+
+<h2>13. Your Rights and Deleting Your Data</h2>
+<ul>
+  <li><strong>Deletion:</strong> see <a href="/apps/atc-radio/delete-data/">Delete Your Data</a>. Uninstalling removes everything stored on the device; server-side records tied to your anonymous ID are deleted on request.</li>
+  <li><strong>Access:</strong> you may request a copy of the data associated with your anonymous ID.</li>
+  <li><strong>Ads:</strong> where consent applies, change your choices any time from <strong>Settings &rarr; Ad privacy choices</strong>. A subscription removes ads entirely.</li>
+  <li><strong>Location:</strong> revoke the permission in system settings; the App keeps working.</li>
+</ul>
+<p>Contact <a href="mailto:info@kovanapps.com">info@kovanapps.com</a> with your Customer ID (Settings &rarr; About &rarr; Customer ID). We respond within 30 days.</p>
+
+<h2>14. Children&rsquo;s Privacy</h2>
+<div class="highlight-box">
+  ATC Radio is a listening tool for aviation enthusiasts, pilots and travellers. It is not directed to children under 13 and we do not knowingly collect personal information from them. If you believe a child has provided us with personal information, write to <a href="mailto:info@kovanapps.com">info@kovanapps.com</a> and we will delete it.
+</div>
+
+<h2>15. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Changes are posted on this page and are effective immediately upon posting.</p>
+
+<h2>16. Contact</h2>
+<p>
+  <strong>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti.</strong><br>
+  &Uuml;niversiteler Mah. 1597 Cad. No: 3/127 Bilkent, &Ccedil;ankaya, 06800 Ankara, TR<br>
+  Email: <a href="mailto:info@kovanapps.com">info@kovanapps.com</a><br>
+  Response Time: Within 30 days
+</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">ATC Radio</span>
+      <div class="footer-app-links">
+        <a href="/apps/atc-radio/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/atc-radio/terms/">Terms of Use</a>
+        <a href="/apps/atc-radio/delete-data/">Delete Data</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

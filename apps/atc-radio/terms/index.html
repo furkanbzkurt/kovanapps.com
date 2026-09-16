@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATC Radio – Terms of Use | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--atc-accent:#FFD60A; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(255,214,10,0.08) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:780px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,214,10,0.1);border:1px solid rgba(255,214,10,0.3);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--atc-accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .meta { font-size:0.82rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap; }
+    .content-wrap { max-width:780px;margin:0 auto;padding:60px 5vw 100px; }
+    .content-wrap h2 { font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
+    .content-wrap p { color:rgba(240,240,245,0.8);margin-bottom:1rem;font-size:0.94rem; }
+    .content-wrap ul { margin:0.75rem 0 1rem 1.25rem; }
+    .content-wrap li { color:rgba(240,240,245,0.8);font-size:0.94rem;margin-bottom:0.4rem; }
+    .content-wrap strong { color:var(--text);font-weight:600; }
+    .content-wrap a { color:var(--accent2);text-decoration:none; }
+    .content-wrap a:hover { text-decoration:underline; }
+    table { width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.85rem; }
+    th { background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .highlight-box { background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    .warning-box { background:rgba(255,214,10,0.08);border:1px solid rgba(255,214,10,0.25);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/atc-radio/privacy-policy/">ATC Radio</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Terms of Use</span>
+    </div>
+    <div class="app-pill">ATC Radio</div>
+    <h1>Terms of Use</h1>
+    <div class="meta">
+      <span>&#x1F5D3; Effective: September 2026</span>
+      <span>&#x1F504; Last Updated: September 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+<p>These Terms of Use (&ldquo;Terms&rdquo;) govern your use of the <strong>ATC Radio</strong> mobile application (the &ldquo;App&rdquo;) published by Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;). By downloading or using the App you agree to these Terms. If you do not agree, do not use the App.</p>
+
+<div class="warning-box">
+  <strong>&#x26A0;&#xFE0F; Not for operational use.</strong> ATC Radio is for listening, learning and entertainment. The audio is delayed, may be incomplete, and can stop without warning. The AI transcript and session summaries are machine-generated and <strong>can be wrong</strong>. Never use the App for flight planning, navigation, dispatch, emergency response, or any other operational or safety-critical purpose. Always use official sources.
+</div>
+
+<h2>1. What the App Does</h2>
+<p>The App lets you listen to publicly available air traffic control radio channels that are relayed by independent third-party volunteer servers. We do not operate radio receivers, we do not control which channels are online, and we cannot guarantee that any particular channel, airport or region is available at any time. Channels may disappear or change without notice.</p>
+
+<h2>2. No Affiliation</h2>
+<p>ATC Radio is an independent application. It is <strong>not</strong> affiliated with, endorsed by, or connected to any aviation authority, air navigation service provider, airline, airport operator, or any organisation that operates or relays the radio channels. All trademarks and airport identifiers belong to their respective owners and are used for identification only.</p>
+
+<h2>3. Free Use and Ads</h2>
+<p>Listening to channels is free. The free experience is supported by advertising: a single full-screen ad may appear at natural breaks after you have been listening for a while. Ads never interrupt the audio stream itself. A subscription removes ads entirely.</p>
+
+<h2>4. Subscriptions and Purchases</h2>
+<table>
+  <tr><th>Plan</th><th>Price</th><th>Notes</th></tr>
+  <tr><td>Monthly</td><td>$5.99 / month</td><td>Auto-renewing</td></tr>
+  <tr><td>Yearly</td><td>$39.99 / year</td><td>Auto-renewing, includes a 7-day free trial for new subscribers</td></tr>
+  <tr><td>Lifetime</td><td>$79.99</td><td>One-time purchase, no renewal</td></tr>
+</table>
+<p>Prices are shown in your local currency in the App and may differ by country and over time; the price displayed at the moment of purchase applies.</p>
+<ul>
+  <li>Payment is charged to your Apple or Google account at confirmation of purchase.</li>
+  <li>Auto-renewing subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours prior to the end of the period.</li>
+  <li>You can manage or cancel a subscription in your <strong>App Store</strong> or <strong>Google Play</strong> account settings. Uninstalling the App does not cancel a subscription.</li>
+  <li>If you start a free trial, any unused portion is forfeited when you purchase a subscription.</li>
+  <li>Refunds are handled by Apple or Google under their own policies; we cannot issue store refunds directly.</li>
+</ul>
+
+<h2>5. Pro Features and Fair Use</h2>
+<p>A subscription unlocks the live AI transcript, session insights, the audio enhancer, recording and rewind, ad-free listening and unlimited favorites. Because transcription and AI summaries have a real per-minute cost, they are subject to daily limits shown in the App (Settings &rarr; Transcript time today). We may adjust these limits to keep the service sustainable, and we may suspend access in case of abuse, automation, or attempts to circumvent the limits.</p>
+
+<h2>6. Recordings and Personal Use</h2>
+<p>Recordings you make are stored on your own device for personal, non-commercial use. You are responsible for complying with the laws that apply to you regarding the recording, retention and redistribution of radio communications. Do not republish recordings or transcripts in a way that violates applicable law or the rights of third parties.</p>
+
+<h2>7. Acceptable Use</h2>
+<ul>
+  <li>Do not use the App for any unlawful purpose or in violation of aviation, privacy or telecommunications law in your jurisdiction.</li>
+  <li>Do not attempt to reverse engineer, scrape, resell, or redistribute the App&rsquo;s backend, catalog or transcripts.</li>
+  <li>Do not interfere with the App&rsquo;s security features, quotas, or the third-party servers that relay the audio.</li>
+</ul>
+
+<h2>8. Availability</h2>
+<p>We do our best to keep the service running, but we do not promise uninterrupted availability. Channels depend on third parties; our backend may be taken down for maintenance; features may change, be added, or be removed. We may discontinue the App with reasonable notice.</p>
+
+<h2>9. Disclaimer of Warranties</h2>
+<p>The App is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;, without warranties of any kind, whether express or implied, including fitness for a particular purpose, accuracy, or non-infringement. We do not warrant that the audio, transcript, summaries, weather information or airport data are accurate, complete or timely.</p>
+
+<h2>10. Limitation of Liability</h2>
+<p>To the maximum extent permitted by law, the Company shall not be liable for any indirect, incidental, special or consequential damages, or for any loss arising from reliance on the App&rsquo;s content, including transcripts and summaries. Nothing in these Terms limits liability that cannot be limited under applicable law. Where liability cannot be excluded, it is limited to the amount you paid for the App in the twelve months preceding the claim.</p>
+
+<h2>11. Privacy</h2>
+<p>Our handling of information is described in the <a href="/apps/atc-radio/privacy-policy/">Privacy Policy</a>, which forms part of these Terms.</p>
+
+<h2>12. Changes to These Terms</h2>
+<p>We may revise these Terms from time to time. The updated version is posted on this page and applies from the date of posting. Continued use of the App after a change means you accept the revised Terms.</p>
+
+<h2>13. Governing Law</h2>
+<p>These Terms are governed by the laws of the Republic of T&uuml;rkiye, without regard to conflict-of-law rules. The courts and enforcement offices of Ankara, T&uuml;rkiye shall have jurisdiction, without prejudice to any mandatory consumer protection rights you have in your country of residence.</p>
+
+<h2>14. Contact</h2>
+<p>
+  <strong>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti.</strong><br>
+  &Uuml;niversiteler Mah. 1597 Cad. No: 3/127 Bilkent, &Ccedil;ankaya, 06800 Ankara, TR<br>
+  Email: <a href="mailto:info@kovanapps.com">info@kovanapps.com</a>
+</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">ATC Radio</span>
+      <div class="footer-app-links">
+        <a href="/apps/atc-radio/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/atc-radio/terms/">Terms of Use</a>
+        <a href="/apps/atc-radio/delete-data/">Delete Data</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATC Radio – Delete Your Data | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent2:#a29bfe;--atc-accent:#FFD60A;--red:#e17055; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(255,214,10,0.07) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:680px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(255,214,10,0.12);border:1px solid rgba(255,214,10,0.28);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--atc-accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .page-header p { color:var(--muted);font-size:0.95rem; }
+    .content { max-width:680px;margin:0 auto;padding:60px 5vw 100px; }
+    .method-card { background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:1.5rem; }
+    .method-card.primary { border-color:rgba(255,214,10,0.3);background:linear-gradient(180deg,rgba(255,214,10,0.06) 0%,var(--surface) 100%); }
+    .method-card h2 { font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem; }
+    .method-card ol, .method-card ul { margin-left:1.25rem; }
+    .method-card li { color:rgba(240,240,245,0.8);font-size:0.9rem;margin-bottom:0.5rem; }
+    .method-card li strong { color:var(--text); }
+    .method-card p { color:var(--muted);font-size:0.88rem;margin-bottom:1rem; }
+    .method-card p:last-child { margin-bottom:0; }
+    .method-card a { color:var(--accent2);text-decoration:none; }
+    .method-card a:hover { text-decoration:underline; }
+    .step-tag { display:inline-block;background:rgba(255,214,10,0.12);border:1px solid rgba(255,214,10,0.28);color:var(--atc-accent);border-radius:6px;padding:0.05rem 0.5rem;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase; }
+    table { width:100%;border-collapse:collapse;margin:1rem 0 0;font-size:0.85rem; }
+    th { background:rgba(255,255,255,0.03);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .warning-box { background:rgba(225,112,85,0.07);border:1px solid rgba(225,112,85,0.2);border-radius:12px;padding:1.25rem 1.5rem;margin:2rem 0;font-size:0.88rem;color:rgba(240,240,245,0.8); }
+    .warning-box strong { color:#e17055; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/atc-radio/privacy-policy/">ATC Radio</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Delete Your Data</span>
+    </div>
+    <div class="app-pill">ATC Radio</div>
+    <h1>Delete Your Data</h1>
+    <p>ATC Radio has no account to close &mdash; there is no email address, password or profile. Almost everything the App keeps is already on your own device.</p>
+  </div>
+</div>
+
+<div class="content">
+
+<div class="method-card primary">
+  <h2><span class="step-tag">Fastest</span> Delete everything on your device</h2>
+  <p>Uninstalling the App permanently removes everything it stored locally:</p>
+  <ul>
+    <li><strong>Recordings</strong> &mdash; they never left your device in the first place</li>
+    <li><strong>Favorites, recently played and insight history</strong></li>
+    <li><strong>Your anonymous ID</strong> and all app settings</li>
+  </ul>
+  <p>To remove single items without uninstalling: delete a recording in <strong>Library</strong>, or remove a favorite with the star icon.</p>
+</div>
+
+<div class="method-card">
+  <h2><span class="step-tag">Server side</span> Ask us to delete the rest</h2>
+  <p>A small amount of data sits on our servers, tied only to your anonymous ID. To have it deleted:</p>
+  <ol>
+    <li>Open the App and go to <strong>Settings &rarr; About &rarr; Customer ID</strong>. Tap it to copy the value.</li>
+    <li>Email <a href="mailto:info@kovanapps.com?subject=ATC%20Radio%20-%20Delete%20my%20data">info@kovanapps.com</a> with the subject <strong>&ldquo;Delete my data&rdquo;</strong> and paste that ID.</li>
+    <li>We delete the records tied to it and confirm by reply, within 30 days.</li>
+  </ol>
+  <p>If you have already uninstalled the App and no longer have the ID, tell us the approximate dates you used it and the store account&rsquo;s country; we will do our best to locate and remove matching records.</p>
+</div>
+
+<div class="method-card">
+  <h2>What is on the server, and for how long</h2>
+  <table>
+    <tr><th>Data</th><th>Tied to you?</th><th>Automatically deleted</th></tr>
+    <tr><td>Transcript lines</td><td>No &mdash; stored per radio channel, not per listener</td><td>About 1 hour</td></tr>
+    <tr><td>Session insights (summaries)</td><td>Yes, via anonymous ID</td><td>90 days</td></tr>
+    <tr><td>Transcription session records</td><td>Yes, via anonymous ID</td><td>7 days</td></tr>
+    <tr><td>Daily usage quotas</td><td>Yes, via anonymous ID</td><td>Rolling daily counters</td></tr>
+    <tr><td>Playback error events</td><td>No personal content</td><td>14 days</td></tr>
+    <tr><td>Subscription state</td><td>Yes, via anonymous ID (RevenueCat)</td><td>On request; purchase receipts stay with Apple/Google</td></tr>
+  </table>
+</div>
+
+<div class="warning-box">
+  <strong>Deleting your data does not cancel a subscription.</strong> Subscriptions are managed by the store: cancel in <strong>App Store &rarr; Subscriptions</strong> or <strong>Google Play &rarr; Payments &amp; subscriptions</strong>. Deleting data also removes the link between your device and an active subscription, so use <strong>Restore purchases</strong> if you reinstall later.
+</div>
+
+<p style="color:var(--muted);font-size:0.88rem;">Questions about any of this: <a href="mailto:info@kovanapps.com" style="color:var(--accent2);text-decoration:none;">info@kovanapps.com</a> &middot; See also the <a href="/apps/atc-radio/privacy-policy/" style="color:var(--accent2);text-decoration:none;">Privacy Policy</a>.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">ATC Radio</span>
+      <div class="footer-app-links">
+        <a href="/apps/atc-radio/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/atc-radio/terms/">Terms of Use</a>
+        <a href="/apps/atc-radio/delete-data/">Delete Data</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
