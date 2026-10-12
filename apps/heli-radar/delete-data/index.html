@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heli Radar – Delete Your Data | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--atc-accent:#F5B335; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(245,179,53,0.08) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:780px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(245,179,53,0.1);border:1px solid rgba(245,179,53,0.3);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--atc-accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .meta { font-size:0.82rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap; }
+    .content-wrap { max-width:780px;margin:0 auto;padding:60px 5vw 100px; }
+    .content-wrap h2 { font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
+    .content-wrap p { color:rgba(240,240,245,0.8);margin-bottom:1rem;font-size:0.94rem; }
+    .content-wrap ul { margin:0.75rem 0 1rem 1.25rem; }
+    .content-wrap li { color:rgba(240,240,245,0.8);font-size:0.94rem;margin-bottom:0.4rem; }
+    .content-wrap strong { color:var(--text);font-weight:600; }
+    .content-wrap a { color:var(--accent2);text-decoration:none; }
+    .content-wrap a:hover { text-decoration:underline; }
+    table { width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.85rem; }
+    th { background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .highlight-box { background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    .disclaimer-box { background:rgba(245,179,53,0.08);border:1px solid rgba(245,179,53,0.25);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/heli-radar/privacy-policy/">Heli Radar</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Delete Your Data</span>
+    </div>
+    <div class="app-pill">Heli Radar</div>
+    <h1>Delete Your Data</h1>
+    <div class="meta">
+      <span>&#x1F5D3; Effective: October 2026</span>
+      <span>&#x1F504; Last Updated: October 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+<h2>Delete in the App (instant)</h2>
+<p>Open Heli Radar &rarr; <strong>Settings &rarr; Data &amp; privacy &rarr; Delete my data</strong>. This immediately deletes your saved places, alert preferences and push token from our server and clears them from your device.</p>
+<h2>Delete without the App</h2>
+<p>Uninstalling removes everything stored on the device. Server-side data tied to an uninstalled app is deleted automatically 30 days after it stops receiving notifications. To have it deleted sooner, email <a href="mailto:info@kovanapps.com?subject=Heli%20Radar%20data%20deletion">info@kovanapps.com</a> with the subject &ldquo;Heli Radar data deletion&rdquo;. We complete requests within 30 days.</p>
+<h2>What is deleted</h2>
+<ul><li>Places (coordinates, radius, label) and alert preferences</li><li>Push token, platform and time zone</li><li>Our cached copy of your subscription status</li></ul>
+<h2>What is kept</h2>
+<ul><li>Purchase records held by Apple, Google and RevenueCat, as required to honour and restore purchases</li><li>Aggregate, anonymous crash and analytics data (up to 90 days / 14 months in Firebase)</li></ul>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">Heli Radar</span>
+      <div class="footer-app-links">
+        <a href="/apps/heli-radar/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/heli-radar/terms/">Terms of Use</a>
+        <a href="/apps/heli-radar/delete-data/">Delete Data</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
