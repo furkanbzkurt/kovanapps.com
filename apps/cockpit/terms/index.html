@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cockpit: Live Flight Tracker – Terms of Use | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--app-accent:#F25CC1; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(242,92,193,0.08) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:780px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(242,92,193,0.1);border:1px solid rgba(242,92,193,0.3);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--app-accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .meta { font-size:0.82rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap; }
+    .content-wrap { max-width:780px;margin:0 auto;padding:60px 5vw 100px; }
+    .content-wrap h2 { font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
+    .content-wrap p { color:rgba(240,240,245,0.8);margin-bottom:1rem;font-size:0.94rem; }
+    .content-wrap ul { margin:0.75rem 0 1rem 1.25rem; }
+    .content-wrap li { color:rgba(240,240,245,0.8);font-size:0.94rem;margin-bottom:0.4rem; }
+    .content-wrap strong { color:var(--text);font-weight:600; }
+    .content-wrap a { color:var(--accent2);text-decoration:none; }
+    .content-wrap a:hover { text-decoration:underline; }
+    table { width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.85rem; }
+    th { background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .highlight-box { background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    .warning-box { background:rgba(242,92,193,0.08);border:1px solid rgba(242,92,193,0.25);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/cockpit/privacy-policy/">Cockpit</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Terms of Use</span>
+    </div>
+    <div class="app-pill">Cockpit</div>
+    <h1>Terms of Use</h1>
+    <div class="meta">
+      <span>&#x1F5D3; Effective: October 2026</span>
+      <span>&#x1F504; Last Updated: October 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+<p>These Terms of Use (&ldquo;Terms&rdquo;) govern your use of the <strong>Cockpit: Live Flight Tracker</strong> mobile application (the &ldquo;App&rdquo;) published by Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;). By downloading or using the App you agree to these Terms.</p>
+<div class="warning-box"><strong>&#x26A0;&#xFE0F; Not for navigation or operational aviation use.</strong> Cockpit is for information and entertainment only. Aircraft positions come from a volunteer ADS-B receiver network and may be delayed, incomplete or wrong; aircraft without ADS-B, or those blocked for privacy, never appear. Weather, NOTAMs, airport status, events and AI explanations may also be delayed, incomplete or wrong. ATC audio and pilot (ACARS) messages are third-party public sources that we do not control, and transcripts are automated. Never use the App for flight planning, navigation, air traffic or safety decisions, or to locate or interfere with any aircraft or its crew. Always use official sources (FAA, NOAA, your airline).</div>
+<h2>1. No Affiliation</h2>
+<p>Cockpit is independent. It is not affiliated with or endorsed by the FAA, NOAA, any airline, airport, air navigation service, aircraft operator or manufacturer, or by adsb.lol, airframes.io, LiveATC.net or planespotters.net. Names and logos of airlines and airports are shown for identification only.</p>
+<h2>2. Free and Pro</h2>
+<p>The live map, aircraft details, search and full airport cards (weather, NOTAMs, diagrams) are free. <strong>Cockpit Pro</strong> unlocks the events feed, the pilot message (ACARS) feed, alerts including plain-English rules, a Home region, live ATC audio with transcripts, pilot map layers, full AI explanations, widgets and Live Activities, and favourite aircraft and airport alerts.</p>
+<h2>3. Subscriptions and Purchases</h2>
+<table><tr><th>Plan</th><th>Price (US)</th><th>Notes</th></tr>
+<tr><td>Monthly</td><td>$9.99 / month</td><td>Auto-renewing</td></tr>
+<tr><td>Yearly</td><td>$39.99 / year</td><td>Auto-renewing</td></tr>
+<tr><td>Lifetime</td><td>$79.99</td><td>One-time purchase, no renewal</td></tr></table>
+<ul>
+<li>Prices are shown in your local currency in the App; the price displayed at purchase applies. There is no free trial.</li>
+<li>Payment is charged to your Apple ID or Google Play account at confirmation of purchase.</li>
+<li>Subscriptions renew automatically for the same period and price unless cancelled at least 24 hours before the end of the current period; your account is charged for renewal within 24 hours before the period ends.</li>
+<li><strong>To cancel on iPhone or iPad:</strong> Settings &rarr; your name &rarr; Subscriptions &rarr; Cockpit. <strong>On Android:</strong> Google Play &rarr; profile icon &rarr; Payments &amp; subscriptions &rarr; Subscriptions &rarr; Cockpit. Cancelling stops the next renewal; Pro stays active until the end of the paid period. Uninstalling does not cancel a subscription.</li>
+<li>Refunds are handled by Apple or Google under their policies.</li>
+<li>Purchases can be restored on a new device with &ldquo;Restore purchases&rdquo; using the same Apple or Google account.</li>
+</ul>
+<h2>4. Acceptable Use</h2>
+<ul>
+<li>Do not use the App to track, follow, harass or interfere with any aircraft, crew, passenger or operation, or for any unlawful purpose.</li>
+<li>Do not scrape, resell or redistribute the App&rsquo;s data, audio or backend, or circumvent its limits or security features.</li>
+<li>ATC audio is provided for personal listening only. Do not record or rebroadcast it in violation of the source&rsquo;s terms or applicable law.</li>
+</ul>
+<h2>5. Data Sources and Attribution</h2>
+<p>Aircraft positions and routes: adsb.lol, &copy; adsb.lol contributors, Open Database License (ODbL). Pilot messages: airframes.io. ATC audio: LiveATC.net. Aircraft photos: planespotters.net, &copy; the credited photographers. NOTAMs, airport status and aircraft registry: U.S. FAA (public domain). Weather: aviationweather.gov / NOAA (public domain). Airport data: OurAirports (public domain). Map data: Apple MapKit / Google Maps, and &copy; OpenStreetMap contributors where shown. AI explanations are generated with Anthropic Claude and transcripts with Deepgram; both are automated and can contain mistakes.</p>
+<h2>6. Availability</h2>
+<p>The service depends on third-party data and may be interrupted, delayed or changed. Features, including ATC audio, may be added, limited or removed, for example if a source changes its terms. We may discontinue the App with reasonable notice.</p>
+<h2>7. Disclaimer of Warranties</h2>
+<p>The App is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind, including accuracy, completeness, timeliness or fitness for a particular purpose.</p>
+<h2>8. Limitation of Liability</h2>
+<p>To the maximum extent permitted by law, the Company is not liable for indirect, incidental, special or consequential damages, or for any loss arising from reliance on the App&rsquo;s content. Where liability cannot be excluded, it is limited to the amount you paid for the App in the twelve months before the claim.</p>
+<h2>9. Privacy</h2>
+<p>See our <a href="/apps/cockpit/privacy-policy/">Privacy Policy</a>, which forms part of these Terms. Apple&rsquo;s standard Licensed Application End User License Agreement also applies to App Store downloads.</p>
+<h2>10. Changes</h2>
+<p>We may revise these Terms; the updated version applies from posting. Continued use means you accept them.</p>
+<h2>11. Governing Law</h2>
+<p>These Terms are governed by the laws of the Republic of T&uuml;rkiye; the courts of Ankara have jurisdiction, without prejudice to mandatory consumer rights in your country of residence.</p>
+<h2>12. Contact</h2>
+<p><strong>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti.</strong><br>&Uuml;niversiteler Mah. 1597 Cad. No: 3/127 Bilkent, &Ccedil;ankaya, 06800 Ankara, TR<br>Email: <a href="mailto:info@kovanapps.com">info@kovanapps.com</a></p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &middot; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">Cockpit</span>
+      <div class="footer-app-links">
+        <a href="/apps/cockpit/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/cockpit/terms/">Terms of Use</a>
+        <a href="/apps/cockpit/delete-data/">Delete Data</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

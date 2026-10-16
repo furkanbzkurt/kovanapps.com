@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cockpit: Live Flight Tracker – Privacy Policy | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--app-accent:#F25CC1; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(242,92,193,0.08) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:780px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(242,92,193,0.1);border:1px solid rgba(242,92,193,0.3);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--app-accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .meta { font-size:0.82rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap; }
+    .content-wrap { max-width:780px;margin:0 auto;padding:60px 5vw 100px; }
+    .content-wrap h2 { font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
+    .content-wrap p { color:rgba(240,240,245,0.8);margin-bottom:1rem;font-size:0.94rem; }
+    .content-wrap ul { margin:0.75rem 0 1rem 1.25rem; }
+    .content-wrap li { color:rgba(240,240,245,0.8);font-size:0.94rem;margin-bottom:0.4rem; }
+    .content-wrap strong { color:var(--text);font-weight:600; }
+    .content-wrap a { color:var(--accent2);text-decoration:none; }
+    .content-wrap a:hover { text-decoration:underline; }
+    table { width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.85rem; }
+    th { background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .highlight-box { background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    .disclaimer-box { background:rgba(242,92,193,0.08);border:1px solid rgba(242,92,193,0.25);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/cockpit/privacy-policy/">Cockpit</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Privacy Policy</span>
+    </div>
+    <div class="app-pill">Cockpit</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>&#x1F5D3; Effective: October 2026</span>
+      <span>&#x1F504; Last Updated: October 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+<p>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) built the <strong>Cockpit: Live Flight Tracker</strong> app (the &ldquo;App&rdquo;) for Google Play (Android) and the Apple App Store (iOS). The App shows live aircraft on a map, airport weather and NOTAMs, aviation events such as emergency squawks, pilot (ACARS) messages, and public air traffic control audio. The map, aircraft details, search and airport cards are free; other features are unlocked with an optional subscription or one-time purchase. There are no ads.</p>
+<div class="disclaimer-box"><strong>&#x2708;&#xFE0F; No account, no ads, no tracking.</strong> The App never asks for your name, email or phone number. Your device is identified only by an anonymous ID. Your precise location is used on the device only, to centre the map; it is never stored on our server. We do not sell data, we do not use an advertising ID, and the App does not track you across other apps or websites.</div>
+<h2>1. No Account, No Sign-Up</h2>
+<p>Your device is identified only by an <strong>anonymous Firebase Authentication ID</strong> created on first launch. It identifies an app installation, not a person. The same anonymous ID is used by our backend, by RevenueCat for purchases and by Google Analytics for Firebase. You can see it in the App under Settings.</p>
+<h2>2. What We Process and Why</h2>
+<table>
+<tr><th>Data</th><th>Why</th><th>Where</th></tr>
+<tr><td>Map area you view (centre point rounded to about 1&nbsp;km, and radius)</td><td>To load aircraft positions for the area on screen</td><td>Sent from your device directly to adsb.lol for regional zoom levels, or to our server for the nationwide view. Not stored by us with your ID.</td></tr>
+<tr><td>Location (optional, &ldquo;While Using&rdquo;)</td><td>Centring the map on where you are</td><td>Used on device only. Precise location is never sent to our server. The App works without location permission.</td></tr>
+<tr><td>Home region, alert rules, favourite aircraft and airports, notification settings (Pro)</td><td>Matching events to your interests and sending alerts</td><td>Our server (Google Cloud, USA), tied to your anonymous ID</td></tr>
+<tr><td>Alert rules you type in plain English (Pro)</td><td>Turning a sentence such as &ldquo;tell me if a flight diverts to JFK&rdquo; into a structured rule</td><td>Sent by our server to Anthropic (Claude) for parsing, without your ID; the resulting rule is stored on our server</td></tr>
+<tr><td>Push token, platform, time zone, Live Activity token</td><td>Delivering alerts, the daily digest at your local time, and Live Activities</td><td>Our server, Firebase Cloud Messaging, Apple Push Notification service</td></tr>
+<tr><td>Flight callsign or aircraft address you open</td><td>Showing the route and photo of that aircraft</td><td>Our server (route lookup) and planespotters.net (photo)</td></tr>
+<tr><td>Subscription and purchase status</td><td>Unlocking Pro features</td><td>RevenueCat, Apple/Google; a copy on our server</td></tr>
+<tr><td>Product usage events (screens and features used, searches by category and result count, alerts created, audio listening time, paywall and purchase steps, settings changes, errors)</td><td>Understanding how the App is used and improving it</td><td>Google Analytics for Firebase, linked to your anonymous ID. Google may derive an approximate city from your IP address.</td></tr>
+<tr><td>Crash reports, performance and diagnostic data</td><td>Stability and fixing bugs</td><td>Firebase Crashlytics, linked to your anonymous ID</td></tr>
+<tr><td>Recent searches</td><td>Quick access to what you looked up</td><td>On device only</td></tr>
+</table>
+<p>Analytics are not used for advertising: there is no advertising ID, ad personalisation signals are turned off, and no data is shared with data brokers or ad networks. We do not sell personal information.</p>
+<h2>3. Third-Party Services</h2>
+<table>
+<tr><th>Service</th><th>Purpose</th></tr>
+<tr><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase</a> (Authentication, Cloud Functions, Firestore, Cloud Storage, Hosting, Cloud Messaging, App Check, Remote Config, Crashlytics, Analytics)</td><td>Anonymous ID, backend, alert delivery, abuse prevention, crash reports and usage analytics. The App has no direct database access; every request goes through authenticated Cloud Functions.</td></tr>
+<tr><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a></td><td>Purchase validation and restore, using your anonymous ID</td></tr>
+<tr><td>Apple MapKit / Google Maps SDK</td><td>Map display. The map provider receives the map area you view and your IP address, under its own privacy policy.</td></tr>
+<tr><td><a href="https://adsb.lol/" target="_blank" rel="noopener">adsb.lol</a> (ODbL)</td><td>Open ADS-B network that provides aircraft positions and routes. Your device requests positions for the rounded map area directly, so adsb.lol receives that area and your IP address.</td></tr>
+<tr><td><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic</a> (Claude)</td><td>AI explanations of public flight data, NOTAMs and pilot messages, and parsing of plain-English alert rules. Requests are made by our server; no personal data or anonymous ID is sent.</td></tr>
+<tr><td><a href="https://deepgram.com/privacy" target="_blank" rel="noopener">Deepgram</a></td><td>Speech-to-text of public ATC audio, run on our server. Your voice or microphone is never used.</td></tr>
+<tr><td><a href="https://www.liveatc.net/" target="_blank" rel="noopener">LiveATC.net</a></td><td>Public ATC audio streams, played on your device. When you listen, the stream server receives your IP address.</td></tr>
+<tr><td><a href="https://www.planespotters.net/" target="_blank" rel="noopener">planespotters.net</a></td><td>Aircraft photos, shown with the photographer&rsquo;s credit. Your device requests the photo for the aircraft you open.</td></tr>
+<tr><td><a href="https://app.airframes.io/" target="_blank" rel="noopener">airframes.io</a></td><td>Public ACARS pilot and airline messages, fetched by our server</td></tr>
+<tr><td>FAA (NOTAMs, airport status, aircraft registry), aviationweather.gov / NOAA, OurAirports</td><td>Public domain aviation, weather and airport data, fetched by our server or bundled in the App</td></tr>
+</table>
+<h2>4. Aircraft and Crew Privacy</h2>
+<ul>
+<li>Aircraft enrolled in the FAA&rsquo;s privacy programs (LADD, PIA) are never shown or stored.</li>
+<li>For privately owned aircraft we never show an owner&rsquo;s name, and we keep no registration history for private aircraft.</li>
+<li>Crew names and personnel numbers are removed from pilot (ACARS) messages on our server before they are stored, displayed or sent to AI.</li>
+</ul>
+<h2>5. Notifications</h2>
+<p>If you allow notifications, our server sends alerts that match your rules (event types, region, airline, Home radius, favourite aircraft and airports) and an optional daily digest. You choose the level, types and quiet hours in the App.</p>
+<h2>6. Data Retention</h2>
+<table>
+<tr><th>Data</th><th>Kept for</th></tr>
+<tr><td>Settings, favourites and recent searches on the device</td><td>Until you delete them or uninstall</td></tr>
+<tr><td>Home region, alert rules, favourites, push token and preferences on our server</td><td>Until you use &ldquo;Delete my data&rdquo;, or automatically 30 days after the App stops receiving notifications (for example after uninstall)</td></tr>
+<tr><td>Public aviation data: events, emergency squawks, NOTAMs, cleaned pilot message summaries (not personal data)</td><td>About 90 days in our live database; an archive is kept in cloud storage to show history and trends</td></tr>
+<tr><td>Raw ACARS messages</td><td>30 days</td></tr>
+<tr><td>Crash logs / analytics</td><td>Up to 90 days / up to 14 months (Firebase)</td></tr>
+<tr><td>Server logs</td><td>About 30 days</td></tr>
+<tr><td>Purchase records</td><td>Per RevenueCat / Apple / Google policies</td></tr>
+</table>
+<h2>7. Your Rights and Deleting Your Data</h2>
+<ul>
+<li><strong>In the App:</strong> Settings &rarr; Data &amp; privacy &rarr; <strong>Delete my data</strong> deletes your Home region, alert rules, favourites and push token from our server immediately and clears them from the device.</li>
+<li><strong>Without the App:</strong> see <a href="/apps/cockpit/delete-data/">Delete Your Data</a>.</li>
+<li>You may request access to, or deletion of, the data tied to your anonymous ID at <a href="mailto:info@kovanapps.com">info@kovanapps.com</a>. We respond within 30 days.</li>
+<li>Depending on where you live (for example the EU, UK or California), you may also have the right to object, restrict processing or complain to a supervisory authority.</li>
+</ul>
+<h2>8. Security</h2>
+<p>All traffic uses HTTPS/TLS. Backend access is limited to authenticated Cloud Functions protected by Firebase App Check, with rate limits and input validation; database rules deny all direct access. Pro status is verified on our server. No method of transmission or storage is 100% secure.</p>
+<h2>9. Children</h2>
+<div class="highlight-box">Cockpit is not directed to children under 13 and we do not knowingly collect personal information from them. Contact <a href="mailto:info@kovanapps.com">info@kovanapps.com</a> and we will delete it.</div>
+<h2>10. Changes</h2>
+<p>We may update this policy; changes are posted on this page and take effect when posted.</p>
+<h2>11. Contact</h2>
+<p><strong>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti.</strong><br>&Uuml;niversiteler Mah. 1597 Cad. No: 3/127 Bilkent, &Ccedil;ankaya, 06800 Ankara, TR<br>Email: <a href="mailto:info@kovanapps.com">info@kovanapps.com</a></p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &middot; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">Cockpit</span>
+      <div class="footer-app-links">
+        <a href="/apps/cockpit/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/cockpit/terms/">Terms of Use</a>
+        <a href="/apps/cockpit/delete-data/">Delete Data</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
