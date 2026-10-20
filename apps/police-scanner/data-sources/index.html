@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crime Map: Local Safety Alerts – Data Sources | Kovan Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--gold:#f9ca55;--red:#e17055; }
+    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
+    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
+    .nav-logo span { color:var(--accent2); }
+    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .nav-back:hover { color:var(--text); }
+    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(249,202,85,0.06) 0%,transparent 100%);border-bottom:1px solid var(--border); }
+    .page-header .inner { max-width:680px;margin:0 auto;padding-bottom:40px; }
+    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
+    .breadcrumb a { color:var(--accent2);text-decoration:none; }
+    .breadcrumb-sep { color:var(--border); }
+    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(249,202,85,0.1);border:1px solid rgba(249,202,85,0.25);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--gold);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
+    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
+    .page-header p { color:var(--muted);font-size:0.95rem; }
+    .content { max-width:680px;margin:0 auto;padding:60px 5vw 100px; }
+    .method-card { background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:1.5rem; }
+    .method-card.primary { border-color:rgba(249,202,85,0.3);background:linear-gradient(180deg,rgba(249,202,85,0.06) 0%,var(--surface) 100%); }
+    .method-card h2 { font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem; }
+    .method-card ol, .method-card ul { margin-left:1.25rem; }
+    .method-card li { color:rgba(240,240,245,0.8);font-size:0.9rem;margin-bottom:0.5rem; }
+    .method-card li strong { color:var(--text); }
+    .method-card p { color:var(--muted);font-size:0.88rem;margin-bottom:1rem; }
+    .method-card p:last-child { margin-bottom:0; }
+    .method-card a { color:var(--accent2);text-decoration:none; }
+    .method-card a:hover { text-decoration:underline; }
+    .step-tag { display:inline-block;background:rgba(249,202,85,0.12);border:1px solid rgba(249,202,85,0.28);color:var(--gold);border-radius:6px;padding:0.05rem 0.5rem;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase; }
+    table { width:100%;border-collapse:collapse;margin:1rem 0 0;font-size:0.85rem; }
+    th { background:rgba(255,255,255,0.03);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
+    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
+    .warning-box { background:rgba(225,112,85,0.07);border:1px solid rgba(225,112,85,0.2);border-radius:12px;padding:1.25rem 1.5rem;margin:2rem 0;font-size:0.88rem;color:rgba(240,240,245,0.8); }
+    .warning-box strong { color:#e17055; }
+    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
+    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .footer-left { font-size:0.82rem;color:var(--muted); }
+    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
+    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
+    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
+    .footer-app-links { display:flex;gap:1rem; }
+    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
+    .footer-app-links a:hover { color:var(--text); }
+    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
+  <a href="/" class="nav-back">&larr; Home</a>
+</nav>
+
+<div class="page-header">
+  <div class="inner">
+    <div class="breadcrumb">
+      <a href="/">Kovan Apps</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <a href="/apps/police-scanner/privacy-policy/">Crime Map</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span>Data Sources</span>
+    </div>
+    <div class="app-pill">&#x1F5FA; Crime Map: Local Safety Alerts</div>
+    <h1>Data Sources</h1>
+    <p>Every source of the information shown in Crime Map, with a link to the original publisher. Each incident in the app also links to the page it came from.</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="warning-box"><strong>Crime Map is an independent app.</strong> It is not affiliated with, endorsed by, or operated by any law-enforcement agency, 911 center or government body. Data is shown for information only, may be incomplete or delayed, and does not replace emergency services. In an emergency, call 911.</div>
+  <div class="method-card primary">
+    <h2>National</h2>
+    <ul>
+      <li><strong>Crime statistics</strong> &mdash; FBI Crime Data Explorer: <a href="https://cde.ucr.cjis.gov" target="_blank" rel="noopener">cde.ucr.cjis.gov</a></li>
+      <li><strong>Severe-weather alerts</strong> &mdash; U.S. National Weather Service (NOAA): <a href="https://www.weather.gov/alerts" target="_blank" rel="noopener">weather.gov/alerts</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>Local crime reports &amp; 911 calls</h2>
+    <p>Published by city and county open-data portals and police or sheriff departments, grouped by state.</p>
+  </div>
+  <div class="method-card">
+    <h2>AZ</h2>
+    <ul>
+      <li><strong>Mesa</strong> &mdash; 911 calls: <a href="https://citydata.mesaaz.gov/Police/Police-Dispatch-Events-2021-present/izhu-764k" target="_blank" rel="noopener">citydata.mesaaz.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>CA</h2>
+    <ul>
+      <li><strong>Alameda County</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=53a54eb59d5f42038e80098384ba5156" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>Los Angeles</strong> &mdash; Crime reports: <a href="https://data.lacity.org/Public-Safety/LAPD-NIBRS-Offenses-Dataset/k7nn-b2ep" target="_blank" rel="noopener">data.lacity.org</a></li>
+      <li><strong>Marin County</strong> &mdash; Crime reports: <a href="https://data.marincounty.gov/" target="_blank" rel="noopener">data.marincounty.gov</a></li>
+      <li><strong>Nevada County</strong> &mdash; 911 calls: <a href="https://www.arcgis.com/home/item.html?id=75933c5e78f143689350f03c7bb46d39" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>Oakland</strong> &mdash; Crime reports: <a href="https://data.oaklandca.gov/" target="_blank" rel="noopener">data.oaklandca.gov</a></li>
+      <li><strong>Orange County</strong> &mdash; Crime reports: <a href="https://www.ocsheriff.gov/" target="_blank" rel="noopener">ocsheriff.gov</a></li>
+      <li><strong>Richmond</strong> &mdash; 911 calls: <a href="https://www.transparentrichmond.org/" target="_blank" rel="noopener">transparentrichmond.org</a></li>
+      <li><strong>Roseville</strong> &mdash; Crime reports: <a href="https://www.roseville.ca.us/police" target="_blank" rel="noopener">roseville.ca.us</a></li>
+      <li><strong>Sacramento</strong> &mdash; Crime reports: <a href="https://data.cityofsacramento.org/" target="_blank" rel="noopener">data.cityofsacramento.org</a></li>
+      <li><strong>San Diego</strong> &mdash; Crime reports: <a href="https://data.sandiego.gov/datasets/police-calls-for-service/" target="_blank" rel="noopener">data.sandiego.gov</a></li>
+      <li><strong>San Francisco</strong> &mdash; 911 calls: <a href="https://data.sfgov.org/Public-Safety/Law-Enforcement-Dispatched-Calls-for-Service-Real-/gnap-fj3t" target="_blank" rel="noopener">data.sfgov.org</a></li>
+      <li><strong>San Francisco</strong> &mdash; Crime reports: <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783" target="_blank" rel="noopener">data.sfgov.org</a></li>
+      <li><strong>San Jose</strong> &mdash; Crime reports: <a href="https://data.sanjoseca.gov/dataset/police-calls-for-service" target="_blank" rel="noopener">data.sanjoseca.gov</a></li>
+      <li><strong>Santa Monica</strong> &mdash; Crime reports: <a href="https://www.santamonica.gov/police" target="_blank" rel="noopener">santamonica.gov</a></li>
+      <li><strong>Sonoma County</strong> &mdash; 911 calls: <a href="https://data.sonomacounty.ca.gov/Public-Safety/Sonoma-County-Sheriff-s-Office-Event-Data/bpq8-s7gr" target="_blank" rel="noopener">data.sonomacounty.ca.gov</a></li>
+      <li><strong>Vallejo</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=b3f338cdff434dd29e8751d5b6941fc9" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>Ventura</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=b8de7537f94c44b0a849faef87c79943" target="_blank" rel="noopener">arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>CO</h2>
+    <ul>
+      <li><strong>Boulder</strong> &mdash; Crime reports: <a href="https://bouldercolorado.gov/crime-dashboard" target="_blank" rel="noopener">bouldercolorado.gov</a></li>
+      <li><strong>Colorado Springs</strong> &mdash; Crime reports: <a href="https://policedata.coloradosprings.gov/" target="_blank" rel="noopener">policedata.coloradosprings.gov</a></li>
+      <li><strong>Denver</strong> &mdash; Crime reports: <a href="https://opendata-geospatialdenver.hub.arcgis.com/" target="_blank" rel="noopener">opendata-geospatialdenver.hub.arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>CT</h2>
+    <ul>
+      <li><strong>Hartford</strong> &mdash; Crime reports: <a href="https://data.hartford.gov/" target="_blank" rel="noopener">data.hartford.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>DC</h2>
+    <ul>
+      <li><strong>Washington</strong> &mdash; Crime reports: <a href="https://opendata.dc.gov/datasets/crime-incidents-in-2026" target="_blank" rel="noopener">opendata.dc.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>FL</h2>
+    <ul>
+      <li><strong>Gainesville</strong> &mdash; Crime reports: <a href="https://data.cityofgainesville.org/Public-Safety/Crime-Responses/gvua-xt9q" target="_blank" rel="noopener">data.cityofgainesville.org</a></li>
+      <li><strong>Orlando</strong> &mdash; 911 calls: <a href="https://www.orlando.gov/Public-Safety/View-Active-Calls" target="_blank" rel="noopener">orlando.gov</a></li>
+      <li><strong>Tampa</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=654a4f080b11490b920761964eed849a" target="_blank" rel="noopener">arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>GA</h2>
+    <ul>
+      <li><strong>Athens</strong> &mdash; Crime reports: <a href="https://www.accgov.com/police" target="_blank" rel="noopener">accgov.com</a></li>
+      <li><strong>Atlanta</strong> &mdash; Crime reports: <a href="https://opendata.atlantapd.org/" target="_blank" rel="noopener">opendata.atlantapd.org</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>HI</h2>
+    <ul>
+      <li><strong>Honolulu</strong> &mdash; Crime reports: <a href="https://data.honolulu.gov/" target="_blank" rel="noopener">data.honolulu.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>ID</h2>
+    <ul>
+      <li><strong>Boise</strong> &mdash; Crime reports: <a href="https://opendata.cityofboise.org/" target="_blank" rel="noopener">opendata.cityofboise.org</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>IL</h2>
+    <ul>
+      <li><strong>Aurora</strong> &mdash; 911 calls: <a href="https://www.arcgis.com/home/item.html?id=92372ca6fc5d4ed6b12b372d6268ecd7" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>Chicago</strong> &mdash; Crime reports: <a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2" target="_blank" rel="noopener">data.cityofchicago.org</a></li>
+      <li><strong>Rockford</strong> &mdash; 911 calls: <a href="https://illinois-edp.data.socrata.com/Public-Safety/Rockford-Police-Department-72-Hour-Dispatch-Call-L/7b7d-v8d9" target="_blank" rel="noopener">illinois-edp.data.socrata.com</a></li>
+      <li><strong>Winnebago County</strong> &mdash; 911 calls: <a href="https://illinois-edp.data.socrata.com/Public-Safety/Winnebago-County-72-Hour-Dispatch-Call-Log/i96m-iu3n" target="_blank" rel="noopener">illinois-edp.data.socrata.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>KY</h2>
+    <ul>
+      <li><strong>Covington</strong> &mdash; Crime reports: <a href="https://www.covingtonky.gov/government/departments/police" target="_blank" rel="noopener">covingtonky.gov</a></li>
+      <li><strong>Louisville</strong> &mdash; Crime reports: <a href="https://data.louisvilleky.gov/datasets/louisville-metro-ky-crime-data-2026" target="_blank" rel="noopener">data.louisvilleky.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>LA</h2>
+    <ul>
+      <li><strong>Baton Rouge</strong> &mdash; Crime reports: <a href="https://data.brla.gov/Public-Safety/East-Baton-Rouge-Parish-Combined-Crime-Incidents/6zc2-imdr" target="_blank" rel="noopener">data.brla.gov</a></li>
+      <li><strong>New Orleans</strong> &mdash; 911 calls: <a href="https://data.nola.gov/Public-Safety-and-Preparedness/Calls-for-Service-2026/es9j-6y5d" target="_blank" rel="noopener">data.nola.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>MA</h2>
+    <ul>
+      <li><strong>Boston</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=d3a6faf911874b53a0723b541daf2822" target="_blank" rel="noopener">arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>MD</h2>
+    <ul>
+      <li><strong>Annapolis</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=229ea112717f4fe985c507c42eae5c80" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>Baltimore</strong> &mdash; Crime reports: <a href="https://data.baltimorecity.gov/" target="_blank" rel="noopener">data.baltimorecity.gov</a></li>
+      <li><strong>Montgomery County</strong> &mdash; 911 calls: <a href="https://data.montgomerycountymd.gov/Public-Safety/Police-Dispatched-Incidents/98cc-bc7d" target="_blank" rel="noopener">data.montgomerycountymd.gov</a></li>
+      <li><strong>Prince George's County</strong> &mdash; Crime reports: <a href="https://data.princegeorgescountymd.gov/Public-Safety/Crime-Incidents-July-2023-to-Present/xjru-idbe" target="_blank" rel="noopener">data.princegeorgescountymd.gov</a></li>
+      <li><strong>Salisbury</strong> &mdash; 911 calls: <a href="https://salisbury.md/departments/police" target="_blank" rel="noopener">salisbury.md</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>MI</h2>
+    <ul>
+      <li><strong>Detroit</strong> &mdash; 911 calls: <a href="https://data.detroitmi.gov/datasets/police-serviced-911-calls" target="_blank" rel="noopener">data.detroitmi.gov</a></li>
+      <li><strong>Detroit</strong> &mdash; Crime reports: <a href="https://data.detroitmi.gov/datasets/detroitmi::rms-crime-incidents/about" target="_blank" rel="noopener">data.detroitmi.gov</a></li>
+      <li><strong>Grand Rapids</strong> &mdash; Crime reports: <a href="https://www.grandrapidsmi.gov/Government/Departments/Police-Department" target="_blank" rel="noopener">grandrapidsmi.gov</a></li>
+      <li><strong>Macomb County</strong> &mdash; Crime reports: <a href="https://www.clemisauthority.org/" target="_blank" rel="noopener">clemisauthority.org</a></li>
+      <li><strong>Oakland County</strong> &mdash; Crime reports: <a href="https://www.clemisauthority.org/" target="_blank" rel="noopener">clemisauthority.org</a></li>
+      <li><strong>St. Clair County</strong> &mdash; Crime reports: <a href="https://www.clemisauthority.org/" target="_blank" rel="noopener">clemisauthority.org</a></li>
+      <li><strong>Washtenaw County</strong> &mdash; Crime reports: <a href="https://www.clemisauthority.org/" target="_blank" rel="noopener">clemisauthority.org</a></li>
+      <li><strong>Wayne County</strong> &mdash; Crime reports: <a href="https://www.clemisauthority.org/" target="_blank" rel="noopener">clemisauthority.org</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>MN</h2>
+    <ul>
+      <li><strong>Duluth</strong> &mdash; Crime reports: <a href="https://duluthmn.gov/police/" target="_blank" rel="noopener">duluthmn.gov</a></li>
+      <li><strong>Minneapolis</strong> &mdash; 911 calls: <a href="https://opendata.minneapolismn.gov/" target="_blank" rel="noopener">opendata.minneapolismn.gov</a></li>
+      <li><strong>Minneapolis</strong> &mdash; Crime reports: <a href="https://opendata.minneapolismn.gov/datasets/cityoflakes::police-incidents-2026" target="_blank" rel="noopener">opendata.minneapolismn.gov</a></li>
+      <li><strong>Rosemount</strong> &mdash; 911 calls: <a href="https://www.rosemountmn.gov/" target="_blank" rel="noopener">rosemountmn.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>MO</h2>
+    <ul>
+      <li><strong>Kansas City</strong> &mdash; Crime reports: <a href="https://data.kcmo.org/" target="_blank" rel="noopener">data.kcmo.org</a></li>
+      <li><strong>St. Louis County</strong> &mdash; Crime reports: <a href="https://stlouiscountypolice.com/" target="_blank" rel="noopener">stlouiscountypolice.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>NC</h2>
+    <ul>
+      <li><strong>Charlotte</strong> &mdash; Crime reports: <a href="https://data.charlottenc.gov/" target="_blank" rel="noopener">data.charlottenc.gov</a></li>
+      <li><strong>Fayetteville</strong> &mdash; Crime reports: <a href="https://data.fayettevillenc.gov/" target="_blank" rel="noopener">data.fayettevillenc.gov</a></li>
+      <li><strong>Goldsboro</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=80e1851bf9974576b07f7e41db3ce596" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>Raleigh</strong> &mdash; Crime reports: <a href="https://data.raleighnc.gov/" target="_blank" rel="noopener">data.raleighnc.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>ND</h2>
+    <ul>
+      <li><strong>Bismarck</strong> &mdash; 911 calls: <a href="https://www.bismarcknd.gov/94/Police" target="_blank" rel="noopener">bismarcknd.gov</a></li>
+      <li><strong>West Fargo</strong> &mdash; 911 calls: <a href="https://www.westfargond.gov/1386/Police" target="_blank" rel="noopener">westfargond.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>NE</h2>
+    <ul>
+      <li><strong>Omaha</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=15ef780ba6d84414a34c5c89a6500572" target="_blank" rel="noopener">arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>NV</h2>
+    <ul>
+      <li><strong>Las Vegas</strong> &mdash; 911 calls: <a href="https://opendata-lvmpd.hub.arcgis.com/" target="_blank" rel="noopener">opendata-lvmpd.hub.arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>NY</h2>
+    <ul>
+      <li><strong>Buffalo</strong> &mdash; Crime reports: <a href="https://data.buffalony.gov/Public-Safety/Crime-Incidents/d6g9-xbgu" target="_blank" rel="noopener">data.buffalony.gov</a></li>
+      <li><strong>Rochester</strong> &mdash; Crime reports: <a href="https://data-rpdny.opendata.arcgis.com/" target="_blank" rel="noopener">data-rpdny.opendata.arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>OH</h2>
+    <ul>
+      <li><strong>Cincinnati</strong> &mdash; 911 calls: <a href="https://data.cincinnati-oh.gov/safety/CPD-CFD-Calls-For-Service/qiik-bpks" target="_blank" rel="noopener">data.cincinnati-oh.gov</a></li>
+      <li><strong>Cincinnati</strong> &mdash; Crime reports: <a href="https://data.cincinnati-oh.gov/safety/Reported-Crime-STARS-Category-Offenses-on-or-after/7aqy-xrv9" target="_blank" rel="noopener">data.cincinnati-oh.gov</a></li>
+      <li><strong>Cleveland</strong> &mdash; 911 calls: <a href="https://data.clevelandohio.gov/datasets/ClevelandGIS::police-calls-for-service/about" target="_blank" rel="noopener">data.clevelandohio.gov</a></li>
+      <li><strong>Columbus</strong> &mdash; Crime reports: <a href="https://opendata.columbus.gov/" target="_blank" rel="noopener">opendata.columbus.gov</a></li>
+      <li><strong>Dayton</strong> &mdash; 911 calls: <a href="https://dayton-transparency-portal-1-daytonohio.hub.arcgis.com/" target="_blank" rel="noopener">dayton-transparency-portal-1-daytonohio.hub.arcgis.com</a></li>
+      <li><strong>Toledo</strong> &mdash; Crime reports: <a href="https://toledopolice.com/" target="_blank" rel="noopener">toledopolice.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>OR</h2>
+    <ul>
+      <li><strong>Beaverton</strong> &mdash; Crime reports: <a href="https://www.beavertonoregon.gov/1181/Crime-Maps" target="_blank" rel="noopener">beavertonoregon.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>PA</h2>
+    <ul>
+      <li><strong>Allentown</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=beda7cf2314c4de8b8253612b6f088a8" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>Philadelphia</strong> &mdash; Crime reports: <a href="https://opendataphilly.org/datasets/crime-incidents/" target="_blank" rel="noopener">opendataphilly.org</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>RI</h2>
+    <ul>
+      <li><strong>Providence</strong> &mdash; Crime reports: <a href="https://data.providenceri.gov/Public-Safety/Providence-Police-Case-Log-Past-180-days/rz3y-pz8v" target="_blank" rel="noopener">data.providenceri.gov</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>TN</h2>
+    <ul>
+      <li><strong>Memphis</strong> &mdash; Crime reports: <a href="https://data.memphistn.gov/" target="_blank" rel="noopener">data.memphistn.gov</a></li>
+      <li><strong>Nashville</strong> &mdash; 911 calls: <a href="https://datanashvillegov-nashville.hub.arcgis.com/" target="_blank" rel="noopener">datanashvillegov-nashville.hub.arcgis.com</a></li>
+      <li><strong>Nashville</strong> &mdash; Crime reports: <a href="https://datanashvillegov-nashville.hub.arcgis.com/" target="_blank" rel="noopener">datanashvillegov-nashville.hub.arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>TX</h2>
+    <ul>
+      <li><strong>Austin</strong> &mdash; 911 calls: <a href="https://datahub.austintexas.gov/Public-Safety/Real-Time-Fire-Incidents/wpu4-x69d" target="_blank" rel="noopener">datahub.austintexas.gov</a></li>
+      <li><strong>Dallas</strong> &mdash; 911 calls: <a href="https://www.dallasopendata.com/Public-Safety/Dallas-Police-Active-Calls/9fxf-t2tr" target="_blank" rel="noopener">dallasopendata.com</a></li>
+      <li><strong>Dallas</strong> &mdash; Crime reports: <a href="https://www.dallasopendata.com/Public-Safety/Police-Incidents/qv6i-rri7" target="_blank" rel="noopener">dallasopendata.com</a></li>
+      <li><strong>Fort Worth</strong> &mdash; Crime reports: <a href="https://data.fortworthtexas.gov/" target="_blank" rel="noopener">data.fortworthtexas.gov</a></li>
+      <li><strong>Houston</strong> &mdash; Crime reports: <a href="https://houston-mycity.opendata.arcgis.com/" target="_blank" rel="noopener">houston-mycity.opendata.arcgis.com</a></li>
+      <li><strong>Lewisville</strong> &mdash; 911 calls: <a href="https://www.arcgis.com/home/item.html?id=006038582b964b63bb521214533fb047" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>San Antonio</strong> &mdash; 911 calls: <a href="https://www.arcgis.com/home/item.html?id=fd32c14b114a436591f4f2e84228db86" target="_blank" rel="noopener">arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>VA</h2>
+    <ul>
+      <li><strong>Charlottesville</strong> &mdash; Crime reports: <a href="https://opendata.charlottesville.org/" target="_blank" rel="noopener">opendata.charlottesville.org</a></li>
+      <li><strong>Fairfax County</strong> &mdash; Crime reports: <a href="https://www.fairfaxcounty.gov/police/data" target="_blank" rel="noopener">fairfaxcounty.gov</a></li>
+      <li><strong>Norfolk</strong> &mdash; Crime reports: <a href="https://data.norfolk.gov/Public-Safety/Police-Incident-Reports/r7bn-2egr" target="_blank" rel="noopener">data.norfolk.gov</a></li>
+      <li><strong>Prince William County</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=bffb14c152194f6ca4d9cbbf3ad163c0" target="_blank" rel="noopener">arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>WA</h2>
+    <ul>
+      <li><strong>Everett</strong> &mdash; 911 calls: <a href="https://data.everettwa.gov/Public-Safety/Police-Incidents/f6vp-3svh" target="_blank" rel="noopener">data.everettwa.gov</a></li>
+      <li><strong>King County</strong> &mdash; Crime reports: <a href="https://data.kingcounty.gov/Law-Enforcement-Safety/KCSO-Offense-Reports-2020-to-Present/4kmt-kfqf" target="_blank" rel="noopener">data.kingcounty.gov</a></li>
+      <li><strong>Seattle</strong> &mdash; 911 calls: <a href="https://data.seattle.gov/Public-Safety/Seattle-Real-Time-Fire-911-Calls/kzjm-xkqj" target="_blank" rel="noopener">data.seattle.gov</a></li>
+      <li><strong>Seattle</strong> &mdash; Crime reports: <a href="https://data.seattle.gov/Public-Safety/SPD-Crime-Data-2008-Present/tazs-3rd5" target="_blank" rel="noopener">data.seattle.gov</a></li>
+      <li><strong>Spokane</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=bb96ce5046324de4b463c849d03861c8" target="_blank" rel="noopener">arcgis.com</a></li>
+      <li><strong>Yakima</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=6ed3f333178c430a8d0712c407a47932" target="_blank" rel="noopener">arcgis.com</a></li>
+    </ul>
+  </div>
+  <div class="method-card">
+    <h2>WI</h2>
+    <ul>
+      <li><strong>Fitchburg</strong> &mdash; 911 calls: <a href="https://www.fitchburgwi.gov/" target="_blank" rel="noopener">fitchburgwi.gov</a></li>
+      <li><strong>Oak Creek</strong> &mdash; 911 calls: <a href="https://www.oakcreekwi.gov/668/Public-Dashboard" target="_blank" rel="noopener">oakcreekwi.gov</a></li>
+      <li><strong>Oshkosh</strong> &mdash; Crime reports: <a href="https://www.arcgis.com/home/item.html?id=c4423244fe99482cbba546a96cb77611" target="_blank" rel="noopener">arcgis.com</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
+    <div class="footer-app-row">
+      <span class="footer-app-label">Crime Map</span>
+      <div class="footer-app-links">
+        <a href="/apps/police-scanner/privacy-policy/">Privacy Policy</a>
+        <a href="/apps/police-scanner/terms/">Terms of Use</a>
+        <a href="/apps/police-scanner/delete-data/">Delete Data</a>
+        <a href="/apps/police-scanner/data-sources/">Data Sources</a>
+      </div>
+    </div>
+    <div class="footer-app-links">
+      <a href="/">Home</a>
+      <a href="mailto:info@kovanapps.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
