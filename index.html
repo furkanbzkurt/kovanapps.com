@@ -253,6 +253,18 @@
     .tag-traffic { background: rgba(56,189,248,0.12); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.25); }
     .tag-aviation { background: rgba(242,92,193,0.12); color: #F25CC1; border: 1px solid rgba(242,92,193,0.28); }
     .tag-reference { background: rgba(52,211,153,0.12); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.25); }
+    .tag-travel { background: rgba(251,146,60,0.12); color: #fdba74; border: 1px solid rgba(251,146,60,0.25); }
+    .site-badge { border-color: rgba(162,155,254,0.3); }
+    .site-badge .badge-name { color: var(--accent2); }
+    .state-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .state-list li {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 0.55rem 0.9rem; border: 1px solid var(--border); border-radius: 8px;
+      background: rgba(255,255,255,0.03); font-size: 0.9rem;
+    }
+    .state-links { display: flex; gap: 0.9rem; }
+    .state-links a { color: var(--accent2); text-decoration: none; font-size: 0.82rem; font-weight: 500; }
+    .state-links a:hover { color: var(--text); }
     .app-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
     .app-card h3 {
       font-family: 'Syne', sans-serif;
@@ -423,7 +435,7 @@
     </h1>
     <p class="hero-sub fade-up">
       We build thoughtful, polished mobile experiences that combine great design
-      with smart technology — for Android and iOS.
+      with smart technology, for Android and iOS.
     </p>
     <div class="hero-actions fade-up">
       <a href="#apps" class="btn btn-primary">Explore Our Apps</a>
@@ -453,7 +465,7 @@
           <div class="stat-label">Active daily users</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">6</div>
+          <div class="stat-num">13</div>
           <div class="stat-label">Apps published</div>
         </div>
         <div class="stat-card">
@@ -484,7 +496,7 @@
       <h3>Crime Map: Local Safety Alerts</h3>
       <p>
         A live local crime map plus crime &amp; severe-weather alerts for the counties
-        you follow — recent incidents and 911 calls near you, mapped from public data.
+        you follow: recent incidents and 911 calls near you, mapped from public data.
         Our flagship app, trusted by 165K+ downloads at a 4.5★ rating.
       </p>
       <div class="app-badge-row">
@@ -500,6 +512,171 @@
             <span class="badge-name">App Store</span>
           </span>
         </a>
+      </div>
+    </div>
+
+    <!-- ATC Radio -->
+    <div class="app-card">
+      <span class="app-tag tag-aviation">✈️ Aviation</span>
+      <span class="app-icon">🎧</span>
+      <h3>ATC Radio: Live Air Traffic</h3>
+      <p>
+        Listen to air traffic control live at 800+ airports, with AI transcripts of
+        what pilots and controllers are saying, airport weather and alerts when
+        your airport gets busy.
+      </p>
+      <div class="app-badge-row">
+        <a href="https://play.google.com/store/apps/details?id=com.kovanapps.atcradio" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Get it on</span>
+            <span class="badge-name">Google Play</span>
+          </span>
+        </a>
+        <a href="https://apps.apple.com/us/app/id6813012111" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Download on the</span>
+            <span class="badge-name">App Store</span>
+          </span>
+        </a>
+        <a href="https://cockpitradar.com/" class="store-badge site-badge">
+          <span>
+            <span class="badge-label">Website</span>
+            <span class="badge-name">cockpitradar.com</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Cockpit: Live Flight Tracker -->
+    <div class="app-card">
+      <span class="app-tag tag-aviation">✈️ Aviation</span>
+      <span class="app-icon">🛩️</span>
+      <h3>Cockpit: Live Flight Tracker</h3>
+      <p>
+        Every plane in the sky on a live map, plus what is happening up there:
+        emergency squawks, diversions, pilot messages explained in plain English,
+        airport weather and NOTAMs, and the tower's live audio one tap away.
+      </p>
+      <div class="app-badge-row">
+        <span class="coming-soon-badge">▶ Google Play: Coming Soon</span>
+        <span class="coming-soon-badge">🍎 App Store: Coming Soon</span>
+        <a href="https://cockpitradar.com/" class="store-badge site-badge">
+          <span>
+            <span class="badge-label">Website</span>
+            <span class="badge-name">cockpitradar.com</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Traffic Cams & Road Conditions -->
+    <div class="app-card">
+      <span class="app-tag tag-traffic">🚗 Traffic &amp; Navigation</span>
+      <span class="app-icon">📷</span>
+      <h3>Traffic Cams &amp; Road Conditions</h3>
+      <p>
+        Live DOT traffic cameras, crashes, closures and winter road conditions across
+        28 states on one national map, with NWS warnings and hurricane tracking.
+        See the road before you drive it.
+      </p>
+      <div class="app-badge-row">
+        <a href="https://play.google.com/store/apps/details?id=com.kovanapps.ustrafficcams" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Get it on</span>
+            <span class="badge-name">Google Play</span>
+          </span>
+        </a>
+        <span class="coming-soon-badge">🍎 App Store: Coming Soon</span>
+        <a href="https://trafficcams.app/" class="store-badge site-badge">
+          <span>
+            <span class="badge-label">Website</span>
+            <span class="badge-name">trafficcams.app</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Global Entry Appointments -->
+    <div class="app-card">
+      <span class="app-tag tag-travel">🛂 Travel</span>
+      <span class="app-icon">🗓️</span>
+      <h3>Global Entry Appointments</h3>
+      <p>
+        Find an earlier Global Entry interview. Browse open slots at every enrollment
+        center for free and get an alert the moment a cancellation opens a date
+        near you.
+      </p>
+      <div class="app-badge-row">
+        <a href="https://play.google.com/store/apps/details?id=com.kovanapps.globalentryslots" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Get it on</span>
+            <span class="badge-name">Google Play</span>
+          </span>
+        </a>
+        <a href="https://apps.apple.com/us/app/id6791092823" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Download on the</span>
+            <span class="badge-name">App Store</span>
+          </span>
+        </a>
+        <a href="https://globalentryslotfinder.com/" class="store-badge site-badge">
+          <span>
+            <span class="badge-label">Website</span>
+            <span class="badge-name">globalentryslotfinder.com</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Teen Driving Log: Permit Hours -->
+    <div class="app-card">
+      <span class="app-tag tag-reference">🚙 Driving</span>
+      <span class="app-icon">📝</span>
+      <h3>Teen Driving Log: Permit Hours</h3>
+      <p>
+        Log a teen driver's supervised practice hours with automatic day and night
+        split, track progress against your state's requirement and export a
+        DMV-ready PDF.
+      </p>
+      <div class="app-badge-row">
+        <a href="https://play.google.com/store/apps/details?id=com.kovanapps.permithours" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Get it on</span>
+            <span class="badge-name">Google Play</span>
+          </span>
+        </a>
+        <a href="https://apps.apple.com/us/app/id6804395622" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Download on the</span>
+            <span class="badge-name">App Store</span>
+          </span>
+        </a>
+        <a href="https://permithours.app/" class="store-badge site-badge">
+          <span>
+            <span class="badge-label">Website</span>
+            <span class="badge-name">permithours.app</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Heli Radar -->
+    <div class="app-card">
+      <span class="app-tag tag-aviation">🚁 Aviation</span>
+      <span class="app-icon">🚁</span>
+      <h3>Heli Radar: Helicopter Tracker</h3>
+      <p>
+        Police, medevac and news helicopters live across the US on one map, and
+        which one is circling over you right now.
+      </p>
+      <div class="app-badge-row">
+        <a href="https://play.google.com/store/apps/details?id=com.kovanapps.heliradar" target="_blank" rel="noopener" class="store-badge">
+          <span>
+            <span class="badge-label">Get it on</span>
+            <span class="badge-name">Google Play</span>
+          </span>
+        </a>
+        <span class="coming-soon-badge">🍎 App Store: Coming Soon</span>
       </div>
     </div>
 
@@ -520,60 +697,7 @@
             <span class="badge-name">Google Play</span>
           </span>
         </a>
-        <span class="coming-soon-badge">🍎 iOS — Coming Soon</span>
-      </div>
-    </div>
-
-    <!-- Cockpit: Live Flight Tracker -->
-    <div class="app-card">
-      <span class="app-tag tag-aviation">✈️ Aviation</span>
-      <span class="app-icon">🛩️</span>
-      <h3>Cockpit: Live Flight Tracker</h3>
-      <p>
-        Every plane in the sky on a live map, plus what is happening up there:
-        emergency squawks, diversions, pilot messages explained in plain English,
-        airport weather and NOTAMs, and the tower's live audio one tap away.
-      </p>
-      <div class="app-badge-row">
-        <span class="coming-soon-badge">▶ Google Play: Coming Soon</span>
-        <span class="coming-soon-badge">🍎 App Store: Coming Soon</span>
-      </div>
-    </div>
-
-    <!-- Traffic Cams & Road Conditions -->
-    <div class="app-card">
-      <span class="app-tag tag-traffic">🚗 Traffic &amp; Navigation</span>
-      <span class="app-icon">📷</span>
-      <h3>Traffic Cams &amp; Road Conditions</h3>
-      <p>
-        Live DOT traffic cameras, crashes, closures and winter road conditions across
-        the US on one national map — with NWS warnings and hurricane tracking. See the
-        road before you drive it, from Florida to Colorado.
-      </p>
-      <div class="app-badge-row">
-        <span class="coming-soon-badge">▶ Google Play — Coming Soon</span>
-        <span class="coming-soon-badge">🍎 App Store — Coming Soon</span>
-      </div>
-    </div>
-
-    <!-- Florida Roads & Cameras -->
-    <div class="app-card">
-      <span class="app-tag tag-traffic">🚗 Traffic &amp; Navigation</span>
-      <span class="app-icon">🌴</span>
-      <h3>Florida Roads &amp; Cameras</h3>
-      <p>
-        Live FDOT traffic cameras, real-time incidents, hurricane tracking and
-        severe-weather alerts — all on one map. Built for Florida drivers who want
-        to know what's ahead before they hit the road.
-      </p>
-      <div class="app-badge-row">
-        <a href="https://play.google.com/store/apps/details?id=com.kovanapps.floridalivecameras" target="_blank" rel="noopener" class="store-badge">
-          <span>
-            <span class="badge-label">Get it on</span>
-            <span class="badge-name">Google Play</span>
-          </span>
-        </a>
-        <a href="https://apps.apple.com/us/app/id6762972633" target="_blank" rel="noopener" class="store-badge">
+        <a href="https://apps.apple.com/us/app/id6801248434" target="_blank" rel="noopener" class="store-badge">
           <span>
             <span class="badge-label">Download on the</span>
             <span class="badge-name">App Store</span>
@@ -582,56 +706,22 @@
       </div>
     </div>
 
-    <!-- Colorado Roads & CDOT Cams -->
+    <!-- State road camera apps -->
     <div class="app-card">
       <span class="app-tag tag-traffic">🚗 Traffic &amp; Navigation</span>
-      <span class="app-icon">🏔️</span>
-      <h3>Colorado Roads &amp; CDOT Cams</h3>
+      <span class="app-icon">🛣️</span>
+      <h3>State Roads &amp; Cameras</h3>
       <p>
-        Live CDOT cameras, mountain-pass alerts, color-coded road conditions and
-        snowplow tracking across every Colorado highway. The no-nonsense traffic
-        toolkit for I-70, I-25 and the high country.
+        Dedicated apps for drivers in a single state: the DOT's live cameras,
+        incidents, construction and winter road conditions for every highway there.
       </p>
-      <div class="app-badge-row">
-        <a href="https://play.google.com/store/apps/details?id=com.kovanapps.coloradoroadscameras" target="_blank" rel="noopener" class="store-badge">
-          <span>
-            <span class="badge-label">Get it on</span>
-            <span class="badge-name">Google Play</span>
-          </span>
-        </a>
-        <a href="https://apps.apple.com/us/app/id6765944722" target="_blank" rel="noopener" class="store-badge">
-          <span>
-            <span class="badge-label">Download on the</span>
-            <span class="badge-name">App Store</span>
-          </span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Ohio Roads & OHGO Cameras -->
-    <div class="app-card">
-      <span class="app-tag tag-traffic">🚗 Traffic &amp; Navigation</span>
-      <span class="app-icon">🚦</span>
-      <h3>Ohio Roads &amp; OHGO Cameras</h3>
-      <p>
-        Live OHGO traffic cameras, real-time incidents, construction and winter road
-        conditions across every Ohio highway — I-70, I-71, I-75 and the Columbus,
-        Cleveland and Cincinnati metros.
-      </p>
-      <div class="app-badge-row">
-        <a href="https://play.google.com/store/apps/details?id=com.kovanapps.ohioroadscameras" target="_blank" rel="noopener" class="store-badge">
-          <span>
-            <span class="badge-label">Get it on</span>
-            <span class="badge-name">Google Play</span>
-          </span>
-        </a>
-        <a href="https://apps.apple.com/us/app/ohio-roads-ohgo-cameras/id6769321795" target="_blank" rel="noopener" class="store-badge">
-          <span>
-            <span class="badge-label">Download on the</span>
-            <span class="badge-name">App Store</span>
-          </span>
-        </a>
-      </div>
+      <ul class="state-list">
+        <li><span>Florida</span><span class="state-links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.floridalivecameras" target="_blank" rel="noopener">Google Play</a> <a href="https://apps.apple.com/us/app/id6762972633" target="_blank" rel="noopener">App Store</a></span></li>
+        <li><span>Colorado</span><span class="state-links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.coloradoroadscameras" target="_blank" rel="noopener">Google Play</a> <a href="https://apps.apple.com/us/app/id6765944722" target="_blank" rel="noopener">App Store</a></span></li>
+        <li><span>Ohio</span><span class="state-links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.ohioroadscameras" target="_blank" rel="noopener">Google Play</a> <a href="https://apps.apple.com/us/app/id6769321795" target="_blank" rel="noopener">App Store</a></span></li>
+        <li><span>Pennsylvania</span><span class="state-links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.pennsylvaniaroadscameras" target="_blank" rel="noopener">Google Play</a></span></li>
+        <li><span>North Carolina</span><span class="state-links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.northcarolinaroadscameras" target="_blank" rel="noopener">Google Play</a></span></li>
+      </ul>
     </div>
 
     <!-- Police Scanner Radio Codes -->
@@ -640,7 +730,7 @@
       <span class="app-icon">📟</span>
       <h3>Police Scanner Radio Codes</h3>
       <p>
-        The most comprehensive U.S. police, fire &amp; EMS radio code reference —
+        The most comprehensive U.S. police, fire &amp; EMS radio code reference:
         11,500+ codes across 239 agencies and all 50 states. Fast offline lookup,
         the perfect companion to any scanner app.
       </p>
@@ -651,7 +741,7 @@
             <span class="badge-name">Google Play</span>
           </span>
         </a>
-        <a href="https://apps.apple.com/us/app/police-10-codes-radio-codes/id6773244206" target="_blank" rel="noopener" class="store-badge">
+        <a href="https://apps.apple.com/us/app/id6773244206" target="_blank" rel="noopener" class="store-badge">
           <span>
             <span class="badge-label">Download on the</span>
             <span class="badge-name">App Store</span>
