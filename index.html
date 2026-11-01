@@ -2,91 +2,271 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kovan Apps</title>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="Kovan Apps"><meta property="og:description" content="Independent mobile studio in Ankara, building apps for Android and iOS."><meta property="og:url" content="https://kovanapps.com/">
-<meta name="description" content="Kovan Apps is an independent mobile studio in Ankara building mobile apps for Android and iOS.">
+<meta property="og:title" content="Kovan Apps"><meta property="og:description" content="Kovan Apps develops and publishes mobile apps for Android and iOS."><meta property="og:url" content="https://kovanapps.com/">
+<meta name="description" content="Kovan Apps develops and publishes mobile apps for Android and iOS.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>html,body{margin:0;background:#f4f3ef}
-/* ---- kovanapps.com pilot v2: one family, one accent, light with a dark counterpart ---- */
-.site { --ink:#17160f; --paper:#f4f3ef; --mute:#6d6a60; --rule:#dcdad3; --honey:#d08a12; container-type: inline-size; background: var(--paper); color: var(--ink);
-  font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
-.site.dark { --ink:#ebe9e2; --paper:#141310; --mute:#9d9a90; --rule:#2b2a25; --honey:#e9a53a; }
+/* ---- kovanapps.com pilot v3: same language as v2 (one family, one accent, paper + ink), with more on the page ---- */
+.site { --ink:#17160f; --paper:#f4f3ef; --paper-2:#ebe9e3; --mute:#6d6a60; --rule:#dcdad3; --rule-soft:#e7e5de; --honey:#d08a12;
+  container-type: inline-size; background: var(--paper); color: var(--ink);
+  font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+.site.dark { --ink:#ebe9e2; --paper:#141310; --paper-2:#1c1b17; --mute:#9d9a90; --rule:#2b2a25; --rule-soft:#23221d; --honey:#e9a53a; }
 .site * { box-sizing: border-box; margin: 0; }
 .site a { color: inherit; text-decoration: none; }
 .site a:hover { color: var(--honey); }
 .site a:focus-visible { outline: 2px solid var(--honey); outline-offset: 3px; }
 .site h1, .site h2, .site h3 { font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
 .site > * { padding-left: max(24px, 6cqw); padding-right: max(24px, 6cqw); }
+.site .wrap { max-width: 1120px; }
+
+/* nav */
 .site .nav { display:flex; justify-content:space-between; align-items:center; height:72px; }
 .site .brand { display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; letter-spacing:-0.01em; }
 .site nav { display:flex; gap:28px; font-size:15px; color:var(--mute); }
-.site .hero { padding-top: 96px; padding-bottom: 104px; }
+
+/* hero */
+.site .hero { padding-top: 104px; padding-bottom: 8px; }
+.site .hero-grid { display:grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: end; }
 .site .hero h1 { font-size: clamp(38px, 4.8cqw, 60px); line-height: 1.06; letter-spacing:-0.03em; max-width: 18ch; }
-.site .hero p { margin-top: 24px; max-width: 48ch; font-size: 19px; color: var(--mute); }
+.site .hero .lede { margin-top: 24px; max-width: 46ch; font-size: 19px; color: var(--mute); }
+.site .hero .lede a { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
+.site .hero .lede a:hover { color: var(--honey); }
+/* the shelf: our five icons at their own sizes, resting on a hairline */
+.site .shelf { display:flex; gap: 18px; align-items: flex-end; padding: 0 8px 0; }
+.site .hero-grid > div:first-child { padding-bottom: 40px; }
+.site .shelf img { display:block; box-shadow: 0 0 0 1px rgba(23,22,15,.08), 0 1px 2px rgba(23,22,15,.08); }
+.site .shelf img:nth-child(1) { width: 64px; height: 64px; border-radius: 15px; }
+.site .shelf img:nth-child(2) { width: 84px; height: 84px; border-radius: 19px; }
+.site .shelf img:nth-child(3) { width: 72px; height: 72px; border-radius: 16px; }
+.site .shelf img:nth-child(4) { width: 96px; height: 96px; border-radius: 22px; }
+.site .shelf img:nth-child(5) { width: 68px; height: 68px; border-radius: 15px; }
+.site.dark .shelf img { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 1px 2px rgba(0,0,0,.4); }
+/* facts strip: only things that are true */
+.site .facts { list-style:none; padding:0; margin-top: 0; display:grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); }
+.site .facts li { padding: 22px 24px 26px 0; border-right: 1px solid var(--rule); margin-right: 24px; }
+.site .facts li:last-child { border-right: 0; margin-right: 0; }
+.site .facts strong { display:block; font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.site .facts span { display:block; margin-top: 8px; font-size: 14px; color: var(--mute); }
+
+.site .hero-row { display:grid; grid-template-columns: minmax(0,1fr) auto; gap: 48px; align-items: end; padding-bottom: 48px; }
+.site .stat { text-align: right; }
+.site .stat strong { display:block; font-size: clamp(56px, 8cqw, 112px); font-weight: 600; letter-spacing: -0.045em; line-height: .95; font-variant-numeric: tabular-nums; }
+.site .stat strong::after { content:""; display:block; height: 4px; width: 56px; background: var(--honey); margin: 18px 0 0 auto; border-radius: 2px; }
+.site .stat span { display:block; margin-top: 12px; font-size: 16px; color: var(--mute); }
+.site .facts { grid-template-columns: repeat(3, 1fr); }
+@container (max-width: 640px) { .site .hero-row { grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; } .site .stat { text-align:left; } .site .stat strong::after { margin-left: 0; } .site ul.facts { grid-template-columns: 1fr; } .site ul.facts li { border-right: 0; margin-right: 0; border-top: 1px solid var(--rule); } .site ul.facts li:first-child { border-top: 0; } }
+/* section label */
 .site h2 { font-size: 15px; font-weight: 500; color: var(--mute); }
-.site .apps { padding-bottom: 96px; }
-.site .apps h2 { padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
-.site .apps ul { list-style:none; padding:0; max-width: 880px; }
-.site .app { display:grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items:start; padding: 24px 0; border-bottom: 1px solid var(--rule); }
-.site .app img { width:48px; height:48px; border-radius: 11px; display:block; }
-.site .app h3 { font-size: 18px; }
-.site .app p { color: var(--mute); margin-top: 4px; max-width: 52ch; font-size: 16px; }
-.site .app .family { font-size: 14px; margin-top: 8px; }
+.site .label { display:flex; justify-content:space-between; align-items:baseline; padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
+.site .label small { font-size: 14px; color: var(--mute); }
+
+/* apps */
+.site .apps { padding-top: 104px; padding-bottom: 104px; }
+.site .feature { display:grid; grid-template-columns: 160px minmax(0, 1fr); gap: 40px; align-items: start; padding: 48px 0 44px; border-bottom: 1px solid var(--rule); }
+.site .feature img { width: 160px; height: 160px; border-radius: 36px; display:block; box-shadow: 0 0 0 1px rgba(23,22,15,.08), 0 2px 4px rgba(23,22,15,.08); }
+.site.dark .feature img { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 2px 4px rgba(0,0,0,.4); }
+.site .eyebrow { font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--mute); }
+.site .eyebrow b { color: var(--honey); font-weight: 500; }
+.site .feature h3 { font-size: clamp(28px, 3.2cqw, 40px); letter-spacing:-0.03em; line-height: 1.08; margin-top: 10px; }
+.site .feature .tag { margin-top: 10px; font-size: 19px; color: var(--ink); max-width: 40ch; }
+.site .feature .more { margin-top: 18px; color: var(--mute); max-width: 56ch; }
+.site .stores { display:flex; flex-wrap:wrap; gap: 8px 22px; margin-top: 22px; font-size: 15px; }
+.site .stores a, .site .links a { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
+.site .stores .soon, .site .links .soon { color: var(--mute); }
+.site .app-list { list-style:none; padding:0; }
+.site .app { display:grid; grid-template-columns: 40px 76px minmax(0, 1fr) auto; gap: 24px; align-items:start; padding: 30px 0; border-bottom: 1px solid var(--rule); }
+.site .app .idx { font-size: 14px; color: var(--mute); padding-top: 4px; font-variant-numeric: tabular-nums; }
+.site .app img { width:76px; height:76px; border-radius: 18px; display:block; box-shadow: 0 0 0 1px rgba(23,22,15,.08), 0 1px 2px rgba(23,22,15,.08); }
+.site.dark .app img { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 1px 2px rgba(0,0,0,.4); }
+.site .app h3 { font-size: 21px; letter-spacing:-0.02em; }
+.site .app .kicker { font-size: 13px; color: var(--mute); letter-spacing: .04em; text-transform: uppercase; font-weight: 500; }
+.site .app h3 { margin-top: 4px; }
+.site .app p { color: var(--mute); margin-top: 6px; max-width: 54ch; font-size: 16px; }
+.site .app .family { font-size: 14px; margin-top: 10px; color: var(--ink); }
 .site .app .family a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
-.site .links { display:flex; flex-direction:column; align-items:flex-end; gap: 6px; font-size: 15px; white-space: nowrap; padding-top: 2px; }
-.site .links a { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
-.site .links .soon { color: var(--mute); }
-.site .studio { padding-bottom: 96px; }
-.site .studio h2, .site .contact h2 { margin-bottom: 20px; }
-.site .studio-cols { display:grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 980px; }
-.site .studio-cols p { max-width: 48ch; }
-.site .fact { margin-top: 36px; color: var(--mute); font-size: 15px; }
+.site .links { display:flex; flex-direction:column; align-items:flex-end; gap: 6px; font-size: 15px; white-space: nowrap; padding-top: 26px; }
+
+/* studio */
+.site .studio { padding-bottom: 104px; }
+.site .studio-grid { display:grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 48px; align-items: start; padding-top: 40px; }
+.site .studio-grid .mark { width: 176px; height: 176px; color: var(--ink); display:block; order: 2; justify-self: end; margin-top: -8px; }
+.site .studio-grid .lead { font-size: clamp(22px, 2.4cqw, 28px); line-height: 1.3; letter-spacing: -0.02em; font-weight: 500; max-width: 30ch; text-wrap: pretty; }
+.site .studio-grid .lead + p { margin-top: 20px; color: var(--mute); max-width: 56ch; }
+.site .how { margin-top: 72px; display:grid; grid-template-columns: 1fr 1fr; column-gap: 56px; row-gap: 0; }
+.site .how > div { padding: 24px 0 30px; border-top: 1px solid var(--rule); }
+.site .how h3 { font-size: 18px; letter-spacing: -0.015em; }
+.site .how p { margin-top: 10px; color: var(--mute); max-width: 46ch; text-wrap: pretty; }
+.site .how p a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+
+.site .company { padding-top: 40px; max-width: 760px; }
+.site .company .lead { font-size: clamp(22px, 2.4cqw, 28px); line-height: 1.3; letter-spacing: -0.02em; font-weight: 500; text-wrap: pretty; }
+.site .company .lead + p { margin-top: 20px; color: var(--mute); max-width: 60ch; }
+/* contact + footer */
 .site .contact { padding-bottom: 104px; border-top: 1px solid var(--ink); padding-top: 48px; }
-.site .mail { font-size: clamp(26px, 3.8cqw, 44px); font-weight: 600; letter-spacing: -0.03em; user-select: all; }
-.site .contact > p:last-child { margin-top: 14px; color: var(--mute); max-width: 48ch; }
+.site .contact-grid { display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+.site .mail { font-size: clamp(26px, 3.8cqw, 44px); font-weight: 600; letter-spacing: -0.03em; user-select: all; overflow-wrap: anywhere; }
+.site .contact .note { margin-top: 14px; color: var(--mute); max-width: 44ch; }
+.site .contact .side { color: var(--mute); font-size: 15px; max-width: 40ch; justify-self: end; text-align: right; }
+.site .contact .side a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); color: var(--ink); }
 .site footer { display:flex; justify-content:space-between; align-items:flex-end; gap: 32px; padding-top: 28px; padding-bottom: 40px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--mute); }
 .site footer .legal { color: var(--ink); }
+.site footer .fine { display:flex; gap: 10px; flex-wrap: wrap; }
+
+@container (max-width: 760px) {
+  .site .facts { grid-template-columns: 1fr 1fr; }
+  .site .facts li:nth-child(2) { border-right: 0; margin-right: 0; }
+  .site .facts li:nth-child(n+3) { border-top: 1px solid var(--rule); }
+  .site .how { grid-template-columns: 1fr; }
+  .site .studio-grid { grid-template-columns: 1fr; gap: 28px; }
+  .site .studio-grid .mark { width: 96px; height: 96px; order: 0; justify-self: start; margin-top: 0; }
+  .site .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+  .site .contact .side { justify-self: start; text-align: left; }
+}
 @container (max-width: 640px) {
   .site nav { gap: 18px; font-size: 14px; }
-  .site .hero { padding-top: 48px; padding-bottom: 64px; }
+  .site .hero { padding-top: 48px; }
+  .site .hero-grid { grid-template-columns: 1fr; gap: 36px; }
   .site .hero h1 { font-size: 36px; }
-  .site .hero p { font-size: 17px; }
-  .site .studio-cols { grid-template-columns: 1fr; gap: 14px; }
-  .site .app { grid-template-columns: 44px 1fr; row-gap: 10px; gap: 14px; }
-  .site .app img { width:44px; height:44px; border-radius: 10px; }
-  .site .links { grid-column: 2; flex-direction: row; flex-wrap: wrap; justify-content:flex-start; gap: 6px 16px; }
+  .site .hero .lede { font-size: 17px; }
+  .site .shelf { gap: 10px; justify-content: flex-start; padding: 0; }
+  .site .hero-grid > div:first-child { padding-bottom: 0; }
+  .site .shelf img:nth-child(n) { width: 56px; height: 56px; border-radius: 13px; }
+  .site .facts { margin-top: 0; }
+  .site .facts strong { font-size: 26px; }
+  .site .apps { padding-top: 72px; padding-bottom: 72px; }
+  .site .feature { grid-template-columns: 1fr; gap: 24px; padding: 32px 0 32px; }
+  .site .feature img { width: 112px; height: 112px; border-radius: 26px; }
+  .site .feature .tag { font-size: 18px; }
+  .site .app { grid-template-columns: 56px 1fr; gap: 16px; row-gap: 10px; padding: 24px 0; }
+  .site .app .idx { display: none; }
+  .site .app img { width:56px; height:56px; border-radius: 13px; }
+  .site .app h3 { font-size: 19px; }
+  .site .links { grid-column: 2; flex-direction: row; flex-wrap: wrap; justify-content:flex-start; gap: 6px 16px; padding-top: 0; }
+  .site .studio { padding-bottom: 72px; }
+  .site .how { margin-top: 48px; }
+  .site .contact { padding-bottom: 72px; }
   .site .mail { font-size: 24px; }
   .site footer { flex-direction: column; align-items:flex-start; gap: 12px; }
 }
-@media (prefers-color-scheme: dark) { .site:not(.light) { --ink:#ebe9e2; --paper:#141310; --mute:#9d9a90; --rule:#2b2a25; --honey:#e9a53a; color-scheme: dark; } html, body { background:#141310; } }</style></head>
+@media (prefers-color-scheme: dark) {
+  .site:not(.light) { --ink:#ebe9e2; --paper:#141310; --paper-2:#1c1b17; --mute:#9d9a90; --rule:#2b2a25; --rule-soft:#23221d; --honey:#e9a53a; color-scheme: dark; }
+  .site:not(.light) .shelf img, .site:not(.light) .feature img, .site:not(.light) .app img { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 1px 2px rgba(0,0,0,.4); }
+  html, body { background:#141310; }
+}
+@media (prefers-reduced-motion: no-preference) { .site a { transition: color .15s ease-out; } }
+</style></head>
 <body><div class="site">
 <header class="nav">
   <a class="brand" href="#top" aria-label="Kovan Apps home"><svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true"><rect x="37" y="20" width="26" height="12" rx="6.0" fill="currentColor"/><rect x="29" y="35" width="42" height="13" rx="6.5" fill="currentColor"/><rect x="23" y="51" width="54" height="13" rx="6.5" fill="currentColor"/><rect x="20" y="67" width="60" height="14" rx="7.0" fill="currentColor"/><path d="M44 81 V74.5 a6 6 0 0 1 12 0 V81 Z" fill="var(--honey)"/></svg><span>Kovan Apps</span></a>
-  <nav><a href="#apps">Apps</a><a href="#studio">Studio</a><a href="#contact">Contact</a></nav>
+  <nav><a href="#apps">Apps</a><a href="#company">Company</a><a href="#contact">Contact</a></nav>
 </header>
+
 <section class="hero" id="top">
-  <h1>Kovan Apps builds mobile apps for Android and iOS.</h1>
-  <p>An independent studio based in Ankara. We design, build and support everything we publish ourselves, from the first sketch to the latest update.</p>
-</section>
-<section class="apps" id="apps">
-  <h2>Apps</h2>
-  <ul><li class="app"><img src="/assets/icons/melomatch.png" alt="" width="48" height="48" loading="lazy"><div class="app-body"><h3>MeloMatch</h3><p>Meet people through the music you love.</p></div><div class="links"><a href="https://play.google.com/store/apps/details?id=com.melomatch.app" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/id6801248434" target="_blank" rel="noopener">App Store</a></div></li><li class="app"><img src="/assets/icons/crime-map.png" alt="" width="48" height="48" loading="lazy"><div class="app-body"><h3>Crime Map: Local Safety Alerts</h3><p>Recent incidents and 911 calls near you, mapped from public data.</p></div><div class="links"><a href="https://play.google.com/store/apps/details?id=com.genesissoftware.livepolicescanner" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/id6760916551" target="_blank" rel="noopener">App Store</a></div></li><li class="app"><img src="/assets/icons/us-traffic-cams.png" alt="" width="48" height="48" loading="lazy"><div class="app-body"><h3>Traffic Cams & Road Conditions</h3><p>Live DOT cameras, closures and winter road conditions in one map.</p><p class="family">Single-state editions: <a href="https://play.google.com/store/apps/details?id=com.kovanapps.floridalivecameras" target="_blank" rel="noopener">Florida</a> (<a href="https://apps.apple.com/us/app/id6762972633" target="_blank" rel="noopener" aria-label="Florida on the App Store">App Store</a>), <a href="https://play.google.com/store/apps/details?id=com.kovanapps.coloradoroadscameras" target="_blank" rel="noopener">Colorado</a> (<a href="https://apps.apple.com/us/app/id6765944722" target="_blank" rel="noopener" aria-label="Colorado on the App Store">App Store</a>), <a href="https://play.google.com/store/apps/details?id=com.kovanapps.ohioroadscameras" target="_blank" rel="noopener">Ohio</a> (<a href="https://apps.apple.com/us/app/id6769321795" target="_blank" rel="noopener" aria-label="Ohio on the App Store">App Store</a>), <a href="https://play.google.com/store/apps/details?id=com.kovanapps.pennsylvaniaroadscameras" target="_blank" rel="noopener">Pennsylvania</a>, <a href="https://play.google.com/store/apps/details?id=com.kovanapps.northcarolinaroadscameras" target="_blank" rel="noopener">North Carolina</a>.</p></div><div class="links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.ustrafficcams" target="_blank" rel="noopener">Google Play</a><span class="soon">App Store soon</span><a href="https://trafficcams.app/" target="_blank" rel="noopener">trafficcams.app</a></div></li><li class="app"><img src="/assets/icons/global-entry.png" alt="" width="48" height="48" loading="lazy"><div class="app-body"><h3>Global Entry Appointments</h3><p>An alert the moment an earlier interview date opens near you.</p></div><div class="links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.globalentryslots" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/id6791092823" target="_blank" rel="noopener">App Store</a><a href="https://globalentryslotfinder.com/" target="_blank" rel="noopener">globalentryslotfinder.com</a></div></li><li class="app"><img src="/assets/icons/permit-hours.png" alt="" width="48" height="48" loading="lazy"><div class="app-body"><h3>Teen Driving Log: Permit Hours</h3><p>Supervised practice hours, logged and exported as a DMV-ready PDF.</p></div><div class="links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.permithours" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/id6804395622" target="_blank" rel="noopener">App Store</a><a href="https://permithours.app/" target="_blank" rel="noopener">permithours.app</a></div></li></ul>
-</section>
-<section class="studio" id="studio">
-  <h2>The studio</h2>
-  <div class="studio-cols">
-    <p>Kovan means beehive in Turkish. We are two people with eight years of Android work behind us, first for other companies, now for ourselves. There is no outsourcing and no agency between you and the people who wrote the code.</p>
-    <p>We support what we release for the long run. Apps are fast, honest about what they can do, and free of dark patterns. We do not sell user data. When something is unclear, write to us; the person who built it will answer.</p>
+  <div class="hero-row">
+    <div>
+      <h1>Kovan Apps builds mobile apps for Android and iOS.</h1>
+      <p class="lede">We design, develop and publish consumer apps on Google Play and the App Store.</p>
+    </div>
+    <div class="stat"><strong>250,000+</strong><span>installs across our apps</span></div>
   </div>
-  <p class="fact">Publishing on Google Play since 2017. 200,000+ installs across our apps.</p>
+  <ul class="facts">
+    <li><strong>Since 2017</strong><span>Publishing on Google Play</span></li>
+    <li><strong>Android &amp; iOS</strong><span>Native apps on both platforms</span></li>
+    <li><strong>6 apps</strong><span>Live on Google Play</span></li>
+  </ul>
 </section>
+
+<section class="apps" id="apps">
+  <div class="label"><h2>Apps</h2></div>
+
+  <article class="feature">
+    <img src="/assets/icons/melomatch.png" alt="" width="160" height="160">
+    <div>
+      <p class="eyebrow"><b>01</b> &nbsp;Social</p>
+      <h3>MeloMatch</h3>
+      <p class="tag">Meet people through the music you love.</p>
+      <p class="more">A dating app built around what you actually listen to. Profiles lead with music taste rather than a bio, so every match starts with something in common.</p>
+      <p class="stores"><a href="https://play.google.com/store/apps/details?id=com.melomatch.app" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/id6801248434" target="_blank" rel="noopener">App Store</a></p>
+    </div>
+  </article>
+  <article class="feature">
+    <img src="/assets/icons/cockpit.png" alt="" width="160" height="160">
+    <div>
+      <p class="eyebrow"><b>02</b> &nbsp;Aviation</p>
+      <h3>Cockpit: Live Flight Tracker</h3>
+      <p class="tag">Live flight radar and plane finder.</p>
+      <p class="more">Track flights in real time on a live map, with ACARS pilot messages and emergency alerts as they happen.</p>
+      <p class="stores"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.cockpit" target="_blank" rel="noopener">Google Play</a><span class="soon">App Store soon</span><a href="https://cockpitradar.com/" target="_blank" rel="noopener">cockpitradar.com</a></p>
+    </div>
+  </article>
+
+  <ol class="app-list">
+    <li class="app">
+      <span class="idx">03</span>
+      <img src="/assets/icons/crime-map.png" alt="" width="76" height="76" loading="lazy">
+      <div class="app-body">
+        <p class="kicker">Local safety</p>
+        <h3>Crime Map: Local Safety Alerts</h3>
+        <p>Recent incidents and 911 calls near you, mapped from public data.</p>
+      </div>
+      <div class="links"><a href="https://play.google.com/store/apps/details?id=com.genesissoftware.livepolicescanner" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/id6760916551" target="_blank" rel="noopener">App Store</a></div>
+    </li>
+    <li class="app">
+      <span class="idx">04</span>
+      <img src="/assets/icons/us-traffic-cams.png" alt="" width="76" height="76" loading="lazy">
+      <div class="app-body">
+        <p class="kicker">Roads</p>
+        <h3>Traffic Cams &amp; Road Conditions</h3>
+        <p>Live DOT cameras, closures and winter road conditions in one map.</p>
+        <p class="family">Single-state editions: <a href="https://play.google.com/store/apps/details?id=com.kovanapps.floridalivecameras" target="_blank" rel="noopener">Florida</a> (<a href="https://apps.apple.com/us/app/id6762972633" target="_blank" rel="noopener" aria-label="Florida on the App Store">App Store</a>), <a href="https://play.google.com/store/apps/details?id=com.kovanapps.coloradoroadscameras" target="_blank" rel="noopener">Colorado</a> (<a href="https://apps.apple.com/us/app/id6765944722" target="_blank" rel="noopener" aria-label="Colorado on the App Store">App Store</a>), <a href="https://play.google.com/store/apps/details?id=com.kovanapps.ohioroadscameras" target="_blank" rel="noopener">Ohio</a> (<a href="https://apps.apple.com/us/app/id6769321795" target="_blank" rel="noopener" aria-label="Ohio on the App Store">App Store</a>), <a href="https://play.google.com/store/apps/details?id=com.kovanapps.pennsylvaniaroadscameras" target="_blank" rel="noopener">Pennsylvania</a>, <a href="https://play.google.com/store/apps/details?id=com.kovanapps.northcarolinaroadscameras" target="_blank" rel="noopener">North Carolina</a>.</p>
+      </div>
+      <div class="links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.ustrafficcams" target="_blank" rel="noopener">Google Play</a><span class="soon">App Store soon</span><a href="https://trafficcams.app/" target="_blank" rel="noopener">trafficcams.app</a></div>
+    </li>
+    <li class="app">
+      <span class="idx">05</span>
+      <img src="/assets/icons/global-entry.png" alt="" width="76" height="76" loading="lazy">
+      <div class="app-body">
+        <p class="kicker">Travel</p>
+        <h3>Global Entry Appointments</h3>
+        <p>An alert the moment an earlier interview date opens near you.</p>
+      </div>
+      <div class="links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.globalentryslots" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/id6791092823" target="_blank" rel="noopener">App Store</a><a href="https://globalentryslotfinder.com/" target="_blank" rel="noopener">globalentryslotfinder.com</a></div>
+    </li>
+    <li class="app">
+      <span class="idx">06</span>
+      <img src="/assets/icons/permit-hours.png" alt="" width="76" height="76" loading="lazy">
+      <div class="app-body">
+        <p class="kicker">Learning to drive</p>
+        <h3>Teen Driving Log: Permit Hours</h3>
+        <p>Supervised practice hours, logged and exported as a DMV-ready PDF.</p>
+      </div>
+      <div class="links"><a href="https://play.google.com/store/apps/details?id=com.kovanapps.permithours" target="_blank" rel="noopener">Google Play</a><a href="https://apps.apple.com/us/app/id6804395622" target="_blank" rel="noopener">App Store</a><a href="https://permithours.app/" target="_blank" rel="noopener">permithours.app</a></div>
+    </li>
+  </ol>
+</section>
+
+<section class="studio" id="company">
+  <div class="label"><h2>Company</h2></div>
+  <div class="company">
+    <p class="lead">Kovan Apps Yazılım Ltd. Şti. is a software company that develops and publishes mobile apps for Android and iOS.</p>
+    <p>All of our apps are designed, built and supported in-house, and we do not sell user data.</p>
+  </div>
+</section>
+
 <section class="contact" id="contact">
-  <h2>Contact</h2>
-  <p class="mail">info@kovanapps.com</p>
-  <p>Support, press and partnership questions all go to the same inbox. We usually answer within a day.</p>
+  <div class="contact-grid">
+    <div>
+      <h2>Contact</h2>
+      <p class="mail" style="margin-top:20px">info@kovanapps.com</p>
+      <p class="note">Support, press and partnership questions all go to the same inbox. We usually answer within a day.</p>
+    </div>
+    <p class="side">Looking for help with a specific app, privacy details or data deletion? Those live on the <a href="/support/">support page</a>.</p>
+  </div>
 </section>
+
 <footer>
   <div><p class="legal">Kovan Apps Yazılım Limited Şirketi</p><p>Üniversiteler Mah. 1597 Cad. No: 3/127, Bilkent, Çankaya, 06800 Ankara, Türkiye</p></div>
-  <p><a href="/contact/">Contact</a> · <a href="/support/">Support</a> · © 2026 Kovan Apps</p>
+  <p class="fine"><a href="/contact/">Contact</a> <span>&middot;</span> <a href="/support/">Support</a> <span>&middot;</span> <span>© 2026 Kovan Apps</span></p>
 </footer>
 </div></body></html>
