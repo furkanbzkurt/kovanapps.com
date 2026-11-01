@@ -1,88 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pennsylvania Roads &amp; Cameras – Privacy Policy | Kovan Apps</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --bg:#0a0a0f;--surface:#16161f;--border:rgba(255,255,255,0.07);--text:#f0f0f5;--muted:#8888a0;--accent:#6c5ce7;--accent2:#a29bfe;--oh-accent:#BB0000;--oh-accent2:#E6A817; }
-    body { background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased; }
-    nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border); }
-    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none; }
-    .nav-logo span { color:var(--accent2); }
-    .nav-back { font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
-    .nav-back:hover { color:var(--text); }
-    .page-header { padding:40px 5vw 0;background:linear-gradient(180deg,rgba(187,0,0,0.10) 0%,transparent 100%);border-bottom:1px solid var(--border); }
-    .page-header .inner { max-width:780px;margin:0 auto;padding-bottom:40px; }
-    .breadcrumb { font-size:0.78rem;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap; }
-    .breadcrumb a { color:var(--accent2);text-decoration:none; }
-    .breadcrumb a:hover { text-decoration:underline; }
-    .breadcrumb-sep { color:var(--border); }
-    .app-pill { display:inline-flex;align-items:center;gap:0.4rem;background:rgba(187,0,0,0.12);border:1px solid rgba(187,0,0,0.35);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.72rem;color:var(--oh-accent2);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem; }
-    .page-header h1 { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:0.75rem; }
-    .meta { font-size:0.82rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap; }
-    .content-wrap { max-width:780px;margin:0 auto;padding:60px 5vw 100px; }
-    .content-wrap h2 { font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;margin:2.5rem 0 0.75rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
-    .content-wrap h3 { font-size:1rem;font-weight:600;margin:1.75rem 0 0.5rem;color:var(--accent2); }
-    .content-wrap p { color:rgba(240,240,245,0.8);margin-bottom:1rem;font-size:0.94rem; }
-    .content-wrap ul { margin:0.75rem 0 1rem 1.25rem; }
-    .content-wrap li { color:rgba(240,240,245,0.8);font-size:0.94rem;margin-bottom:0.4rem; }
-    .content-wrap strong { color:var(--text);font-weight:600; }
-    .content-wrap a { color:var(--accent2);text-decoration:none; }
-    .content-wrap a:hover { text-decoration:underline; }
-    table { width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.85rem; }
-    th { background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;border:1px solid var(--border); }
-    td { padding:0.6rem 0.9rem;border:1px solid var(--border);color:rgba(240,240,245,0.75);vertical-align:top; }
-    .highlight-box { background:rgba(108,92,231,0.08);border:1px solid rgba(108,92,231,0.2);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
-    .disclaimer-box { background:rgba(230,168,23,0.10);border:1px solid rgba(230,168,23,0.28);border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:0.9rem; }
-    footer { padding:2.5rem 5vw;border-top:1px solid var(--border); }
-    .footer-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
-    .footer-left { font-size:0.82rem;color:var(--muted); }
-    .footer-left strong { color:var(--text);font-family:'Syne',sans-serif; }
-    .footer-app-row { display:flex;gap:1rem;align-items:center;flex-wrap:wrap; }
-    .footer-app-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);min-width:110px; }
-    .footer-app-links { display:flex;gap:1rem; }
-    .footer-app-links a { font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s; }
-    .footer-app-links a:hover { color:var(--text); }
-    @media(max-width:600px){table{display:block;overflow-x:auto;}.footer-inner{flex-direction:column;}}
-  </style>
-</head>
-<body>
-<nav>
-  <a href="/" class="nav-logo">Kovan<span>Apps</span></a>
-  <a href="/" class="nav-back">&larr; Home</a>
-</nav>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pennsylvania Roads &amp; Cameras – Privacy Policy | Kovan Apps</title>
 
-<div class="page-header">
-  <div class="inner">
-    <div class="breadcrumb">
-      <a href="/">Kovan Apps</a>
-      <span class="breadcrumb-sep">&rsaquo;</span>
-      <a href="/apps/pennsylvania-roads-cameras/privacy-policy/">Pennsylvania Roads &amp; Cameras</a>
-      <span class="breadcrumb-sep">&rsaquo;</span>
-      <span>Privacy Policy</span>
-    </div>
-    <div class="app-pill">&#x1F6E3;&#xFE0F; Pennsylvania Roads &amp; Cameras</div>
-    <h1>Privacy Policy</h1>
-    <div class="meta">
-      <span>&#x1F5D3; Effective: June 2026</span>
-      <span>&#x1F504; Last Updated: June 4, 2026</span>
-    </div>
-  </div>
-</div>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#f4f3ef}
+/* ---- kovanapps.com pilot v2: one family, one accent, light with a dark counterpart ---- */
+.site { --ink:#17160f; --paper:#f4f3ef; --mute:#6d6a60; --rule:#dcdad3; --honey:#d08a12; container-type: inline-size; background: var(--paper); color: var(--ink);
+  font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.site.dark { --ink:#ebe9e2; --paper:#141310; --mute:#9d9a90; --rule:#2b2a25; --honey:#e9a53a; }
+.site * { box-sizing: border-box; margin: 0; }
+.site a { color: inherit; text-decoration: none; }
+.site a:hover { color: var(--honey); }
+.site a:focus-visible { outline: 2px solid var(--honey); outline-offset: 3px; }
+.site h1, .site h2, .site h3 { font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+.site > * { padding-left: max(24px, 6cqw); padding-right: max(24px, 6cqw); }
+.site .nav { display:flex; justify-content:space-between; align-items:center; height:72px; }
+.site .brand { display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; letter-spacing:-0.01em; }
+.site nav { display:flex; gap:28px; font-size:15px; color:var(--mute); }
+.site .hero { padding-top: 96px; padding-bottom: 104px; }
+.site .hero h1 { font-size: clamp(38px, 4.8cqw, 60px); line-height: 1.06; letter-spacing:-0.03em; max-width: 18ch; }
+.site .hero p { margin-top: 24px; max-width: 48ch; font-size: 19px; color: var(--mute); }
+.site h2 { font-size: 15px; font-weight: 500; color: var(--mute); }
+.site .apps { padding-bottom: 96px; }
+.site .apps h2 { padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
+.site .apps ul { list-style:none; padding:0; max-width: 880px; }
+.site .app { display:grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items:start; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.site .app img { width:48px; height:48px; border-radius: 11px; display:block; }
+.site .app h3 { font-size: 18px; }
+.site .app p { color: var(--mute); margin-top: 4px; max-width: 52ch; font-size: 16px; }
+.site .app .family { font-size: 14px; margin-top: 8px; }
+.site .app .family a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+.site .links { display:flex; flex-direction:column; align-items:flex-end; gap: 6px; font-size: 15px; white-space: nowrap; padding-top: 2px; }
+.site .links a { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
+.site .links .soon { color: var(--mute); }
+.site .studio { padding-bottom: 96px; }
+.site .studio h2, .site .contact h2 { margin-bottom: 20px; }
+.site .studio-cols { display:grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 980px; }
+.site .studio-cols p { max-width: 48ch; }
+.site .fact { margin-top: 36px; color: var(--mute); font-size: 15px; }
+.site .contact { padding-bottom: 104px; border-top: 1px solid var(--ink); padding-top: 48px; }
+.site .mail { font-size: clamp(26px, 3.8cqw, 44px); font-weight: 600; letter-spacing: -0.03em; user-select: all; }
+.site .contact > p:last-child { margin-top: 14px; color: var(--mute); max-width: 48ch; }
+.site footer { display:flex; justify-content:space-between; align-items:flex-end; gap: 32px; padding-top: 28px; padding-bottom: 40px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--mute); }
+.site footer .legal { color: var(--ink); }
+@container (max-width: 640px) {
+  .site nav { gap: 18px; font-size: 14px; }
+  .site .hero { padding-top: 48px; padding-bottom: 64px; }
+  .site .hero h1 { font-size: 36px; }
+  .site .hero p { font-size: 17px; }
+  .site .studio-cols { grid-template-columns: 1fr; gap: 14px; }
+  .site .app { grid-template-columns: 44px 1fr; row-gap: 10px; gap: 14px; }
+  .site .app img { width:44px; height:44px; border-radius: 10px; }
+  .site .links { grid-column: 2; flex-direction: row; flex-wrap: wrap; justify-content:flex-start; gap: 6px 16px; }
+  .site .mail { font-size: 24px; }
+  .site footer { flex-direction: column; align-items:flex-start; gap: 12px; }
+}
+@media (prefers-color-scheme: dark) { .site:not(.light) { --ink:#ebe9e2; --paper:#141310; --mute:#9d9a90; --rule:#2b2a25; --honey:#e9a53a; color-scheme: dark; } html, body { background:#141310; } }
+.site .page { padding-top: 72px; padding-bottom: 96px; max-width: 760px; }
+.site .page h1 { font-size: clamp(34px, 4.2cqw, 52px); line-height:1.08; letter-spacing:-0.03em; }
+.site .page .lead { margin-top: 18px; color: var(--mute); font-size: 19px; max-width: 52ch; }
+.site .block { margin-top: 48px; }
+.site .block h2 { margin-bottom: 14px; }
+.site .block p { max-width: 56ch; }
+.site .block p + p { margin-top: 10px; }
+.site .rows { list-style:none; padding:0; border-top:1px solid var(--ink); }
+.site .rows li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--rule); flex-wrap:wrap; }
+.site .rows .l { display:flex; gap:16px; flex-wrap:wrap; font-size:15px; }
+.site .rows .l a, .site .block a.u { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
 
-<div class="content-wrap">
+.site .lg-head { padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid var(--rule); }
+.site .crumb { font-size: 14px; color: var(--mute); display:flex; gap:8px; flex-wrap:wrap; }
+.site .crumb a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+.site .eyebrow { margin-top: 28px; font-size: 14px; font-weight: 500; color: var(--honey); }
+.site .lg-head h1 { margin-top: 8px; font-size: clamp(32px, 4cqw, 48px); line-height: 1.08; letter-spacing: -0.03em; max-width: 20ch; }
+.site .lg-head > p, .site .lg-meta { margin-top: 14px; color: var(--mute); max-width: 60ch; }
+.site .lg-meta { font-size: 14px; display:flex; gap: 20px; flex-wrap: wrap; }
+.site .lg-body { padding-top: 48px; padding-bottom: 96px; }
+.site .lg-body > div { max-width: 720px; }
+.site .lg-body p, .site .lg-body li { font-size: 16px; line-height: 1.7; }
+.site .lg-body p { margin: 0 0 14px; }
+.site .lg-body h2 { font-size: 21px; font-weight: 600; color: var(--ink); letter-spacing: -0.015em; margin: 44px 0 12px; }
+.site .lg-body h3 { font-size: 17px; font-weight: 600; margin: 26px 0 8px; }
+.site .lg-body ul, .site .lg-body ol { padding-left: 22px; margin: 0 0 16px; }
+.site .lg-body li { margin-bottom: 6px; }
+.site .lg-body strong { font-weight: 600; }
+.site .lg-body a { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey); }
+.site .lg-body table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 15px; }
+.site .lg-body th, .site .lg-body td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); }
+.site .lg-body th { font-weight: 600; border-bottom-color: var(--ink); }
+.site .method-card, .site .contact-box, .site .retention { border: 1px solid var(--rule); border-radius: 12px; padding: 22px 24px; margin: 0 0 16px; }
+.site .method-card h2 { margin-top: 0; font-size: 18px; }
+.site .warning-box, .site .highlight-box, .site .disclaimer-box, .site .info-box { border-left: 3px solid var(--honey); background: color-mix(in srgb, var(--honey) 7%, transparent); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 20px 0; }
+.site .warning-box p:last-child, .site .highlight-box p:last-child, .site .disclaimer-box p:last-child, .site .info-box p:last-child, .site .method-card p:last-child { margin-bottom: 0; }
+.site .contact-box { text-align: left; margin-top: 32px; }
+.site .contact-box p { margin-bottom: 6px; color: var(--mute); }
+.site .step-tag { display:inline-block; font-size: 12px; font-weight: 600; color: var(--honey); margin-right: 6px; }
+.site footer .app-legal { display:flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; color: var(--ink); }
+.site footer .app-legal a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+.site footer .right { text-align: right; }
+@container (max-width: 640px) { .site .lg-head { padding-top: 40px; } .site .lg-body table { display:block; overflow-x:auto; } .site footer .right { text-align:left; } }
+</style></head>
+<body><div class="site">
+<header class="nav">
+  <a class="brand" href="/" aria-label="Kovan Apps home"><svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true"><rect x="37" y="20" width="26" height="12" rx="6.0" fill="currentColor"/><rect x="29" y="35" width="42" height="13" rx="6.5" fill="currentColor"/><rect x="23" y="51" width="54" height="13" rx="6.5" fill="currentColor"/><rect x="20" y="67" width="60" height="14" rx="7.0" fill="currentColor"/><path d="M44 81 V74.5 a6 6 0 0 1 12 0 V81 Z" fill="var(--honey)"/></svg><span>Kovan Apps</span></a>
+  <nav><a href="/#apps">Apps</a><a href="/support/">Support</a><a href="/contact/">Contact</a></nav>
+</header>
+<section class="lg-head">
+<div class="crumb"><a href="/">Kovan Apps</a><span aria-hidden="true">/</span><a href="/apps/pennsylvania-roads-cameras/privacy-policy/">Pennsylvania Roads &amp; Cameras</a><span aria-hidden="true">/</span><span>Privacy Policy</span></div>
+<p class="eyebrow">Pennsylvania Roads &amp; Cameras</p>
+<h1>Privacy Policy</h1>
+
+<div class="lg-meta"><span> Effective: June 2026</span>
+      <span> Last Updated: June 4, 2026</span></div>
+</section>
+<main class="lg-body"><div>
+
 
 <p>Kovan Apps Yaz&#x131;l&#x131;m Ltd. &#x15E;ti. (&ldquo;Company&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) built the <strong>Pennsylvania Roads &amp; Cameras</strong> app (the &ldquo;App&rdquo;) as a free, ad-supported application available on both <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. The App provides real-time access to publicly available traffic cameras, incident reports, road conditions, lane closures, snow-plow locations, and weather information for the state of Pennsylvania, USA. This SERVICE is provided by Kovan Apps at no cost and is intended for use as is.</p>
 
 <p>This page informs visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decides to use our Service. By using our Service, you agree to the collection and use of information in relation to this policy.</p>
 
 <div class="disclaimer-box">
-  <strong>&#x26A0;&#xFE0F; Independent App Notice:</strong> Pennsylvania Roads &amp; Cameras is an independent, third-party application and is <strong>NOT</strong> affiliated with, endorsed by, or connected to the Pennsylvania Department of Transportation (PennDOT), 511PA, the National Weather Service (NWS), or any government agency. All traffic, incident, road condition, and weather data is sourced from publicly available official feeds.
+  <strong> Independent App Notice:</strong> Pennsylvania Roads &amp; Cameras is an independent, third-party application and is <strong>NOT</strong> affiliated with, endorsed by, or connected to the Pennsylvania Department of Transportation (PennDOT), 511PA, the National Weather Service (NWS), or any government agency. All traffic, incident, road condition, and weather data is sourced from publicly available official feeds.
 </div>
 
 <h2>1. Information Collection and Use</h2>
@@ -225,24 +266,10 @@
   Response Time: Within 30 days
 </p>
 
-</div>
 
+</div></main>
 <footer>
-  <div class="footer-inner">
-    <div class="footer-left"><strong>Kovan Apps</strong> &mdash; &copy; 2026 All rights reserved.</div>
-    <div class="footer-app-row">
-      <span class="footer-app-label">Pennsylvania Roads &amp; Cameras</span>
-      <div class="footer-app-links">
-        <a href="/apps/pennsylvania-roads-cameras/privacy-policy/">Privacy Policy</a>
-        <a href="/apps/pennsylvania-roads-cameras/terms/">Terms of Use</a>
-        <a href="/apps/pennsylvania-roads-cameras/delete-data/">Delete Data</a>
-      </div>
-    </div>
-    <div class="footer-app-links">
-      <a href="/">Home</a>
-      <a href="mailto:info@kovanapps.com">Contact</a>
-    </div>
-  </div>
+  <div><p class="legal">Kovan Apps Yazılım Limited Şirketi</p><p>Üniversiteler Mah. 1597 Cad. No: 3/127, Bilkent, Çankaya, 06800 Ankara, Türkiye</p></div>
+  <div class="right"><div class="app-legal"><span>Pennsylvania Roads &amp; Cameras</span><a href="/apps/pennsylvania-roads-cameras/privacy-policy/">Privacy Policy</a> <a href="/apps/pennsylvania-roads-cameras/terms/">Terms of Use</a> <a href="/apps/pennsylvania-roads-cameras/delete-data/">Delete Data</a></div><p><a href="/contact/">Contact</a> · <a href="/support/">Support</a> · &copy; 2026 Kovan Apps</p></div>
 </footer>
-</body>
-</html>
+</div></body></html>
