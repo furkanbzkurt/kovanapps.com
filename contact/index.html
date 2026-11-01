@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Kovan Apps</title>
+<meta name="description" content="Contact Kovan Apps: support, press and partnership questions.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#f4f3ef}
+/* ---- kovanapps.com pilot v2: one family, one accent, light with a dark counterpart ---- */
+.site { --ink:#17160f; --paper:#f4f3ef; --mute:#6d6a60; --rule:#dcdad3; --honey:#d08a12; container-type: inline-size; background: var(--paper); color: var(--ink);
+  font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.site.dark { --ink:#ebe9e2; --paper:#141310; --mute:#9d9a90; --rule:#2b2a25; --honey:#e9a53a; }
+.site * { box-sizing: border-box; margin: 0; }
+.site a { color: inherit; text-decoration: none; }
+.site a:hover { color: var(--honey); }
+.site a:focus-visible { outline: 2px solid var(--honey); outline-offset: 3px; }
+.site h1, .site h2, .site h3 { font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+.site > * { padding-left: max(24px, 6cqw); padding-right: max(24px, 6cqw); }
+.site .nav { display:flex; justify-content:space-between; align-items:center; height:72px; }
+.site .brand { display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; letter-spacing:-0.01em; }
+.site nav { display:flex; gap:28px; font-size:15px; color:var(--mute); }
+.site .hero { padding-top: 96px; padding-bottom: 104px; }
+.site .hero h1 { font-size: clamp(38px, 4.8cqw, 60px); line-height: 1.06; letter-spacing:-0.03em; max-width: 18ch; }
+.site .hero p { margin-top: 24px; max-width: 48ch; font-size: 19px; color: var(--mute); }
+.site h2 { font-size: 15px; font-weight: 500; color: var(--mute); }
+.site .apps { padding-bottom: 96px; }
+.site .apps h2 { padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
+.site .apps ul { list-style:none; padding:0; max-width: 880px; }
+.site .app { display:grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items:start; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.site .app img { width:48px; height:48px; border-radius: 11px; display:block; }
+.site .app h3 { font-size: 18px; }
+.site .app p { color: var(--mute); margin-top: 4px; max-width: 52ch; font-size: 16px; }
+.site .app .family { font-size: 14px; margin-top: 8px; }
+.site .app .family a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+.site .links { display:flex; flex-direction:column; align-items:flex-end; gap: 6px; font-size: 15px; white-space: nowrap; padding-top: 2px; }
+.site .links a { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
+.site .links .soon { color: var(--mute); }
+.site .studio { padding-bottom: 96px; }
+.site .studio h2, .site .contact h2 { margin-bottom: 20px; }
+.site .studio-cols { display:grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 980px; }
+.site .studio-cols p { max-width: 48ch; }
+.site .fact { margin-top: 36px; color: var(--mute); font-size: 15px; }
+.site .contact { padding-bottom: 104px; border-top: 1px solid var(--ink); padding-top: 48px; }
+.site .mail { font-size: clamp(26px, 3.8cqw, 44px); font-weight: 600; letter-spacing: -0.03em; user-select: all; }
+.site .contact > p:last-child { margin-top: 14px; color: var(--mute); max-width: 48ch; }
+.site footer { display:flex; justify-content:space-between; align-items:flex-end; gap: 32px; padding-top: 28px; padding-bottom: 40px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--mute); }
+.site footer .legal { color: var(--ink); }
+@container (max-width: 640px) {
+  .site nav { gap: 18px; font-size: 14px; }
+  .site .hero { padding-top: 48px; padding-bottom: 64px; }
+  .site .hero h1 { font-size: 36px; }
+  .site .hero p { font-size: 17px; }
+  .site .studio-cols { grid-template-columns: 1fr; gap: 14px; }
+  .site .app { grid-template-columns: 44px 1fr; row-gap: 10px; gap: 14px; }
+  .site .app img { width:44px; height:44px; border-radius: 10px; }
+  .site .links { grid-column: 2; flex-direction: row; flex-wrap: wrap; justify-content:flex-start; gap: 6px 16px; }
+  .site .mail { font-size: 24px; }
+  .site footer { flex-direction: column; align-items:flex-start; gap: 12px; }
+}
+@media (prefers-color-scheme: dark) { .site:not(.light) { --ink:#ebe9e2; --paper:#141310; --mute:#9d9a90; --rule:#2b2a25; --honey:#e9a53a; color-scheme: dark; } html, body { background:#141310; } }
+.site .page { padding-top: 72px; padding-bottom: 96px; max-width: 760px; }
+.site .page h1 { font-size: clamp(34px, 4.2cqw, 52px); line-height:1.08; letter-spacing:-0.03em; }
+.site .page .lead { margin-top: 18px; color: var(--mute); font-size: 19px; max-width: 52ch; }
+.site .block { margin-top: 48px; }
+.site .block h2 { margin-bottom: 14px; }
+.site .block p { max-width: 56ch; }
+.site .block p + p { margin-top: 10px; }
+.site .rows { list-style:none; padding:0; border-top:1px solid var(--ink); }
+.site .rows li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--rule); flex-wrap:wrap; }
+.site .rows .l { display:flex; gap:16px; flex-wrap:wrap; font-size:15px; }
+.site .rows .l a, .site .block a.u { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
+</style></head>
+<body><div class="site">
+<header class="nav">
+  <a class="brand" href="/" aria-label="Kovan Apps home"><svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true"><rect x="37" y="20" width="26" height="12" rx="6.0" fill="currentColor"/><rect x="29" y="35" width="42" height="13" rx="6.5" fill="currentColor"/><rect x="23" y="51" width="54" height="13" rx="6.5" fill="currentColor"/><rect x="20" y="67" width="60" height="14" rx="7.0" fill="currentColor"/><path d="M44 81 V74.5 a6 6 0 0 1 12 0 V81 Z" fill="var(--honey)"/></svg><span>Kovan Apps</span></a>
+  <nav><a href="/#apps">Apps</a><a href="/support/">Support</a><a href="/contact/">Contact</a></nav>
+</header>
+<main class="page">
+<h1>Contact</h1>
+<p class="lead">Support, press and partnership questions all go to the same inbox. We usually answer within a day.</p>
+<section class="block"><h2>Email</h2><p><a class="u" href="mailto:info@kovanapps.com">info@kovanapps.com</a></p></section>
+<section class="block"><h2>Company</h2><p>Kovan Apps Yazılım Limited Şirketi</p><p>Üniversiteler Mah. 1597 Cad. No: 3/127, Bilkent, Çankaya, 06800 Ankara, Türkiye</p></section>
+<section class="block"><h2>App support</h2><p>For help with a specific app, see <a class="u" href="/support/">Support</a> or write to us with the app name and your device model.</p></section>
+</main>
+<footer>
+  <div><p class="legal">Kovan Apps Yazılım Limited Şirketi</p><p>Üniversiteler Mah. 1597 Cad. No: 3/127, Bilkent, Çankaya, 06800 Ankara, Türkiye</p></div>
+  <p><a href="/contact/">Contact</a> · <a href="/support/">Support</a> · © 2024–2026 Kovan Apps</p>
+</footer>
+</div></body></html>
