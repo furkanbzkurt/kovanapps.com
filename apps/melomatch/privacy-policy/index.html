@@ -113,7 +113,7 @@
 <h1>Privacy Policy</h1>
 
 <div class="lg-meta"><span> Effective: December 4, 2024</span>
-      <span> Last Updated: September 3, 2026</span></div>
+      <span> Last Updated: November 5, 2026</span></div>
 </section>
 <main class="lg-body"><div>
 
@@ -141,7 +141,7 @@
 
 <h3>1.2 Information Collected Automatically</h3>
 <ul>
-  <li><strong>Location Data:</strong> With your permission we read your device's precise location while the App is in use (Android: fine/coarse location; iOS: "While Using the App"). We store your coordinates and derived city on our servers to show you people nearby and concerts in your area. <strong>Other users only see your city and an approximate distance</strong>, never your exact coordinates. Location is required for discovery; you can revoke it in device settings, in which case discovery will not work.</li>
+  <li><strong>Location Data:</strong> With your permission we read your device's approximate (city-level) location while the App is in use (Android: approximate location only; iOS: "While Using the App" with reduced accuracy). You can also pick your city by name instead. We store these approximate coordinates and the derived city on our servers to show you people nearby and concerts in your area. <strong>Other users only see your city and an approximate distance</strong>, never your exact coordinates. Location is required for discovery; you can revoke it in device settings, in which case discovery will not work.</li>
   <li><strong>Device and App Information:</strong> Device model, operating system version, app version, language, time zone, a random app-instance identifier, and a push notification token (Firebase Cloud Messaging on Android, Apple Push Notification service on iOS).</li>
   <li><strong>Usage Data:</strong> Screens viewed, features used, connection requests sent and received, duels played, songs sent, subscription events. Collected through Google Analytics for Firebase.</li>
   <li><strong>Diagnostic Data:</strong> Crash reports and non-fatal errors (Firebase Crashlytics), including device state at the time of the error and your internal user ID so we can investigate reports you send us.</li>
@@ -182,7 +182,7 @@
 <div class="highlight-box"><strong>WE DO NOT SELL YOUR PERSONAL DATA.</strong> We never sell, rent, or trade your personal information, and we do not share it with advertisers or data brokers.</div>
 
 <h3>4.1 With Other Users</h3>
-<p>The following is visible to other MeloMatch users: your first name, age, gender, city and approximate distance, bio, photos, favorite artists and songs, genres, your compatibility score with them, duel results you played together, and songs you send. Your phone number, exact location, date of birth and discovery preferences are <strong>never</strong> shown to other users.</p>
+<p>The following is visible to other MeloMatch users: your first name, age, gender, city and approximate distance, bio, photos, favorite artists and songs, genres, your compatibility score with them, duel results you played together, and songs you send. If you open someone's profile while it is featured in Spotlight, that person can see that you viewed it. Your phone number, exact location, date of birth and discovery preferences are <strong>never</strong> shown to other users.</p>
 
 <h3>4.2 Service Providers</h3>
 <p>We share data only with providers that help us run the App, under contracts that restrict them to that purpose:</p>
@@ -191,11 +191,12 @@
   <tr><td><strong><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase / Google Cloud</a></strong></td><td>Authentication, database, file storage, server functions, push notifications, App Check, analytics, crash reporting</td><td>Phone number, profile, photos, music preferences, location, messages, usage and crash data</td><td>Android &amp; iOS</td></tr>
   <tr><td><strong><a href="https://cloud.google.com/vision" target="_blank" rel="noopener">Google Cloud Vision API</a></strong></td><td>Automated screening of uploaded photos for prohibited content</td><td>Photo being uploaded (no identity data)</td><td>Android &amp; iOS</td></tr>
   <tr><td><strong><a href="https://www.google.com/recaptcha/about/" target="_blank" rel="noopener">Google reCAPTCHA Enterprise</a></strong></td><td>Abuse prevention during phone verification</td><td>Device signals</td><td>iOS</td></tr>
+  <tr><td><strong><a href="https://www.twilio.com/legal/privacy" target="_blank" rel="noopener">Twilio Verify</a></strong></td><td>Backup delivery of the sign-in code by SMS when the primary SMS route fails</td><td>Phone number, sign-in code, app language</td><td>Android &amp; iOS</td></tr>
   <tr><td><strong><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a></strong></td><td>Subscription validation and management</td><td>Internal user ID, purchase receipts, subscription status, device info</td><td>Android &amp; iOS</td></tr>
   <tr><td><strong><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple</a></strong></td><td>App Store billing, push notifications (APNs), Apple Music / MusicKit access, song previews</td><td>Purchase data (handled by Apple), push token, catalog lookups</td><td>iOS</td></tr>
   <tr><td><strong><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></strong></td><td>Play billing, push notifications, location services</td><td>Purchase data (handled by Google), push token</td><td>Android</td></tr>
-  <tr><td><strong><a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify</a></strong></td><td>Music catalog lookups (artist and song search)</td><td>None &mdash; catalog queries only, no account connection</td><td>Android &amp; iOS</td></tr>
-  <tr><td><strong><a href="https://www.ticketmaster.com/privacy" target="_blank" rel="noopener">Ticketmaster</a></strong>, <a href="https://metabrainz.org/privacy" target="_blank" rel="noopener">MusicBrainz</a></td><td>Concert listings and genre data</td><td>None &mdash; queried from our servers without personal data</td><td>Android &amp; iOS</td></tr>
+  <tr><td><strong><a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify</a></strong></td><td>Music catalog lookups (artist and song search)</td><td>None: catalog queries only, no account connection</td><td>Android &amp; iOS</td></tr>
+  <tr><td><strong><a href="https://www.ticketmaster.com/privacy" target="_blank" rel="noopener">Ticketmaster</a></strong>, <a href="https://metabrainz.org/privacy" target="_blank" rel="noopener">MusicBrainz</a></td><td>Concert listings and genre data</td><td>None: queried from our servers without personal data</td><td>Android &amp; iOS</td></tr>
 </table>
 
 <h3>4.3 Legal Requirements</h3>
@@ -211,7 +212,7 @@
 <h2>6. Data Retention</h2>
 <ul>
   <li><strong>Active accounts:</strong> Profile, music, connection and chat data are retained while your account is active.</li>
-  <li><strong>Deleted accounts:</strong> Your profile is hidden immediately. Profile data, photos, connections, duels and messages are deleted from our production systems within 30 days. Limited records (for example moderation actions and the hashed identifier of a banned account) may be kept for up to 90 days, or longer where required by law, to prevent abuse and to handle legal claims.</li>
+  <li><strong>Deleted accounts:</strong> Your profile is hidden immediately. Profile data, photos, connections and duels are deleted from our production systems within 30 days. Messages you already sent may remain in the other person's copy of the conversation. Limited records (for example moderation actions and the hashed identifier of a banned account) may be kept for up to 90 days, or longer where required by law, to prevent abuse and to handle legal claims.</li>
   <li><strong>Reports and moderation records:</strong> Retained for as long as needed to enforce our Terms and meet legal reporting obligations.</li>
   <li><strong>Crash logs:</strong> Retained by Firebase Crashlytics for up to 90 days.</li>
   <li><strong>Analytics events:</strong> Retained by Google Analytics for Firebase for up to 14 months.</li>
@@ -272,9 +273,9 @@
 
 <h3>Supervisory Authorities</h3>
 <ul>
-  <li><strong>Turkey:</strong> Personal Data Protection Authority (KVKK) &mdash; <a href="https://www.kvkk.gov.tr" target="_blank" rel="noopener">kvkk.gov.tr</a></li>
+  <li><strong>Turkey:</strong> Personal Data Protection Authority (KVKK): <a href="https://www.kvkk.gov.tr" target="_blank" rel="noopener">kvkk.gov.tr</a></li>
   <li><strong>European Users:</strong> Your local Data Protection Authority</li>
-  <li><strong>California Users:</strong> California Attorney General's Office &mdash; <a href="https://oag.ca.gov/privacy" target="_blank" rel="noopener">oag.ca.gov/privacy</a></li>
+  <li><strong>California Users:</strong> California Attorney General's Office: <a href="https://oag.ca.gov/privacy" target="_blank" rel="noopener">oag.ca.gov/privacy</a></li>
 </ul>
 
 
