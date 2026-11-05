@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Child Safety Standards – MeloMatch | Kovan Apps</title>
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#f4f3ef}
+/* ---- kovanapps.com pilot v2: one family, one accent, light with a dark counterpart ---- */
+.site { --ink:#17160f; --paper:#f4f3ef; --mute:#6d6a60; --rule:#dcdad3; --honey:#d08a12; container-type: inline-size; background: var(--paper); color: var(--ink);
+  font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.site.dark { --ink:#ebe9e2; --paper:#141310; --mute:#9d9a90; --rule:#2b2a25; --honey:#e9a53a; }
+.site * { box-sizing: border-box; margin: 0; }
+.site a { color: inherit; text-decoration: none; }
+.site a:hover { color: var(--honey); }
+.site a:focus-visible { outline: 2px solid var(--honey); outline-offset: 3px; }
+.site h1, .site h2, .site h3 { font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+.site > * { padding-left: max(24px, 6cqw); padding-right: max(24px, 6cqw); }
+.site .nav { display:flex; justify-content:space-between; align-items:center; height:72px; }
+.site .brand { display:flex; align-items:center; gap:10px; font-weight:600; font-size:18px; letter-spacing:-0.01em; }
+.site nav { display:flex; gap:28px; font-size:15px; color:var(--mute); }
+.site .hero { padding-top: 96px; padding-bottom: 104px; }
+.site .hero h1 { font-size: clamp(38px, 4.8cqw, 60px); line-height: 1.06; letter-spacing:-0.03em; max-width: 18ch; }
+.site .hero p { margin-top: 24px; max-width: 48ch; font-size: 19px; color: var(--mute); }
+.site h2 { font-size: 15px; font-weight: 500; color: var(--mute); }
+.site .apps { padding-bottom: 96px; }
+.site .apps h2 { padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
+.site .apps ul { list-style:none; padding:0; max-width: 880px; }
+.site .app { display:grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items:start; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.site .app img { width:48px; height:48px; border-radius: 11px; display:block; }
+.site .app h3 { font-size: 18px; }
+.site .app p { color: var(--mute); margin-top: 4px; max-width: 52ch; font-size: 16px; }
+.site .app .family { font-size: 14px; margin-top: 8px; }
+.site .app .family a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+.site .links { display:flex; flex-direction:column; align-items:flex-end; gap: 6px; font-size: 15px; white-space: nowrap; padding-top: 2px; }
+.site .links a { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
+.site .links .soon { color: var(--mute); }
+.site .studio { padding-bottom: 96px; }
+.site .studio h2, .site .contact h2 { margin-bottom: 20px; }
+.site .studio-cols { display:grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 980px; }
+.site .studio-cols p { max-width: 48ch; }
+.site .fact { margin-top: 36px; color: var(--mute); font-size: 15px; }
+.site .contact { padding-bottom: 104px; border-top: 1px solid var(--ink); padding-top: 48px; }
+.site .mail { font-size: clamp(26px, 3.8cqw, 44px); font-weight: 600; letter-spacing: -0.03em; user-select: all; }
+.site .contact > p:last-child { margin-top: 14px; color: var(--mute); max-width: 48ch; }
+.site footer { display:flex; justify-content:space-between; align-items:flex-end; gap: 32px; padding-top: 28px; padding-bottom: 40px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--mute); }
+.site footer .legal { color: var(--ink); }
+@container (max-width: 640px) {
+  .site nav { gap: 18px; font-size: 14px; }
+  .site .hero { padding-top: 48px; padding-bottom: 64px; }
+  .site .hero h1 { font-size: 36px; }
+  .site .hero p { font-size: 17px; }
+  .site .studio-cols { grid-template-columns: 1fr; gap: 14px; }
+  .site .app { grid-template-columns: 44px 1fr; row-gap: 10px; gap: 14px; }
+  .site .app img { width:44px; height:44px; border-radius: 10px; }
+  .site .links { grid-column: 2; flex-direction: row; flex-wrap: wrap; justify-content:flex-start; gap: 6px 16px; }
+  .site .mail { font-size: 24px; }
+  .site footer { flex-direction: column; align-items:flex-start; gap: 12px; }
+}
+@media (prefers-color-scheme: dark) { .site:not(.light) { --ink:#ebe9e2; --paper:#141310; --mute:#9d9a90; --rule:#2b2a25; --honey:#e9a53a; color-scheme: dark; } html, body { background:#141310; } }
+.site .page { padding-top: 72px; padding-bottom: 96px; max-width: 760px; }
+.site .page h1 { font-size: clamp(34px, 4.2cqw, 52px); line-height:1.08; letter-spacing:-0.03em; }
+.site .page .lead { margin-top: 18px; color: var(--mute); font-size: 19px; max-width: 52ch; }
+.site .block { margin-top: 48px; }
+.site .block h2 { margin-bottom: 14px; }
+.site .block p { max-width: 56ch; }
+.site .block p + p { margin-top: 10px; }
+.site .rows { list-style:none; padding:0; border-top:1px solid var(--ink); }
+.site .rows li { display:flex; justify-content:space-between; gap:20px; padding:16px 0; border-bottom:1px solid var(--rule); flex-wrap:wrap; }
+.site .rows .l { display:flex; gap:16px; flex-wrap:wrap; font-size:15px; }
+.site .rows .l a, .site .block a.u { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rule); }
+
+.site .lg-head { padding-top: 64px; padding-bottom: 40px; border-bottom: 1px solid var(--rule); }
+.site .crumb { font-size: 14px; color: var(--mute); display:flex; gap:8px; flex-wrap:wrap; }
+.site .crumb a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+.site .eyebrow { margin-top: 28px; font-size: 14px; font-weight: 500; color: var(--honey); }
+.site .lg-head h1 { margin-top: 8px; font-size: clamp(32px, 4cqw, 48px); line-height: 1.08; letter-spacing: -0.03em; max-width: 20ch; }
+.site .lg-head > p, .site .lg-meta { margin-top: 14px; color: var(--mute); max-width: 60ch; }
+.site .lg-meta { font-size: 14px; display:flex; gap: 20px; flex-wrap: wrap; }
+.site .lg-body { padding-top: 48px; padding-bottom: 96px; }
+.site .lg-body > div { max-width: 720px; }
+.site .lg-body p, .site .lg-body li { font-size: 16px; line-height: 1.7; }
+.site .lg-body p { margin: 0 0 14px; }
+.site .lg-body h2 { font-size: 21px; font-weight: 600; color: var(--ink); letter-spacing: -0.015em; margin: 44px 0 12px; }
+.site .lg-body h3 { font-size: 17px; font-weight: 600; margin: 26px 0 8px; }
+.site .lg-body ul, .site .lg-body ol { padding-left: 22px; margin: 0 0 16px; }
+.site .lg-body li { margin-bottom: 6px; }
+.site .lg-body strong { font-weight: 600; }
+.site .lg-body a { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey); }
+.site .lg-body table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 15px; }
+.site .lg-body th, .site .lg-body td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); }
+.site .lg-body th { font-weight: 600; border-bottom-color: var(--ink); }
+.site .method-card, .site .contact-box, .site .retention { border: 1px solid var(--rule); border-radius: 12px; padding: 22px 24px; margin: 0 0 16px; }
+.site .method-card h2 { margin-top: 0; font-size: 18px; }
+.site .warning-box, .site .highlight-box, .site .disclaimer-box, .site .info-box { border-left: 3px solid var(--honey); background: color-mix(in srgb, var(--honey) 7%, transparent); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 20px 0; }
+.site .warning-box p:last-child, .site .highlight-box p:last-child, .site .disclaimer-box p:last-child, .site .info-box p:last-child, .site .method-card p:last-child { margin-bottom: 0; }
+.site .contact-box { text-align: left; margin-top: 32px; }
+.site .contact-box p { margin-bottom: 6px; color: var(--mute); }
+.site .step-tag { display:inline-block; font-size: 12px; font-weight: 600; color: var(--honey); margin-right: 6px; }
+.site footer .app-legal { display:flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; color: var(--ink); }
+.site footer .app-legal a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }
+.site footer .right { text-align: right; }
+@container (max-width: 640px) { .site .lg-head { padding-top: 40px; } .site .lg-body table { display:block; overflow-x:auto; } .site footer .right { text-align:left; } }
+</style></head>
+<body><div class="site">
+<header class="nav">
+  <a class="brand" href="/" aria-label="Kovan Apps home"><svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true"><rect x="37" y="20" width="26" height="12" rx="6.0" fill="currentColor"/><rect x="29" y="35" width="42" height="13" rx="6.5" fill="currentColor"/><rect x="23" y="51" width="54" height="13" rx="6.5" fill="currentColor"/><rect x="20" y="67" width="60" height="14" rx="7.0" fill="currentColor"/><path d="M44 81 V74.5 a6 6 0 0 1 12 0 V81 Z" fill="var(--honey)"/></svg><span>Kovan Apps</span></a>
+  <nav><a href="/#apps">Apps</a><a href="/support/">Support</a><a href="/contact/">Contact</a></nav>
+</header>
+<section class="lg-head">
+<div class="crumb"><a href="/">Kovan Apps</a><span aria-hidden="true">/</span><a href="/apps/melomatch/terms/">MeloMatch</a><span aria-hidden="true">/</span><span>Child Safety Standards</span></div>
+<p class="eyebrow">MeloMatch</p>
+<h1>Child Safety Standards</h1>
+<p>Last Updated: November 5, 2026. These standards apply to MeloMatch on Google Play and the App Store, published by Kovan Apps Yazılım Ltd. Şti.</p>
+</section>
+<main class="lg-body"><div>
+
+<h2>1. Zero tolerance for child sexual abuse and exploitation</h2>
+<p>MeloMatch prohibits child sexual abuse and exploitation (CSAE) and child sexual abuse material (CSAM) of any kind. This includes any content that sexualizes minors, grooming, sextortion, trafficking, and any attempt to contact, solicit, or meet a minor. Violating accounts are permanently banned.</p>
+
+<h2>2. Adults only</h2>
+<p>MeloMatch is for people aged 18 and over. Date of birth is required at sign-up and the age limit is enforced on our servers. Accounts that appear to belong to a minor are removed. Profile photos must show the account holder and must not include children.</p>
+
+<h2>3. How we prevent and detect abuse</h2>
+<ul>
+  <li>Every uploaded photo is screened automatically on our servers (Google Cloud Vision SafeSearch) before it can be added to a profile; rejected photos are deleted.</li>
+  <li>Profile text is checked on our servers before it is saved.</li>
+  <li>Every profile and conversation has in-app <strong>Report</strong> and <strong>Block</strong>.</li>
+  <li>Reports are reviewed by our team within 24 hours. Child safety reports are marked urgent and reviewed first.</li>
+</ul>
+
+<h2>4. How to report</h2>
+<p><strong>In the app:</strong> open the profile or conversation, tap Report, and choose <strong>"Under 18 or child safety"</strong>. Reports are confidential; the reported person is not told who reported them.</p>
+<p><strong>By email:</strong> write to <a href="mailto:info@kovanapps.com?subject=MeloMatch%20child%20safety">info@kovanapps.com</a> with the subject "Child safety". This is our designated child safety contact.</p>
+<p>If a child is in immediate danger, contact your local police or emergency services first.</p>
+
+<h2>5. What we do with a report</h2>
+<p>We remove the content, permanently ban the account, preserve evidence as the law requires, and report apparent CSAM to the NCMEC CyberTipline (18 U.S.C. &sect; 2258A) and to the competent authorities in the relevant country. We cooperate with law enforcement requests.</p>
+
+<h2>6. Compliance</h2>
+<p>We comply with applicable child safety laws in the countries where MeloMatch is available. See also our <a href="/apps/melomatch/terms/">Terms of Service</a> (section 3.1) and <a href="/apps/melomatch/privacy-policy/">Privacy Policy</a>.</p>
+
+</div></main>
+<footer>
+  <div><p class="legal">Kovan Apps Yazılım Limited Şirketi</p><p>Üniversiteler Mah. 1597 Cad. No: 3/127, Bilkent, Çankaya, 06800 Ankara, Türkiye</p></div>
+  <div class="right"><div class="app-legal"><span>MeloMatch</span><a href="/apps/melomatch/privacy-policy/">Privacy Policy</a> <a href="/apps/melomatch/terms/">Terms</a> <a href="/apps/melomatch/delete-account/">Delete Account</a> <a href="/apps/melomatch/child-safety/">Child Safety</a></div><p><a href="/contact/">Contact</a> · <a href="/support/">Support</a> · &copy; 2026 Kovan Apps</p></div>
+</footer>
+</div></body></html>
